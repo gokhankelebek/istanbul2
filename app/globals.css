@@ -1,26 +1,168 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-crimson: #A51C30;
+  --color-crimson-dark: #8A1526;
+  --color-crimson-light: #C42B42;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4BA6A;
+  --color-gold-dark: #B09138;
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F5EBD6;
+  --color-stone: #1C1917;
+  --color-stone-light: #44403C;
+  --color-olive: #5A6E3A;
+  --color-olive-light: #6E854A;
+  --color-warm-gray: #9C958C;
+  --color-warm-gray-light: #C4BFB8;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-stone);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-crimson: var(--color-crimson);
+  --color-crimson-dark: #8A1526;
+  --color-crimson-light: #C42B42;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4BA6A;
+  --color-gold-dark: #B09138;
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F5EBD6;
+  --color-stone: #1C1917;
+  --color-stone-light: #44403C;
+  --color-olive: #5A6E3A;
+  --color-olive-light: #6E854A;
+  --color-warm-gray: #9C958C;
+  --color-warm-gray-light: #C4BFB8;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate(-1.5%, -1%);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Turkish Pattern Utilities ─── */
+
+/* Section divider: kilim-inspired zigzag band (gold on cream) */
+.turkish-divider {
+  height: 24px;
+  background-color: var(--color-cream);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 12 L12 0 L24 12 L36 0 L48 12' fill='none' stroke='%23C9A84C' stroke-width='1.5' opacity='0.5'/%3E%3Cpath d='M0 12 L12 24 L24 12 L36 24 L48 12' fill='none' stroke='%23C9A84C' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 48px 24px;
+}
+
+/* Variant for dark sections (cream on stone) */
+.turkish-divider-light {
+  height: 24px;
+  background-color: var(--color-stone);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 12 L12 0 L24 12 L36 0 L48 12' fill='none' stroke='%23FDF6EC' stroke-width='1.5' opacity='0.35'/%3E%3Cpath d='M0 12 L12 24 L24 12 L36 24 L48 12' fill='none' stroke='%23FDF6EC' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 48px 24px;
+}
+
+/* Subtle diamond pattern for cream backgrounds */
+.turkish-pattern-subtle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 0 L32 16 L16 32 L0 16 Z' fill='none' stroke='%239C958C' stroke-width='0.4' opacity='0.06'/%3E%3Cpath d='M8 8 L24 8 L24 24 L8 24 Z' fill='none' stroke='%239C958C' stroke-width='0.3' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 32px 32px;
+}
+
+/* Footer: diamond pattern in gold/cream on stone */
+.turkish-pattern-footer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%23C9A84C' stroke-width='0.35' opacity='0.12'/%3E%3Cpath d='M10 10 L30 10 L30 30 L10 30 Z' fill='none' stroke='%23FDF6EC' stroke-width='0.25' opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 40px 40px;
 }
