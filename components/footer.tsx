@@ -115,20 +115,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Map */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-cream/10">
-          <iframe
-            title="Istanbul Mediterranean Restaurant-2 Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.5!2d-115.1441!3d36.1711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s505+Fremont+Street+Las+Vegas+NV!5e0!3m2!1sen!2sus!4v1700000000000"
-            width="100%"
-            height="250"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-cream/10 pt-8">
           <p className="text-xs text-cream/40">
