@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Hero />
       <InfoBar />
-      <TurkishPatternDivider />
+      <TurkishPatternDivider variant="light" />
       <Highlights />
       <TurkishPatternDivider variant="light" />
       <FeaturedDishes />

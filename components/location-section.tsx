@@ -4,16 +4,36 @@ import { motion } from "framer-motion";
 import { MapPin, Clock, Phone, Navigation } from "lucide-react";
 import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
 
+const detailVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const detailsContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+  },
+};
+
 export default function LocationSection() {
   return (
-    <section className="bg-stone py-20 lg:py-28">
+    <section className="bg-stone py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -60, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              type: "spring",
+              stiffness: 60,
+              damping: 18,
+              mass: 1,
+            }}
           >
             <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
               Find Us on Fremont
@@ -23,11 +43,25 @@ export default function LocationSection() {
               historic Inspire building at 505 Fremont Street.
             </p>
 
-            <div className="mt-10 space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-crimson/15 text-crimson">
+            <motion.div
+              className="mt-10 space-y-6"
+              variants={detailsContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+            >
+              <motion.div
+                className="flex items-start gap-4"
+                variants={detailVariants}
+                transition={{ type: "spring", stiffness: 100, damping: 14 }}
+              >
+                <motion.div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-crimson/15 text-crimson"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
                   <MapPin size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="text-sm font-semibold text-cream">Address</h3>
                   <p className="text-sm text-cream/60">{RESTAURANT.address}</p>
@@ -35,12 +69,20 @@ export default function LocationSection() {
                     {RESTAURANT.neighborhood}
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-crimson/15 text-crimson">
+              <motion.div
+                className="flex items-start gap-4"
+                variants={detailVariants}
+                transition={{ type: "spring", stiffness: 100, damping: 14 }}
+              >
+                <motion.div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-crimson/15 text-crimson"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
                   <Clock size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="text-sm font-semibold text-cream">Hours</h3>
                   {HOURS.map((h) => (
@@ -49,12 +91,20 @@ export default function LocationSection() {
                     </p>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-crimson/15 text-crimson">
+              <motion.div
+                className="flex items-start gap-4"
+                variants={detailVariants}
+                transition={{ type: "spring", stiffness: 100, damping: 14 }}
+              >
+                <motion.div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-crimson/15 text-crimson"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
                   <Phone size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="text-sm font-semibold text-cream">Phone</h3>
                   <a
@@ -64,25 +114,38 @@ export default function LocationSection() {
                     {RESTAURANT.phone}
                   </a>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <a
-              href={LINKS.googleMaps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Navigation size={16} />
-              Get Directions
-            </a>
+              <a
+                href={LINKS.googleMaps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
+              >
+                <Navigation size={16} />
+                Get Directions
+              </a>
+            </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            initial={{ opacity: 0, x: 60, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              type: "spring",
+              stiffness: 60,
+              damping: 18,
+              mass: 1,
+              delay: 0.15,
+            }}
             className="overflow-hidden rounded-2xl border border-cream/10"
           >
             <iframe

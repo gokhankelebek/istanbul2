@@ -1,11 +1,37 @@
+"use client";
+
 import { MapPin, Clock, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 import { RESTAURANT, LINKS } from "@/lib/constants";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const },
+  },
+};
 
 export default function InfoBar() {
   return (
-    <div className="bg-stone text-cream">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-5 py-4 text-sm sm:gap-10 lg:px-8">
-        <a
+    <div className="bg-stone text-cream overflow-hidden">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-5 py-4 text-sm sm:gap-10 lg:px-8"
+      >
+        <motion.a
+          variants={itemVariants}
           href={LINKS.googleMaps}
           target="_blank"
           rel="noopener noreferrer"
@@ -14,22 +40,26 @@ export default function InfoBar() {
           <MapPin size={16} className="text-gold" />
           <span className="hidden sm:inline">505 Fremont Street, Las Vegas</span>
           <span className="sm:hidden">505 Fremont St</span>
-        </a>
-        <div className="flex items-center gap-2">
+        </motion.a>
+        <motion.div variants={itemVariants} className="flex items-center gap-2">
           <Clock size={16} className="text-gold" />
           <span>Open Daily from 10 AM</span>
-        </div>
-        <a
+        </motion.div>
+        <motion.a
+          variants={itemVariants}
           href={`tel:${RESTAURANT.phone}`}
           className="flex items-center gap-2 hover:text-gold transition-colors"
         >
           <Phone size={16} className="text-gold" />
           <span>{RESTAURANT.phone}</span>
-        </a>
-        <span className="rounded-full bg-olive/20 px-3 py-1 text-xs font-semibold text-olive-light border border-olive/30">
+        </motion.a>
+        <motion.span
+          variants={itemVariants}
+          className="rounded-full bg-olive/20 px-3 py-1 text-xs font-semibold text-olive-light border border-olive/30"
+        >
           100% Zabiha Halal
-        </span>
-      </div>
+        </motion.span>
+      </motion.div>
     </div>
   );
 }
