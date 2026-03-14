@@ -22,7 +22,7 @@ export const LINKS = {
   fremontPage: "https://www.istanbullv.com/fremont-street",
   fremontMenu: "https://www.istanbullv.com/fremont-menu",
   orderOnline: "https://orderdoner.com",
-  instagram: "https://www.instagram.com/istanbulinvegas/",
+  instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
     "https://maps.google.com/?q=Istanbul+Mediterranean+Fremont+Street+505+Fremont+Las+Vegas",
   press:

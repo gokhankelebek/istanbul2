@@ -51,7 +51,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 max-w-xl text-lg text-cream/70 sm:text-xl"
+          className="mt-6 max-w-xl text-lg text-cream/90 sm:text-xl"
         >
           Award-winning doner kebab, authentic Turkish flavors &amp;
           Mediterranean hospitality at 505 Fremont Street.
