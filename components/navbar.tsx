@@ -48,7 +48,7 @@ export default function Navbar() {
               className="rounded-full w-auto h-auto"
               priority
             />
-            <span className="font-heading text-lg font-bold text-cream hidden sm:inline">
+            <span className="font-heading text-sm font-bold text-cream sm:text-lg">
               Istanbul Mediterranean 2
             </span>
           </Link>
