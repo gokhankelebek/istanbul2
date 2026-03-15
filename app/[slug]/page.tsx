@@ -24,10 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: dish.metaTitle,
       description: dish.ogDescription,
-      url: `https://www.istanbullv.com/${slug}`,
+      url: `https://www.istanbul2.com/${slug}`,
       images: [
         {
-          url: `https://www.istanbullv.com${dish.heroImage}`,
+          url: `https://www.istanbul2.com${dish.heroImage}`,
           width: 1200,
           height: 630,
           alt: dish.heroImageAlt,

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.istanbullv.com/sitemap.xml",
+    sitemap: "https://www.istanbul2.com/sitemap.xml",
   };
 }

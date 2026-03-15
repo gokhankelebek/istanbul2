@@ -84,18 +84,18 @@ export const BREAKFAST_JSON_LD = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.istanbullv.com/turkish-breakfast",
+      "@id": "https://www.istanbul2.com/turkish-breakfast",
       name: "Turkish Breakfast Las Vegas | Kahvalti at Istanbul Mediterranean 2",
       description:
         "Authentic Turkish breakfast (Kahvalti) in Downtown Las Vegas. Traditional spread with fresh cheeses, olives, honey, eggs, simit, and Turkish tea. Served daily at 505 Fremont Street. 100% Halal.",
-      url: "https://www.istanbullv.com/turkish-breakfast",
+      url: "https://www.istanbul2.com/turkish-breakfast",
       isPartOf: {
-        "@id": "https://www.istanbullv.com/#website",
+        "@id": "https://www.istanbul2.com/#website",
       },
     },
     {
       "@type": "Restaurant",
-      "@id": "https://www.istanbullv.com/#restaurant-fremont",
+      "@id": "https://www.istanbul2.com/#restaurant-fremont",
       name: "Istanbul Mediterranean Restaurant-2 (Halal)",
       servesCuisine: ["Turkish", "Mediterranean", "Halal"],
       hasMenu: {

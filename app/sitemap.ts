@@ -3,29 +3,29 @@ import { ALL_DISH_SLUGS } from "@/lib/dish-pages-data";
 import { getAllMenuItemSlugs } from "@/lib/menu-utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.istanbullv.com";
+  const baseUrl = "https://www.istanbul2.com";
 
   const corePages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/fremont-street`,
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/fremont-menu`,
+      url: `${baseUrl}/menu`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/fremont-street/gallery`,
+      url: `${baseUrl}/gallery`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fremont-street/our-story`,
+      url: `${baseUrl}/our-story`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

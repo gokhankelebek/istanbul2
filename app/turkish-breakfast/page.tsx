@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     title: "Turkish Breakfast Las Vegas | Kahvalti at Istanbul Mediterranean 2",
     description:
       "A centuries-old morning ritual, now in Downtown Las Vegas. Fresh cheeses, olives, honey, eggs, simit, and endless Turkish tea. Served daily from 10 AM at 505 Fremont Street.",
-    url: "https://www.istanbullv.com/turkish-breakfast",
+    url: "https://www.istanbul2.com/turkish-breakfast",
     images: [
       {
-        url: "https://www.istanbullv.com/images/2026-march/breakfast/turkish-breakfast-spread.webp",
+        url: "https://www.istanbul2.com/images/2026-march/breakfast/turkish-breakfast-spread.webp",
         width: 1200,
         height: 630,
         alt: "Traditional Turkish breakfast spread at Istanbul Mediterranean 2",

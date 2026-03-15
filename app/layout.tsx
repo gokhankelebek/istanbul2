@@ -29,11 +29,11 @@ export const metadata: Metadata = {
       "Turkish Restaurant Fremont Street | Istanbul Mediterranean Restaurant-2 (Halal)",
     description:
       "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).",
-    url: "https://www.istanbullv.com/fremont-street",
+    url: "https://www.istanbul2.com",
     siteName: "Istanbul Mediterranean",
     images: [
       {
-        url: "https://www.istanbullv.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
+        url: "https://www.istanbul2.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
         width: 1200,
         height: 630,
         alt: "Istanbul Mediterranean Restaurant-2 on Fremont Street at night",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  metadataBase: new URL("https://www.istanbullv.com"),
+  metadataBase: new URL("https://www.istanbul2.com"),
   alternates: {
-    canonical: "/fremont-street",
+    canonical: "/",
   },
 };
 

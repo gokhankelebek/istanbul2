@@ -18,9 +18,9 @@ export const HOURS = [
 ] as const;
 
 export const LINKS = {
-  website: "https://www.istanbullv.com",
-  fremontPage: "https://www.istanbullv.com/fremont-street",
-  fremontMenu: "https://www.istanbullv.com/fremont-menu",
+  website: "https://www.istanbul2.com",
+  fremontPage: "https://www.istanbul2.com",
+  fremontMenu: "https://www.istanbul2.com/menu",
   orderOnline: "https://orderdoner.com",
   instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
@@ -146,15 +146,15 @@ export const JSON_LD = {
   "@graph": [
     {
       "@type": "Restaurant",
-      "@id": "https://www.istanbullv.com/#restaurant-fremont",
+      "@id": "https://www.istanbul2.com/#restaurant-fremont",
       name: "Istanbul Mediterranean Restaurant-2 (Halal)",
       alternateName: "Istanbul Mediterranean Restaurant-2",
       description:
         "Turkish restaurant now open on Fremont Street, Downtown Las Vegas. Expanded menu with Kahvalti, Lahmacun, Pide, and Turkish pastries. 100% Zabiha Halal certified.",
       image:
-        "https://www.istanbullv.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
+        "https://www.istanbul2.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
       telephone: "(702) 812-4598",
-      url: "https://www.istanbullv.com/fremont-street",
+      url: "https://www.istanbul2.com",
       servesCuisine: ["Turkish", "Mediterranean", "Halal"],
       priceRange: "$$",
       address: {

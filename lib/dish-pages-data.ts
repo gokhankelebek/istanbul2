@@ -74,15 +74,15 @@ function buildJsonLd(config: {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": `https://www.istanbullv.com/${config.slug}`,
+        "@id": `https://www.istanbul2.com/${config.slug}`,
         name: config.pageTitle,
         description: config.pageDescription,
-        url: `https://www.istanbullv.com/${config.slug}`,
-        isPartOf: { "@id": "https://www.istanbullv.com/#website" },
+        url: `https://www.istanbul2.com/${config.slug}`,
+        isPartOf: { "@id": "https://www.istanbul2.com/#website" },
       },
       {
         "@type": "Restaurant",
-        "@id": "https://www.istanbullv.com/#restaurant-fremont",
+        "@id": "https://www.istanbul2.com/#restaurant-fremont",
         name: "Istanbul Mediterranean Restaurant-2 (Halal)",
         servesCuisine: ["Turkish", "Mediterranean", "Halal"],
         hasMenu: {

@@ -96,17 +96,17 @@ export function buildMenuItemJsonLd(entry: MenuItemWithMeta) {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": `https://www.istanbullv.com/menu/${entry.slug}`,
+        "@id": `https://www.istanbul2.com/menu/${entry.slug}`,
         name: `${entry.item.name} | Istanbul Mediterranean 2`,
         description:
           entry.item.description ||
           `${entry.item.name} at Istanbul Mediterranean 2, Downtown Las Vegas.`,
-        url: `https://www.istanbullv.com/menu/${entry.slug}`,
-        isPartOf: { "@id": "https://www.istanbullv.com/#website" },
+        url: `https://www.istanbul2.com/menu/${entry.slug}`,
+        isPartOf: { "@id": "https://www.istanbul2.com/#website" },
       },
       {
         "@type": "Restaurant",
-        "@id": "https://www.istanbullv.com/#restaurant-fremont",
+        "@id": "https://www.istanbul2.com/#restaurant-fremont",
         name: "Istanbul Mediterranean Restaurant-2 (Halal)",
         servesCuisine: ["Turkish", "Mediterranean", "Halal"],
         hasMenu: {

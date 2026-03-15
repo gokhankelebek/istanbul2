@@ -42,13 +42,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: `https://www.istanbullv.com/menu/${slug}`,
+      url: `https://www.istanbul2.com/menu/${slug}`,
       siteName: "Istanbul Mediterranean 2",
       locale: "en_US",
       type: "website",
       ...(item.image ? { images: [{ url: item.image, width: 800, height: 600 }] } : {}),
     },
-    alternates: { canonical: `https://www.istanbullv.com/menu/${slug}` },
+    alternates: { canonical: `https://www.istanbul2.com/menu/${slug}` },
   };
 }
 
