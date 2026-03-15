@@ -79,7 +79,7 @@ export default function Navbar() {
               href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
               className="rounded-full border border-cream/20 px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
             >
-              Book a Table
+              Call to Reserve
             </a>
             <a
               href={LINKS.orderOnline}
@@ -143,7 +143,7 @@ export default function Navbar() {
                   href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
                   className="inline-block rounded-full border-2 border-cream/20 px-8 py-3 text-lg font-semibold text-cream transition-all hover:border-gold hover:text-gold"
                 >
-                  Book a Table
+                  Call to Reserve
                 </a>
                 <a
                   href={LINKS.orderOnline}

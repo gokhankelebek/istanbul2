@@ -49,10 +49,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.9, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mb-4"
+          className="mb-4 flex flex-wrap items-center justify-center gap-3"
         >
           <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
             Now Open on Fremont Street
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-olive/40 bg-olive/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-olive-light backdrop-blur-sm">
+            <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.5 6.7-4 4a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 1 1 1.06-1.06L7 9.14l3.47-3.47a.75.75 0 1 1 1.06 1.06Z"/></svg>
+            100% Zabiha Halal
           </span>
         </motion.div>
 
@@ -94,6 +98,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+            title="Order via orderdoner.com — our secure ordering partner"
           >
             Order Online
           </a>

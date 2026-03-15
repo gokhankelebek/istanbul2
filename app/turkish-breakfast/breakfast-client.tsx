@@ -470,8 +470,8 @@ export default function BreakfastPageClient() {
               </h2>
               <p className="mt-4 text-cream/50 max-w-lg">
                 Join us every morning for the most authentic Turkish breakfast
-                experience in Las Vegas. Walk-ins welcome — no reservation
-                needed.
+                experience in Las Vegas. Walk-ins always welcome. For groups
+                of 6+, call ahead to reserve.
               </p>
 
               <div className="mt-10 space-y-6">

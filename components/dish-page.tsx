@@ -389,7 +389,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
               Try It at 505 Fremont
             </h2>
             <p className="mt-4 text-cream/50 max-w-lg mx-auto">
-              Walk-ins welcome. No reservation needed.
+              Walk-ins always welcome. For groups of 6+, call ahead to reserve.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-cream/60">
