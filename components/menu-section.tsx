@@ -6,6 +6,36 @@ import { motion } from "framer-motion";
 import type { MenuCategory } from "@/lib/menu-data";
 import { getMenuItemHref } from "@/lib/menu-utils";
 
+const POPULAR_ITEMS = new Set([
+  "Beef & Lamb Turkish Pita",
+  "Chicken Lavash Wrap",
+  "Mix Rice Bowl",
+  "Iskender",
+  "Lahmacun",
+  "Doner & Cheese Pide",
+  "Turkish Breakfast",
+  "Baklava",
+  "Falafel Lavash Wrap",
+]);
+
+const VEGETARIAN_ITEMS = new Set([
+  "Falafel Turkish Pita",
+  "Falafel Pita",
+  "Falafel Lavash Wrap",
+  "Falafel Salad Bowl",
+  "Falafel Rice Bowl",
+  "Falafel French Fries Bowl",
+  "Falafel (Side)",
+  "Hummus",
+  "French Fries",
+  "Side Rice",
+  "Stuffed Grape Leaves",
+  "Menemen",
+  "Cheese Pide",
+  "Veggie Pide",
+  "Extra Pita",
+]);
+
 interface MenuSectionProps {
   category: MenuCategory;
   index: number;
@@ -80,6 +110,20 @@ export default function MenuSection({ category, index }: MenuSectionProps) {
                       {item.price}
                     </span>
                   </div>
+                  {(POPULAR_ITEMS.has(item.name) || VEGETARIAN_ITEMS.has(item.name)) && (
+                    <div className="mt-1.5 flex gap-1.5 flex-wrap">
+                      {POPULAR_ITEMS.has(item.name) && (
+                        <span className="inline-block rounded-full bg-crimson/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-crimson">
+                          Popular
+                        </span>
+                      )}
+                      {VEGETARIAN_ITEMS.has(item.name) && (
+                        <span className="inline-block rounded-full bg-olive/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-olive">
+                          Vegetarian
+                        </span>
+                      )}
+                    </div>
+                  )}
                   {item.description && (
                     <p className="mt-1 text-xs leading-relaxed text-warm-gray line-clamp-2 sm:text-sm">
                       {item.description}

@@ -84,7 +84,7 @@ export const FAQ_ITEMS = [
   {
     question: "What are the Fremont Street location hours?",
     answer:
-      "We're open daily from 10 AM — until 2 AM Sunday through Wednesday, and until 5 AM Thursday through Saturday. We serve breakfast, lunch, dinner, and late-night dining.",
+      "We're open daily from 10 AM. Sunday through Wednesday we close at 2 AM, and Thursday through Saturday we stay open until 5 AM. We serve breakfast, lunch, dinner, and late-night dining.",
   },
   {
     question: "What makes the Fremont location different from the Strip?",
@@ -94,12 +94,32 @@ export const FAQ_ITEMS = [
   {
     question: "Is the food Halal certified?",
     answer:
-      "Yes, absolutely. We maintain 100% Zabiha Halal certification. All meats are hand-slaughtered according to strict Islamic dietary laws, with no pork or alcohol in any preparation.",
+      "Yes, absolutely. We maintain 100% Zabiha Halal certification. All meats are hand-slaughtered according to strict Islamic dietary laws, with no pork or alcohol in any preparation. Our kitchen maintains strict separation from any non-halal items.",
   },
   {
-    question: "What is Kahvalti?",
+    question: "Do you serve Turkish breakfast every day?",
     answer:
-      "Kahvalti is a traditional Turkish breakfast experience featuring fresh cheeses, olives, honey, jams, eggs, and freshly baked breads. Enjoyed slowly with friends and family over endless cups of Turkish tea — exclusive to our Fremont location.",
+      "Yes — Kahvalti (Turkish breakfast) is served every day starting at 10 AM. It's a traditional spread of fresh cheeses, olives, honey, jams, eggs, simit bread, and endless Turkish tea. Perfect for a slow morning or weekend brunch.",
+  },
+  {
+    question: "Do you have vegetarian options?",
+    answer:
+      "Absolutely. We offer a wide range of vegetarian dishes including Menemen (Turkish scrambled eggs), Hummus, Falafel plates and wraps, Stuffed Grape Leaves, French Fries, and vegetarian Pide varieties. All prepared in our 100% pork-free and alcohol-free kitchen.",
+  },
+  {
+    question: "Do you take reservations or group bookings?",
+    answer:
+      "Yes — for parties of 6 or more, we recommend calling ahead at (702) 812-4598 to reserve seating. We also accommodate larger groups and private events in our spacious dining room. Walk-ins are always welcome.",
+  },
+  {
+    question: "Is there parking nearby?",
+    answer:
+      "Yes. There is metered street parking on Fremont Street and surrounding blocks, plus several parking garages within a short walk including the Fremont East lot. Rideshare drop-off is easy at our 505 Fremont Street entrance.",
+  },
+  {
+    question: "Can I order online for pickup or delivery?",
+    answer:
+      "Yes! You can order online at orderdoner.com for pickup or delivery. We're also available on major delivery platforms. For large catering orders, please call us directly at (702) 812-4598.",
   },
 ] as const;
 
@@ -197,7 +217,7 @@ export const JSON_LD = {
           name: "What are the Fremont Street location hours?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Istanbul Mediterranean Restaurant-2 (Halal) is now open at 505 Fremont Street, Las Vegas, NV 89101. We're open daily from 10 AM (until 2 AM Sun-Wed, 5 AM Thu-Sat).",
+            text: "We're open daily from 10 AM. Sunday through Wednesday we close at 2 AM, Thursday through Saturday we stay open until 5 AM.",
           },
         },
         {
@@ -205,7 +225,7 @@ export const JSON_LD = {
           name: "What makes the Fremont location different from the Strip?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The Fremont location features an expanded menu including Kahvalti (Turkish breakfast), Lahmacun (Turkish pizza), Pide (Turkish boats), and a full bakery case. Designed as a full-day destination with a larger dining room, living green walls, cozy booths, and an open kitchen.",
+            text: "The Fremont location features full table service, an expanded menu including Kahvalti (Turkish breakfast), Lahmacun (Turkish pizza), Pide (Turkish boats), and a full bakery case. A larger dining room with living green walls, cozy booths, and an open kitchen.",
           },
         },
         {
@@ -213,15 +233,31 @@ export const JSON_LD = {
           name: "Is the food Halal certified?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. The Fremont location maintains 100% Zabiha Halal certification. All meats are hand-slaughtered according to strict Islamic dietary laws.",
+            text: "Yes. We maintain 100% Zabiha Halal certification. All meats are hand-slaughtered according to strict Islamic dietary laws, with no pork or alcohol in any preparation.",
           },
         },
         {
           "@type": "Question",
-          name: "What is Kahvalti?",
+          name: "Do you have vegetarian options?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Kahvalti is a traditional Turkish breakfast featuring fresh cheeses, olives, honey, jams, eggs, and freshly baked breads, enjoyed with Turkish tea. Exclusive to the Fremont location.",
+            text: "Yes. We offer Menemen, Hummus, Falafel plates and wraps, Stuffed Grape Leaves, and vegetarian Pide varieties, all prepared in our 100% pork-free and alcohol-free kitchen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do you take reservations?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For parties of 6 or more, call ahead at (702) 812-4598 to reserve. Walk-ins are always welcome. We also accommodate larger groups and private events.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I order online for pickup or delivery?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Order online at orderdoner.com for pickup or delivery. We're also available on major delivery platforms.",
           },
         },
       ],

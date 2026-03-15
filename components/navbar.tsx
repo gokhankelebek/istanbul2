@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { NAV_ITEMS, LINKS } from "@/lib/constants";
+import { NAV_ITEMS, LINKS, RESTAURANT } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -76,6 +76,12 @@ export default function Navbar() {
               </Link>
             ))}
             <a
+              href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
+              className="rounded-full border border-cream/20 px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+            >
+              Book a Table
+            </a>
+            <a
               href={LINKS.orderOnline}
               target="_blank"
               rel="noopener noreferrer"
@@ -131,12 +137,19 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
+                className="flex flex-col items-center gap-4 mt-4"
               >
+                <a
+                  href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
+                  className="inline-block rounded-full border-2 border-cream/20 px-8 py-3 text-lg font-semibold text-cream transition-all hover:border-gold hover:text-gold"
+                >
+                  Book a Table
+                </a>
                 <a
                   href={LINKS.orderOnline}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light"
+                  className="inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light"
                 >
                   Order Online
                 </a>

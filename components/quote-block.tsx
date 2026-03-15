@@ -70,10 +70,14 @@ export default function QuoteBlock() {
                 variants={wordVariants}
                 transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="inline-block mr-[0.3em]"
+                aria-hidden="true"
               >
                 {word}
               </motion.span>
             ))}
+            <span className="sr-only">
+              We hope to provide a high-quality, authentic Halal option that stays open late — perfect for the hospitality workers, artists, and locals who make Downtown thrive.
+            </span>
           </blockquote>
           <motion.div
             initial={{ opacity: 0, width: 0 }}

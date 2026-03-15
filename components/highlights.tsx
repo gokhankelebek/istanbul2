@@ -35,8 +35,8 @@ const HIGHLIGHTS = [
     aspect: "aspect-[4/3]" as const,
   },
   {
-    title: "Morning to Midnight",
-    subtitle: "10 AM — 5 AM.",
+    title: "Open Late, Every Night",
+    subtitle: "10 AM — 2 AM / 5 AM weekends.",
     description:
       "From Kahvalti at sunrise to late-night Pide after your shift. Open every day for Downtown's community.",
     image: "/images/2026-march/breakfast/turkish-breakfast-spread.webp",

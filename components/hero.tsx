@@ -73,8 +73,8 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mt-6 max-w-xl text-lg text-cream/90 sm:text-xl"
         >
-          Award-winning doner kebab, authentic Turkish flavors &amp;
-          Mediterranean hospitality at 505 Fremont Street.
+          Authentic doner kebab, Turkish breakfast &amp; Mediterranean
+          hospitality — now on Fremont Street. 100% Zabiha Halal.
         </motion.p>
 
         <motion.div

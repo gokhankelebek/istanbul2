@@ -5,6 +5,7 @@ import Highlights from "@/components/highlights";
 import FeaturedDishes from "@/components/featured-dishes";
 import GalleryPreview from "@/components/gallery-preview";
 import QuoteBlock from "@/components/quote-block";
+import Reviews from "@/components/reviews";
 import FaqAccordion from "@/components/faq-accordion";
 import LocationSection from "@/components/location-section";
 
@@ -21,6 +22,8 @@ export default function HomePage() {
       <GalleryPreview />
       <TurkishPatternDivider variant="light" />
       <QuoteBlock />
+      <TurkishPatternDivider />
+      <Reviews />
       <TurkishPatternDivider />
       <FaqAccordion />
       <TurkishPatternDivider variant="light" />

@@ -19,9 +19,11 @@ export default function GalleryPageClient() {
             <h1 className="font-heading text-4xl font-bold text-cream sm:text-5xl">
               Gallery
             </h1>
-            <p className="mt-4 text-cream/50 max-w-xl mx-auto">
-              A visual journey through Istanbul Mediterranean — our food, our
-              space, and our community
+            <p className="mt-4 text-cream/50 max-w-2xl mx-auto">
+              Step inside Istanbul Mediterranean Restaurant-2 on Fremont Street.
+              From our open kitchen and living green walls to handmade Turkish
+              dishes and fresh-baked baklava — see the space, the food, and the
+              community that makes Downtown Las Vegas our home.
             </p>
           </motion.div>
         </div>

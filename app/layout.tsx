@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import MobileCtaBar from "@/components/mobile-cta-bar";
 import { JSON_LD } from "@/lib/constants";
 import "./globals.css";
 
@@ -63,8 +64,9 @@ export default function RootLayout({
       </head>
       <body className="bg-cream text-stone antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
+        <MobileCtaBar />
       </body>
     </html>
   );
