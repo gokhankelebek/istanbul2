@@ -24,7 +24,7 @@ export const LINKS = {
   orderOnline: "https://orderdoner.com",
   instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
-    "https://maps.google.com/?q=Istanbul+Mediterranean+Fremont+Street+505+Fremont+Las+Vegas",
+    "https://maps.google.com/?q=505+Fremont+Street,+Las+Vegas,+NV+89101",
   press:
     "https://whatnow.com/las-vegas/restaurants/istanbul-mediterranean-to-set-up-shop-on-fremont-street/",
 } as const;
