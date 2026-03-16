@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       ...(item.image ? { images: [{ url: item.image, width: 800, height: 600 }] } : {}),
     },
-    alternates: { canonical: `https://www.istanbul2.com/menu/${slug}` },
+    alternates: { canonical: `/menu/${slug}` },
   };
 }
 
