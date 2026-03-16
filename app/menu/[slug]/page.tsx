@@ -6,6 +6,7 @@ import {
   buildMenuItemJsonLd,
 } from "@/lib/menu-utils";
 import MenuItemPage from "@/components/menu-item-page";
+import BreadcrumbJsonLd from "@/components/breadcrumb-json-ld";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -46,7 +47,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Istanbul Mediterranean 2",
       locale: "en_US",
       type: "website",
-      ...(item.image ? { images: [{ url: item.image, width: 800, height: 600 }] } : {}),
+      ...(item.image
+        ? {
+            images: [
+              {
+                url: item.image.startsWith("http")
+                  ? item.image
+                  : `https://www.istanbul2.com${item.image}`,
+                width: 800,
+                height: 600,
+              },
+            ],
+          }
+        : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(item.image
+        ? {
+            images: [
+              item.image.startsWith("http")
+                ? item.image
+                : `https://www.istanbul2.com${item.image}`,
+            ],
+          }
+        : {}),
     },
     alternates: { canonical: `/menu/${slug}` },
   };
@@ -61,6 +88,13 @@ export default async function MenuItemRoute({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Menu", path: "/menu" },
+          { name: entry.item.name, path: `/menu/${slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

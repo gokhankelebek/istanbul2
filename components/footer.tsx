@@ -50,6 +50,16 @@ export default function Footer() {
               >
                 Order Online <ExternalLink size={12} />
               </a>
+              {process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL && (
+                <a
+                  href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1"
+                >
+                  Leave a Review <ExternalLink size={12} />
+                </a>
+              )}
             </nav>
           </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import DishPage from "@/components/dish-page";
+import BreadcrumbJsonLd from "@/components/breadcrumb-json-ld";
 import { DISH_PAGES, ALL_DISH_SLUGS } from "@/lib/dish-pages-data";
 
 interface Props {
@@ -34,6 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: dish.metaTitle,
+      description: dish.ogDescription,
+      images: [`https://www.istanbul2.com${dish.heroImage}`],
+    },
   };
 }
 
@@ -42,5 +49,15 @@ export default async function DishPageRoute({ params }: Props) {
   const dish = DISH_PAGES[slug];
   if (!dish) notFound();
 
-  return <DishPage dish={dish} />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: dish.englishName, path: `/${slug}` },
+        ]}
+      />
+      <DishPage dish={dish} />
+    </>
+  );
 }

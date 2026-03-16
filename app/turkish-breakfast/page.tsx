@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BreakfastPageClient from "./breakfast-client";
+import BreadcrumbJsonLd from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Turkish Breakfast Las Vegas | Kahvalti at Istanbul Mediterranean 2",
@@ -22,8 +23,27 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turkish Breakfast Las Vegas | Kahvalti at Istanbul Mediterranean 2",
+    description:
+      "A centuries-old morning ritual, now in Downtown Las Vegas. Fresh cheeses, olives, honey, eggs, simit, and endless Turkish tea. Served daily from 10 AM at 505 Fremont Street.",
+    images: [
+      "https://www.istanbul2.com/images/2026-march/breakfast/turkish-breakfast-spread.webp",
+    ],
+  },
 };
 
 export default function TurkishBreakfastPage() {
-  return <BreakfastPageClient />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Turkish Breakfast", path: "/turkish-breakfast" },
+        ]}
+      />
+      <BreakfastPageClient />
+    </>
+  );
 }
