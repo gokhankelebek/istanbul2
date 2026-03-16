@@ -12,6 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { LINKS } from "@/lib/constants";
+import PromoVideo from "@/components/promo-video";
 
 const STORY_SECTIONS = [
   {
@@ -103,6 +104,8 @@ export default function StoryPageClient() {
           </motion.div>
         </div>
       </div>
+
+      <PromoVideo variant="light" />
 
       {/* Story sections */}
       <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-24 space-y-24 lg:space-y-32">

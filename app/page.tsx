@@ -8,6 +8,7 @@ import QuoteBlock from "@/components/quote-block";
 import Reviews from "@/components/reviews";
 import FaqAccordion from "@/components/faq-accordion";
 import LocationSection from "@/components/location-section";
+import PromoVideo from "@/components/promo-video";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <InfoBar />
       <TurkishPatternDivider variant="light" />
       <Highlights />
+      <PromoVideo variant="dark" />
       <TurkishPatternDivider variant="light" />
       <FeaturedDishes />
       <TurkishPatternDivider />
