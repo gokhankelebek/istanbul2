@@ -150,7 +150,7 @@ export default function LocationSection() {
           >
             <iframe
               title="Istanbul Mediterranean Restaurant-2 Location"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=505+Fremont+Street,Las+Vegas,NV+89101&zoom=16"
+              src="https://www.google.com/maps?q=505+Fremont+Street,+Las+Vegas,+NV+89101&output=embed"
               width="100%"
               height="420"
               style={{ border: 0 }}
