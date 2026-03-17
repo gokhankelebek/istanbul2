@@ -25,14 +25,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title:
-    "Turkish Restaurant Fremont Street | Istanbul Mediterranean Restaurant-2 (Halal)",
+    "Turkish Restaurant Las Vegas | Fremont Street | Istanbul Mediterranean 2 (Halal)",
   description:
     "Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street, Downtown Las Vegas. Expanded Turkish menu with Kahvalti, Lahmacun, Pide, and Turkish pastries. Now open at 505 Fremont Street.",
   keywords:
-    "Turkish restaurant Fremont Street, Downtown Las Vegas halal food, Fremont Street Mediterranean, Turkish breakfast Las Vegas, Kahvalti Las Vegas, Pide Las Vegas, Lahmacun Las Vegas",
+    "Turkish restaurant Las Vegas, Turkish restaurant Fremont Street, best Turkish restaurant Downtown, Halal Turkish food Las Vegas, Downtown Las Vegas halal food, Fremont Street Mediterranean, Turkish breakfast Las Vegas, Kahvalti Las Vegas, Pide Las Vegas, Lahmacun Las Vegas",
   openGraph: {
     title:
-      "Turkish Restaurant Fremont Street | Istanbul Mediterranean Restaurant-2 (Halal)",
+      "Turkish Restaurant Las Vegas | Fremont Street | Istanbul Mediterranean 2 (Halal)",
     description:
       "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).",
     url: "https://www.istanbul2.com",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Turkish Restaurant Fremont Street | Istanbul Mediterranean Restaurant-2 (Halal)",
+      "Turkish Restaurant Las Vegas | Fremont Street | Istanbul Mediterranean 2 (Halal)",
     description:
       "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).",
     images: [

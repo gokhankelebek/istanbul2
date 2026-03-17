@@ -61,8 +61,11 @@ export default function MenuPageClient() {
               100% Zabiha Halal Certified
             </div>
             <h1 className="font-heading text-4xl font-bold text-cream sm:text-5xl">
-              Our Menu
+              Turkish Restaurant Menu
             </h1>
+            <p className="text-cream/60 text-sm mt-1">
+              Full Turkish Menu — Fremont Street
+            </p>
             <p className="mt-4 text-cream/50 max-w-xl mx-auto">
               Celebrating the full spectrum of Turkish cuisine — from morning
               Kahvalti to late-night Pide

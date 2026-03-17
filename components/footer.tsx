@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Instagram, Phone, MapPin, Clock, ExternalLink } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS, NAV_ITEMS, FOOTER_SEO_LINKS } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS, NAV_ITEMS, FOOTER_SEO_LINKS, FOOTER_DINING_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -50,9 +50,9 @@ export default function Footer() {
               >
                 Order Online <ExternalLink size={12} />
               </a>
-              {process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL && (
+              {(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review") && (
                 <a
-                  href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL}
+                  href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1"
@@ -107,8 +107,22 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* SEO / Discover pages */}
+        {/* Dining in Las Vegas */}
         <div className="mt-12 border-t border-cream/10 pt-8">
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
+            Dining in Las Vegas
+          </h4>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-8">
+            {FOOTER_DINING_LINKS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-cream/70 hover:text-gold transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
             Discover Our Dishes
           </h4>

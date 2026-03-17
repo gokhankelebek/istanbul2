@@ -45,6 +45,14 @@ export default function Hero() {
         className="relative flex h-full flex-col items-center justify-center px-5 text-center"
         style={{ y: contentY, opacity: contentOpacity }}
       >
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mb-3 text-sm font-medium tracking-wide text-cream/70"
+        >
+          Downtown Las Vegas Turkish Restaurant
+        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}

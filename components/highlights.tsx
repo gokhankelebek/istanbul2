@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const HIGHLIGHTS = [
@@ -90,6 +91,9 @@ export default function Highlights() {
             Not just another
             <span className="text-gold"> kebab shop</span>
           </h2>
+          <p className="mt-4 text-cream/60 max-w-2xl text-sm sm:text-base">
+            From our <Link href="/turkish-breakfast" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish breakfast</Link> to our <Link href="/doner-kebab-las-vegas" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Halal doner kebab</Link>, we bring authentic Turkish cuisine to <Link href="/" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Fremont Street</Link>. See our full <Link href="/menu" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish restaurant menu</Link>.
+          </p>
         </motion.div>
 
         <motion.div

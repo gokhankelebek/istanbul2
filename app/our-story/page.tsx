@@ -3,7 +3,7 @@ import StoryPageClient from "./story-client";
 import BreadcrumbJsonLd from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "Our Story | Istanbul Mediterranean Restaurant-2 (Halal)",
+  title: "Our Story | Turkish Restaurant Las Vegas | Istanbul Mediterranean 2",
   description:
     "The story behind Istanbul Mediterranean Restaurant-2 on Fremont Street. A family-owned Turkish restaurant bringing the soul of Istanbul to Downtown Las Vegas.",
   keywords:

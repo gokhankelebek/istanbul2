@@ -17,8 +17,9 @@ export default function GalleryPageClient() {
             className="text-center"
           >
             <h1 className="font-heading text-4xl font-bold text-cream sm:text-5xl">
-              Gallery
+              Turkish Restaurant &amp; Dining Room
             </h1>
+            <p className="text-cream/60 text-sm mt-1">Fremont Street, Downtown Las Vegas</p>
             <p className="mt-4 text-cream/50 max-w-2xl mx-auto">
               Step inside Istanbul Mediterranean Restaurant-2 on Fremont Street.
               From our open kitchen and living green walls to handmade Turkish
@@ -31,6 +32,11 @@ export default function GalleryPageClient() {
 
       {/* Gallery grid */}
       <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-3xl mb-12 text-center text-warm-gray leading-relaxed">
+          <p>
+            Our Turkish restaurant on Fremont Street brings the warmth of Istanbul to Downtown Las Vegas. The gallery captures our dining room with living green walls, the open kitchen where doner and pide are prepared, and the dishes that make us a favorite for Halal Turkish food in Las Vegas.
+          </p>
+        </div>
         <GalleryGrid />
 
         {/* Opening Day Video */}

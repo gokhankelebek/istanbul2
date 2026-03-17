@@ -18,7 +18,7 @@ const STORY_SECTIONS = [
   {
     title: "Bringing the Soul of Istanbul to Downtown",
     content:
-      "At Istanbul Mediterranean, we're more than just a restaurant — we're bringing the soul of Istanbul to the heart of Downtown Las Vegas. Our mission is to share centuries-old culinary traditions with a community that values authentic flavors and genuine hospitality.\n\nOur flagship location at the Grand Bazaar Shops on the Strip has become a beloved destination for authentic Turkish street food. Now, with our second location in Fremont East, we're expanding our reach while staying true to our roots.",
+      "At Istanbul Mediterranean, we're the Turkish restaurant Las Vegas has been waiting for — bringing the soul of Istanbul to the heart of Downtown Las Vegas. Our mission is to share centuries-old culinary traditions with a community that values authentic flavors and genuine hospitality.\n\nOur flagship location at the Grand Bazaar Shops on the Strip has become a beloved destination for authentic Turkish street food. Now, with our second location in Fremont East, we're expanding our reach while staying true to our roots.",
     image: "/images/2026-march/fremont/fremont-exterior-night-505.webp",
     imageAlt: "Istanbul Mediterranean Fremont Street exterior at night",
   },
