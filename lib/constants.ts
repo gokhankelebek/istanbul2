@@ -224,74 +224,77 @@ export const JSON_LD = {
         name: "Zane Atlas Muslu",
       },
     },
+  ],
+};
+
+/** Homepage FAQ schema - used only on / to avoid duplicate FAQPage on pages with their own FAQ */
+export const HOMEPAGE_FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
     {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What are the Fremont Street location hours?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "We're open daily from 10 AM. Sunday through Wednesday we close at 2 AM, Thursday through Saturday we stay open until 5 AM.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What makes the Fremont location different from the Strip?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The Fremont location features full table service, an expanded menu including Kahvalti (Turkish breakfast), Lahmacun (Turkish pizza), Pide (Turkish boats), and a full bakery case. A larger dining room with living green walls, cozy booths, and an open kitchen.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is the food Halal certified?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We maintain 100% Zabiha Halal certification. All meats are hand-slaughtered according to strict Islamic dietary laws, with no pork or alcohol in any preparation.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you have vegetarian options?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We offer Menemen, Hummus, Falafel plates and wraps, Stuffed Grape Leaves, and vegetarian Pide varieties, all prepared in our 100% pork-free and alcohol-free kitchen.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you take reservations?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "For parties of 6 or more, call ahead at (702) 861-6905 to reserve. Walk-ins are always welcome. We also accommodate larger groups and private events.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can I order online for pickup or delivery?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Order online at istanbullasvegas.square.site for pickup or delivery. We're also available on major delivery platforms.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Where is the best Turkish restaurant in Downtown Las Vegas?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Istanbul Mediterranean 2 at 505 Fremont Street in the Fremont East District. We offer full table service, doner kebab, Turkish breakfast, pide, lahmacun, and 100% Zabiha Halal cuisine. Open daily until 2 AM Sun–Wed, 5 AM Thu–Sat.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is there Halal Turkish food on Fremont Street?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Istanbul Mediterranean 2 serves 100% Zabiha Halal Turkish and Mediterranean food at 505 Fremont Street. Doner kebab, pide, lahmacun, Turkish breakfast, and more. No pork or alcohol in any preparation.",
-          },
-        },
-      ],
+      "@type": "Question",
+      name: "What are the Fremont Street location hours?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We're open daily from 10 AM. Sunday through Wednesday we close at 2 AM, Thursday through Saturday we stay open until 5 AM.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What makes the Fremont location different from the Strip?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Fremont location features full table service, an expanded menu including Kahvalti (Turkish breakfast), Lahmacun (Turkish pizza), Pide (Turkish boats), and a full bakery case. A larger dining room with living green walls, cozy booths, and an open kitchen.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is the food Halal certified?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We maintain 100% Zabiha Halal certification. All meats are hand-slaughtered according to strict Islamic dietary laws, with no pork or alcohol in any preparation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you have vegetarian options?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We offer Menemen, Hummus, Falafel plates and wraps, Stuffed Grape Leaves, and vegetarian Pide varieties, all prepared in our 100% pork-free and alcohol-free kitchen.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you take reservations?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For parties of 6 or more, call ahead at (702) 861-6905 to reserve. Walk-ins are always welcome. We also accommodate larger groups and private events.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I order online for pickup or delivery?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Order online at istanbullasvegas.square.site for pickup or delivery. We're also available on major delivery platforms.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is the best Turkish restaurant in Downtown Las Vegas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Istanbul Mediterranean 2 at 505 Fremont Street in the Fremont East District. We offer full table service, doner kebab, Turkish breakfast, pide, lahmacun, and 100% Zabiha Halal cuisine. Open daily until 2 AM Sun–Wed, 5 AM Thu–Sat.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there Halal Turkish food on Fremont Street?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Istanbul Mediterranean 2 serves 100% Zabiha Halal Turkish and Mediterranean food at 505 Fremont Street. Doner kebab, pide, lahmacun, Turkish breakfast, and more. No pork or alcohol in any preparation.",
+      },
     },
   ],
 };
