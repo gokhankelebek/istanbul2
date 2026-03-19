@@ -106,7 +106,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-            title="Order via orderdoner.com — our secure ordering partner"
+            title="Order via istanbullasvegas.square.site — our secure ordering partner"
           >
             Order Online
           </a>

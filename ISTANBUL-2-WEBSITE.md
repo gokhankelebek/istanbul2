@@ -445,11 +445,11 @@ Kahvalti is a traditional Turkish breakfast experience featuring a spread of fre
 
 ## Contact & Links
 
-- **Phone:** (702) 812-4598
+- **Phone:** (702) 861-6905
 - **Website:** [www.istanbullv.com](https://www.istanbullv.com)
 - **Fremont Page:** [www.istanbullv.com/fremont-street](https://www.istanbullv.com/fremont-street)
 - **Fremont Menu:** [www.istanbullv.com/fremont-menu](https://www.istanbullv.com/fremont-menu)
-- **Order Online:** [OrderDoner.com](https://orderdoner.com)
+- **Order Online:** [Square Site](https://istanbullasvegas.square.site)
 - **Instagram:** [@istanbulinvegas](https://www.instagram.com/istanbulinvegas/)
 - **Google Maps:** [Get Directions](https://maps.google.com/?q=Istanbul+Mediterranean+Fremont+Street+505+Fremont+Las+Vegas)
 - **Press:** [WhatNow Las Vegas Article](https://whatnow.com/las-vegas/restaurants/istanbul-mediterranean-to-set-up-shop-on-fremont-street/)

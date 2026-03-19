@@ -7,7 +7,7 @@ export const RESTAURANT = {
   address: "505 Fremont Street, Las Vegas, NV 89101",
   neighborhood: "Fremont East District, Downtown Las Vegas",
   building: "The Inspire building",
-  phone: "(702) 812-4598",
+  phone: "(702) 861-6905",
   coordinates: { lat: 36.1711, lng: -115.1441 },
   opened: "January 21, 2026",
 } as const;
@@ -21,7 +21,7 @@ export const LINKS = {
   website: "https://www.istanbul2.com",
   fremontPage: "https://www.istanbul2.com",
   fremontMenu: "https://www.istanbul2.com/menu",
-  orderOnline: "https://orderdoner.com",
+  orderOnline: "https://istanbullasvegas.square.site",
   instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
     "https://maps.google.com/?q=505+Fremont+Street,+Las+Vegas,+NV+89101",
@@ -119,7 +119,7 @@ export const FAQ_ITEMS = [
   {
     question: "Do you take reservations or group bookings?",
     answer:
-      "Yes — for parties of 6 or more, we recommend calling ahead at (702) 812-4598 to reserve seating. We also accommodate larger groups and private events in our spacious dining room. Walk-ins are always welcome.",
+      "Yes — for parties of 6 or more, we recommend calling ahead at (702) 861-6905 to reserve seating. We also accommodate larger groups and private events in our spacious dining room. Walk-ins are always welcome.",
   },
   {
     question: "Is there parking nearby?",
@@ -129,7 +129,7 @@ export const FAQ_ITEMS = [
   {
     question: "Can I order online for pickup or delivery?",
     answer:
-      "Yes! You can order online at orderdoner.com for pickup or delivery. We're also available on major delivery platforms. For large catering orders, please call us directly at (702) 812-4598.",
+      "Yes! You can order online at istanbullasvegas.square.site for pickup or delivery. We're also available on major delivery platforms. For large catering orders, please call us directly at (702) 861-6905.",
   },
 ] as const;
 
@@ -188,7 +188,7 @@ export const JSON_LD = {
         "Turkish restaurant in Downtown Las Vegas serving doner kebab, Turkish breakfast, pide, and lahmacun. 100% Zabiha Halal. Late night dining on Fremont Street. Open until 5 AM Thu–Sat.",
       image:
         "https://www.istanbul2.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
-      telephone: "(702) 812-4598",
+      telephone: "(702) 861-6905",
       url: "https://www.istanbul2.com",
       servesCuisine: ["Turkish", "Mediterranean", "Halal"],
       priceRange: "$$",
@@ -264,7 +264,7 @@ export const JSON_LD = {
           name: "Do you take reservations?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "For parties of 6 or more, call ahead at (702) 812-4598 to reserve. Walk-ins are always welcome. We also accommodate larger groups and private events.",
+            text: "For parties of 6 or more, call ahead at (702) 861-6905 to reserve. Walk-ins are always welcome. We also accommodate larger groups and private events.",
           },
         },
         {
@@ -272,7 +272,7 @@ export const JSON_LD = {
           name: "Can I order online for pickup or delivery?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Order online at orderdoner.com for pickup or delivery. We're also available on major delivery platforms.",
+            text: "Yes. Order online at istanbullasvegas.square.site for pickup or delivery. We're also available on major delivery platforms.",
           },
         },
         {
