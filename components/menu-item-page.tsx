@@ -13,7 +13,7 @@ import {
   Navigation,
   ArrowRight,
 } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import type { MenuItemWithMeta } from "@/lib/menu-utils";
 
 export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
@@ -27,7 +27,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
     },
     {
       question: `Where can I get ${item.name} in Las Vegas?`,
-      answer: `Istanbul Mediterranean 2 at 505 Fremont Street, Downtown Las Vegas serves ${item.name} for ${item.price}. We're open daily from 10 AM. You can also order online at OrderDoner.com for delivery.`,
+      answer: `Istanbul Mediterranean 2 at 505 Fremont Street, Downtown Las Vegas serves ${item.name} for ${item.price}. We're open daily from 10 AM. Order pickup or delivery online at istanbullasvegas.square.site — same Halal menu from our Fremont kitchen.`,
     },
   ];
 
@@ -109,8 +109,9 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
+                aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
-                Order Online
+                {ORDER_ONLINE_COPY.label}
               </a>
               <Link
                 href="/menu"
@@ -287,8 +288,9 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
-                Order Online
+                {ORDER_ONLINE_COPY.label}
               </a>
             </div>
           </motion.div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Phone, MapPin, ShoppingBag } from "lucide-react";
-import { RESTAURANT, LINKS } from "@/lib/constants";
+import { RESTAURANT, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function MobileCtaBar() {
   return (
@@ -28,10 +28,13 @@ export default function MobileCtaBar() {
             href={LINKS.orderOnline}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-1 rounded-xl bg-crimson py-2.5 text-cream transition-colors active:bg-crimson-light"
+            className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-crimson py-2 px-1 text-cream transition-colors active:bg-crimson-light"
+            aria-label={ORDER_ONLINE_COPY.ariaLabel}
           >
             <ShoppingBag size={20} />
-            <span className="text-[11px] font-bold">Order</span>
+            <span className="text-[10px] font-bold leading-tight text-center">
+              {ORDER_ONLINE_COPY.labelShort}
+            </span>
           </a>
         </div>
       </div>

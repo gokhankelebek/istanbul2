@@ -13,7 +13,7 @@ import {
   Navigation,
   ArrowRight,
 } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import type { DishPageData } from "@/lib/dish-pages-data";
 
 export default function DishPage({ dish }: { dish: DishPageData }) {
@@ -96,8 +96,9 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+              aria-label={ORDER_ONLINE_COPY.ariaLabel}
             >
-              Order Online
+              {ORDER_ONLINE_COPY.label}
             </a>
           </motion.div>
         </div>
@@ -435,8 +436,9 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
-                Order Online
+                {ORDER_ONLINE_COPY.label}
               </a>
             </div>
           </motion.div>

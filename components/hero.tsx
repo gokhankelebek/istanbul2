@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { LINKS } from "@/lib/constants";
+import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -42,7 +42,7 @@ export default function Hero() {
       />
 
       <motion.div
-        className="relative flex h-full flex-col items-center justify-center px-5 text-center"
+        className="relative flex min-h-full flex-col items-center justify-start px-5 pt-28 pb-12 text-center sm:pt-32"
         style={{ y: contentY, opacity: contentOpacity }}
       >
         <motion.p
@@ -86,14 +86,18 @@ export default function Hero() {
           className="mt-6 max-w-xl text-lg text-cream/90 sm:text-xl"
         >
           Authentic doner kebab, Turkish breakfast &amp; Mediterranean
-          hospitality — now on Fremont Street. 100% Zabiha Halal.
+          hospitality — now on Fremont Street.{" "}
+          <span className="text-cream font-medium">
+            Order pickup &amp; delivery
+          </span>{" "}
+          from our kitchen. 100% Zabiha Halal.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mt-10 flex flex-col gap-4 sm:flex-row"
+          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-start"
         >
           <Link
             href="/menu"
@@ -106,11 +110,20 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-            title="Order via istanbullasvegas.square.site — our secure ordering partner"
+            title={ORDER_ONLINE_COPY.ariaLabel}
+            aria-label={ORDER_ONLINE_COPY.ariaLabel}
           >
-            Order Online
+            {ORDER_ONLINE_COPY.label}
           </a>
         </motion.div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.05 }}
+          className="mt-4 max-w-md text-sm text-cream/70 text-center sm:text-left sm:mx-0 mx-auto"
+        >
+          {ORDER_ONLINE_COPY.promo}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}

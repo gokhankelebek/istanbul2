@@ -11,7 +11,7 @@ import {
   ShieldCheck,
   ArrowRight,
 } from "lucide-react";
-import { LINKS } from "@/lib/constants";
+import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import PromoVideo from "@/components/promo-video";
 
 const STORY_SECTIONS = [
@@ -249,8 +249,9 @@ export default function StoryPageClient() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
-                Order Online <ArrowRight size={16} />
+                {ORDER_ONLINE_COPY.label} <ArrowRight size={16} />
               </a>
             </div>
           </motion.div>

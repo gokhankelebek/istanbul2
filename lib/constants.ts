@@ -29,6 +29,17 @@ export const LINKS = {
     "https://whatnow.com/las-vegas/restaurants/istanbul-mediterranean-to-set-up-shop-on-fremont-street/",
 } as const;
 
+/** Primary CTA copy for Istanbul 2 Square ordering (pickup & delivery from Fremont) */
+export const ORDER_ONLINE_COPY = {
+  label: "Order Pickup & Delivery",
+  /** Shorter label for tight mobile UI */
+  labelShort: "Pickup & Delivery",
+  promo:
+    "Pickup and delivery are live — order direct from Istanbul 2 on Fremont, same Halal menu as the dining room.",
+  ariaLabel:
+    "Order pickup or delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
+} as const;
+
 /** SEO landing pages for footer links — helps crawlability and internal linking */
 export const FOOTER_SEO_LINKS = [
   { label: "Turkish Breakfast", href: "/turkish-breakfast" },
@@ -127,9 +138,9 @@ export const FAQ_ITEMS = [
       "Yes. There is metered street parking on Fremont Street and surrounding blocks, plus several parking garages within a short walk including the Fremont East lot. Rideshare drop-off is easy at our 505 Fremont Street entrance.",
   },
   {
-    question: "Can I order online for pickup or delivery?",
+    question: "Can I order online for pickup or delivery from Istanbul 2?",
     answer:
-      "Yes! You can order online at istanbullasvegas.square.site for pickup or delivery. We're also available on major delivery platforms. For large catering orders, please call us directly at (702) 861-6905.",
+      "Yes — Istanbul Mediterranean 2 on Fremont now offers online ordering for pickup and delivery. Place your order at istanbullasvegas.square.site (our official Square store) for the full Halal menu straight from our kitchen. We're also on major delivery apps. For large catering, call (702) 861-6905.",
   },
 ] as const;
 
@@ -274,10 +285,10 @@ export const HOMEPAGE_FAQ_JSON_LD = {
     },
     {
       "@type": "Question",
-      name: "Can I order online for pickup or delivery?",
+      name: "Can I order online for pickup or delivery from Istanbul 2?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Order online at istanbullasvegas.square.site for pickup or delivery. We're also available on major delivery platforms.",
+        text: "Yes. Istanbul Mediterranean 2 on Fremont offers online ordering for pickup and delivery at istanbullasvegas.square.site — the full Halal menu from our kitchen. Major delivery apps also carry us. For catering, call (702) 861-6905.",
       },
     },
     {

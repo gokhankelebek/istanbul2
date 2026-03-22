@@ -13,7 +13,7 @@ import {
   Navigation,
   ExternalLink,
 } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import { MENU_CATEGORIES } from "@/lib/menu-data";
 import {
   BREAKFAST_STORY,
@@ -107,8 +107,9 @@ export default function BreakfastPageClient() {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+              aria-label={ORDER_ONLINE_COPY.ariaLabel}
             >
-              Order Online
+              Order breakfast — pickup &amp; delivery
             </a>
           </motion.div>
 
@@ -542,8 +543,9 @@ export default function BreakfastPageClient() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-6 py-3 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                  aria-label={ORDER_ONLINE_COPY.ariaLabel}
                 >
-                  Order Breakfast Online
+                  Breakfast — pickup &amp; delivery
                 </a>
               </div>
             </motion.div>

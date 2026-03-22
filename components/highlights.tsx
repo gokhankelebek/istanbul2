@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 const HIGHLIGHTS = [
   {
@@ -44,6 +45,18 @@ const HIGHLIGHTS = [
     alt: "Turkish breakfast spread with eggs, cheese, olives and fresh bread",
     span: "col-span-2" as const,
     aspect: "aspect-[16/9] sm:aspect-[2/1]" as const,
+  },
+  {
+    title: ORDER_ONLINE_COPY.label,
+    subtitle: "Istanbul 2 — Fremont Street.",
+    description:
+      "Same Halal menu as dine-in: order online for pickup at 505 Fremont or delivery to your door.",
+    image: "/images/2026-march/food/doner-salad-plate.webp",
+    alt: "Turkish doner and fresh salad plate from Istanbul Mediterranean 2",
+    span: "col-span-2" as const,
+    aspect: "aspect-[16/9] sm:aspect-[2/1]" as const,
+    externalHref: LINKS.orderOnline,
+    externalLabel: ORDER_ONLINE_COPY.ariaLabel,
   },
 ];
 
@@ -92,7 +105,17 @@ export default function Highlights() {
             <span className="text-gold"> kebab shop</span>
           </h2>
           <p className="mt-4 text-cream/60 max-w-2xl text-sm sm:text-base">
-            From our <Link href="/turkish-breakfast" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish breakfast</Link> to our <Link href="/doner-kebab-las-vegas" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Halal doner kebab</Link>, we bring authentic Turkish cuisine to <Link href="/" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Fremont Street</Link>. See our full <Link href="/menu" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish restaurant menu</Link>.
+            From our <Link href="/turkish-breakfast" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish breakfast</Link> to our <Link href="/doner-kebab-las-vegas" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Halal doner kebab</Link>, we bring authentic Turkish cuisine to <Link href="/" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Fremont Street</Link>.{" "}
+            <a
+              href={LINKS.orderOnline}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold-light transition-colors underline underline-offset-2 font-medium"
+              aria-label={ORDER_ONLINE_COPY.ariaLabel}
+            >
+              Order pickup &amp; delivery
+            </a>{" "}
+            from our kitchen, or see our full <Link href="/menu" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish restaurant menu</Link>.
           </p>
         </motion.div>
 
@@ -103,12 +126,9 @@ export default function Highlights() {
           viewport={{ once: true, margin: "-40px" }}
           className="grid grid-cols-2 gap-3 sm:gap-4"
         >
-          {HIGHLIGHTS.map((item) => (
-            <motion.div
-              key={item.title}
-              variants={cardVariants}
-              className={`group relative overflow-hidden rounded-2xl ${item.span}`}
-            >
+          {HIGHLIGHTS.map((item) => {
+            const cardClass = `group relative overflow-hidden rounded-2xl ${item.span}`;
+            const inner = (
               <div className={`relative ${item.aspect} w-full`}>
                 <Image
                   src={item.image}
@@ -138,10 +158,37 @@ export default function Highlights() {
                   <p className="mt-2 text-sm leading-relaxed text-cream/60 max-w-md line-clamp-2 sm:line-clamp-none">
                     {item.description}
                   </p>
+                  {"externalHref" in item && item.externalHref ? (
+                    <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-gold">
+                      Tap to order →
+                    </p>
+                  ) : null}
                 </div>
               </div>
-            </motion.div>
-          ))}
+            );
+
+            if ("externalHref" in item && item.externalHref) {
+              return (
+                <motion.a
+                  key={item.title}
+                  href={item.externalHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variants={cardVariants}
+                  className={`${cardClass} block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-stone`}
+                  aria-label={item.externalLabel}
+                >
+                  {inner}
+                </motion.a>
+              );
+            }
+
+            return (
+              <motion.div key={item.title} variants={cardVariants} className={cardClass}>
+                {inner}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

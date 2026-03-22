@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { NAV_ITEMS, LINKS, RESTAURANT } from "@/lib/constants";
+import { NAV_ITEMS, LINKS, RESTAURANT, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,10 +35,10 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || !isHome
             ? "bg-stone/90 backdrop-blur-xl shadow-lg py-3"
-            : "bg-transparent py-5"
+            : "bg-black/30 backdrop-blur-sm py-5"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-nowrap items-center justify-between gap-4 px-5 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo-istanbul.webp"
@@ -54,7 +54,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden flex-shrink-0 items-center gap-4 md:flex lg:gap-6 xl:gap-8">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
@@ -85,9 +85,12 @@ export default function Navbar() {
               href={LINKS.orderOnline}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
+              className="flex-shrink-0 rounded-full bg-crimson px-4 py-2.5 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95 whitespace-nowrap"
+              aria-label={ORDER_ONLINE_COPY.ariaLabel}
+              title={ORDER_ONLINE_COPY.ariaLabel}
             >
-              Order Online
+              <span className="hidden lg:inline">{ORDER_ONLINE_COPY.label}</span>
+              <span className="lg:hidden">{ORDER_ONLINE_COPY.labelShort}</span>
             </a>
           </div>
 
@@ -149,9 +152,10 @@ export default function Navbar() {
                   href={LINKS.orderOnline}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light"
+                  className="inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light text-center max-w-[min(100%,280px)]"
+                  aria-label={ORDER_ONLINE_COPY.ariaLabel}
                 >
-                  Order Online
+                  {ORDER_ONLINE_COPY.label}
                 </a>
               </motion.div>
             </nav>

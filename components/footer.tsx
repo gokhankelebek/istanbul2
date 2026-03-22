@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { Instagram, Phone, MapPin, Clock, ExternalLink } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS, NAV_ITEMS, FOOTER_SEO_LINKS, FOOTER_DINING_LINKS } from "@/lib/constants";
+import {
+  RESTAURANT,
+  HOURS,
+  LINKS,
+  NAV_ITEMS,
+  FOOTER_SEO_LINKS,
+  FOOTER_DINING_LINKS,
+  ORDER_ONLINE_COPY,
+} from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -14,7 +22,10 @@ export default function Footer() {
             </h3>
             <p className="text-sm leading-relaxed text-cream/60 mb-6">
               The Heart of Istanbul, Now in Downtown Las Vegas. Authentic Turkish
-              cuisine, 100% Zabiha Halal certified.
+              cuisine, 100% Zabiha Halal certified.{" "}
+              <span className="text-cream/75">
+                Order pickup &amp; delivery from our Fremont kitchen.
+              </span>
             </p>
             <a
               href={LINKS.instagram}
@@ -46,9 +57,10 @@ export default function Footer() {
                 href={LINKS.orderOnline}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1"
+                className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1 font-medium text-gold/90"
+                aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
-                Order Online <ExternalLink size={12} />
+                {ORDER_ONLINE_COPY.label} <ExternalLink size={12} />
               </a>
               {(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review") && (
                 <a

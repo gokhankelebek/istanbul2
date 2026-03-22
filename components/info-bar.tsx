@@ -1,8 +1,8 @@
 "use client";
 
-import { MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
-import { RESTAURANT, LINKS } from "@/lib/constants";
+import { RESTAURANT, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 const containerVariants = {
   hidden: {},
@@ -52,6 +52,18 @@ export default function InfoBar() {
         >
           <Phone size={16} className="text-gold" />
           <span>{RESTAURANT.phone}</span>
+        </motion.a>
+        <motion.a
+          variants={itemVariants}
+          href={LINKS.orderOnline}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 font-semibold text-gold/95 hover:text-gold transition-colors"
+          aria-label={ORDER_ONLINE_COPY.ariaLabel}
+        >
+          <ShoppingBag size={16} className="text-gold shrink-0" />
+          <span className="hidden sm:inline">{ORDER_ONLINE_COPY.labelShort}</span>
+          <span className="sm:hidden">Order</span>
         </motion.a>
         <motion.span
           variants={itemVariants}
