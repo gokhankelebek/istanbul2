@@ -30,6 +30,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+      },
+    },
     keywords: [
       item.name,
       `${item.name} Las Vegas`,
@@ -75,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           }
         : {}),
     },
-    alternates: { canonical: `/menu/${slug}` },
+    alternates: { canonical: "/menu" },
   };
 }
 
