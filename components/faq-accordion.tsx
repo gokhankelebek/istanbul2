@@ -28,7 +28,10 @@ const itemVariants = {
 
 export default function FaqAccordion() {
   return (
-    <section className="relative bg-cream py-20 lg:py-28 turkish-pattern-subtle overflow-hidden">
+    <section
+      id="faq"
+      className="relative scroll-mt-28 bg-cream py-20 lg:py-28 turkish-pattern-subtle overflow-hidden"
+    >
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
