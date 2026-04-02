@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Rss } from "lucide-react";
 import { Instagram, Phone, MapPin, Clock, ExternalLink } from "lucide-react";
 import {
   RESTAURANT,
@@ -72,6 +73,13 @@ export default function Footer() {
                   Leave a Review <ExternalLink size={12} />
                 </a>
               )}
+              <Link
+                href="/feed.xml"
+                className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1.5 text-cream/70"
+              >
+                <Rss size={14} className="text-gold/80" />
+                Blog RSS
+              </Link>
             </nav>
           </div>
 

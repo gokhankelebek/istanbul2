@@ -101,6 +101,14 @@ export default function StoryPageClient() {
               More than just food — we&apos;re bringing Turkish hospitality and
               centuries-old culinary traditions to Downtown Las Vegas.
             </p>
+            <p className="mt-4 text-base text-cream/55 max-w-2xl mx-auto">
+              <Link
+                href="/blog"
+                className="font-medium text-gold hover:text-gold-light underline underline-offset-2"
+              >
+                Read news and guides on our blog
+              </Link>
+            </p>
           </motion.div>
         </div>
       </div>

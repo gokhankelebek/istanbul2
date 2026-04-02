@@ -72,6 +72,7 @@ export const NAV_ITEMS = [
   { label: "Menu", href: "/menu" },
   { label: "Gallery", href: "/gallery" },
   { label: "Our Story", href: "/our-story" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 export const HIGHLIGHTS = [
