@@ -15,6 +15,9 @@ import {
 } from "@/lib/blog";
 import BreadcrumbJsonLd from "@/components/breadcrumb-json-ld";
 import BlogPostingJsonLd from "@/components/blog-posting-json-ld";
+import BlogFaqsJsonLd from "@/components/blog-faqs-json-ld";
+import BlogFaqSection from "@/components/blog-faq-section";
+import BlogPostCta from "@/components/blog-post-cta";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 
 interface Props {
@@ -88,6 +91,9 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <BlogPostingJsonLd post={post} />
+      {post.faqs && post.faqs.length > 0 ? (
+        <BlogFaqsJsonLd faqs={post.faqs} />
+      ) : null}
       <BreadcrumbJsonLd
         items={[
           { name: "Home", path: "/" },
@@ -145,6 +151,9 @@ export default async function BlogPostPage({ params }: Props) {
                 priority
               />
             </div>
+            <div className="mx-auto mt-8 max-w-2xl">
+              <BlogPostCta variant="stone" />
+            </div>
           </div>
         </header>
 
@@ -170,6 +179,13 @@ export default async function BlogPostPage({ params }: Props) {
               },
             }}
           />
+
+          <div className="mt-14 space-y-12">
+            <BlogPostCta variant="cream" />
+            {post.faqs && post.faqs.length > 0 ? (
+              <BlogFaqSection faqs={post.faqs} />
+            ) : null}
+          </div>
         </div>
 
         {related.length > 0 ? (

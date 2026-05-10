@@ -3,7 +3,11 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { BlogFrontmatter, BlogPost } from "@/lib/blog-types";
+import type {
+  BlogFrontmatter,
+  BlogPost,
+  BlogPostFaqItem,
+} from "@/lib/blog-types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -44,6 +48,25 @@ function isValidFrontmatter(data: unknown): data is BlogFrontmatter {
   );
 }
 
+function normalizeFaqs(raw: unknown): BlogPostFaqItem[] | undefined {
+  if (!raw || !Array.isArray(raw)) return undefined;
+  const out: BlogPostFaqItem[] = [];
+  for (const item of raw) {
+    if (
+      item &&
+      typeof item === "object" &&
+      typeof (item as BlogPostFaqItem).question === "string" &&
+      typeof (item as BlogPostFaqItem).answer === "string"
+    ) {
+      out.push({
+        question: (item as BlogPostFaqItem).question.trim(),
+        answer: (item as BlogPostFaqItem).answer.trim(),
+      });
+    }
+  }
+  return out.length > 0 ? out : undefined;
+}
+
 function readPostFile(filePath: string, slug: string): BlogPost | null {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
@@ -52,6 +75,9 @@ function readPostFile(filePath: string, slug: string): BlogPost | null {
     return null;
   }
   const fm = data as BlogFrontmatter;
+  const faqs = normalizeFaqs(
+    (data as unknown as Record<string, unknown>).faqs
+  );
   if (RESERVED_SLUGS.has(slug)) {
     console.warn(`[blog] Reserved slug skipped: ${slug}`);
     return null;
@@ -64,6 +90,7 @@ function readPostFile(filePath: string, slug: string): BlogPost | null {
 
   return {
     ...fm,
+    faqs,
     slug,
     body: content.trim(),
     lastModified,
@@ -72,7 +99,9 @@ function readPostFile(filePath: string, slug: string): BlogPost | null {
 
 function listMdxFiles(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
-  return fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".mdx"));
+  return fs.readdirSync(CONTENT_DIR).filter(
+    (f) => f.endsWith(".mdx") && !f.startsWith("_")
+  );
 }
 
 export function getAllPosts(): BlogPost[] {
