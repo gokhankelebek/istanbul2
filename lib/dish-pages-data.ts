@@ -779,7 +779,7 @@ const menemen: DishPageData = {
     {
       question: "Is Menemen available all day?",
       answer:
-        "Yes. While Menemen is traditionally a breakfast dish, our breakfast menu is available throughout the day at our Fremont Street location. Hours: Sunday-Wednesday 10 AM to 2 AM, Thursday-Saturday 10 AM to 5 AM.",
+        "Yes. While Menemen is traditionally a breakfast dish, our breakfast menu is available throughout the day at our Fremont Street location. Hours: Sunday-Thursday 10 AM to 2 AM, Friday-Saturday 10 AM to 5 AM.",
     },
   ],
 

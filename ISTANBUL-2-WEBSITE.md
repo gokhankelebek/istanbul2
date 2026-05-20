@@ -29,8 +29,8 @@ From the bustling streets of the Grand Bazaar to the vibrant lights of the Neon 
 
 | Days | Hours |
 |------|-------|
-| Sunday - Wednesday | 10 AM - 2 AM |
-| Thursday - Saturday | 10 AM - 5 AM |
+| Sunday - Thursday | 10 AM - 2 AM |
+| Friday - Saturday | 10 AM - 5 AM |
 
 **Open daily** for breakfast, lunch, dinner, and late-night dining.
 
@@ -427,7 +427,7 @@ More spacious than our Strip location, with room to relax and enjoy the full Tur
 
 **What are the Fremont Street location hours?**
 
-Istanbul Mediterranean Restaurant-2 (Halal) is now open at 505 Fremont Street, Las Vegas, NV 89101. We're open daily from 10 AM (until 2 AM Sun-Wed, 5 AM Thu-Sat), serving our award-winning doner kebab and authentic Turkish flavors to Downtown Las Vegas.
+Istanbul Mediterranean Restaurant-2 (Halal) is now open at 505 Fremont Street, Las Vegas, NV 89101. We're open daily from 10 AM (until 2 AM Sun-Thu, 5 AM Fri-Sat), serving our award-winning doner kebab and authentic Turkish flavors to Downtown Las Vegas.
 
 **What makes the Fremont location different from the Strip location?**
 
@@ -460,7 +460,7 @@ Kahvalti is a traditional Turkish breakfast experience featuring a spread of fre
 |---|---|---|
 | **Address** | 3615 S Las Vegas Blvd #101, Las Vegas, NV 89109 | 505 Fremont Street, Las Vegas, NV 89101 |
 | **Area** | Grand Bazaar Shops, Las Vegas Strip | Fremont East District, Downtown |
-| **Hours** | 10 AM - 5 AM daily | Sun-Wed 10 AM - 2 AM, Thu-Sat 10 AM - 5 AM |
+| **Hours** | 10 AM - 5 AM daily | Sun-Thu 10 AM - 2 AM, Fri-Sat 10 AM - 5 AM |
 | **Style** | Quick-service doner kebab | Full table service, expanded menu |
 | **Halal** | 100% Zabiha Halal | 100% Zabiha Halal |
 
@@ -490,7 +490,7 @@ Turkish restaurant Fremont Street, Downtown Las Vegas halal food, Fremont Street
 
 ```
 og:title: Turkish Restaurant Fremont Street | Istanbul Mediterranean Restaurant-2 (Halal)
-og:description: Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).
+og:description: Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Fri-Sat).
 og:url: https://www.istanbullv.com/fremont-street
 og:image: https://www.istanbullv.com/images/2026-march/fremont/fremont-exterior-night-505.webp
 ```
@@ -527,12 +527,20 @@ https://www.istanbullv.com/fremont-street
         "latitude": 36.1711,
         "longitude": -115.1441
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "10:00",
-        "closes": "02:00"
-      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "10:00",
+          "closes": "02:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "05:00"
+        }
+      ],
       "hasCredential": {
         "@type": "EducationalOccupationalCredential",
         "credentialCategory": "Zabiha Halal Certification"
@@ -546,7 +554,7 @@ https://www.istanbullv.com/fremont-street
       "@type": "WebPage",
       "@id": "https://www.istanbullv.com/fremont-street",
       "name": "Turkish Restaurant Fremont Street | Istanbul Mediterranean Restaurant-2 (Halal)",
-      "description": "Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street, Downtown Las Vegas. Expanded Turkish menu with Kahvalti, Lahmacun, Pide, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).",
+      "description": "Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street, Downtown Las Vegas. Expanded Turkish menu with Kahvalti, Lahmacun, Pide, and pastries. Open 10 AM - 2 AM (5 AM Fri-Sat).",
       "url": "https://www.istanbullv.com/fremont-street"
     },
     {
@@ -557,7 +565,7 @@ https://www.istanbullv.com/fremont-street
           "name": "What are the Fremont Street location hours?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Istanbul Mediterranean Restaurant-2 (Halal) is now open at 505 Fremont Street, Las Vegas, NV 89101. We're open daily from 10 AM (until 2 AM Sun-Wed, 5 AM Thu-Sat), serving our award-winning doner kebab and authentic Turkish flavors to Downtown Las Vegas."
+            "text": "Istanbul Mediterranean Restaurant-2 (Halal) is now open at 505 Fremont Street, Las Vegas, NV 89101. We're open daily from 10 AM (until 2 AM Sun-Thu, 5 AM Fri-Sat), serving our award-winning doner kebab and authentic Turkish flavors to Downtown Las Vegas."
           }
         },
         {

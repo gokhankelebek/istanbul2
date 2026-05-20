@@ -119,7 +119,7 @@ export default function DonerPageClient() {
               Beyond doner, we serve the full spectrum of Turkish cuisine: <Link href="/lahmacun" className="text-crimson hover:underline">lahmacun</Link>, <Link href="/turkish-pide" className="text-crimson hover:underline">Turkish pide</Link>, <Link href="/turkish-breakfast" className="text-crimson hover:underline">Kahvalti (Turkish breakfast)</Link>, and fresh-baked pastries. Full table service in a spacious dining room with living green walls and an open kitchen.
             </p>
             <p>
-              We are open daily at 10 AM. Sunday–Wednesday until 2 AM; Thursday–Saturday until 5 AM. Perfect for late-night doner on Fremont Street.
+              We are open daily at 10 AM. Sunday–Thursday until 2 AM; Friday–Saturday until 5 AM. Perfect for late-night doner on Fremont Street.
             </p>
           </div>
         </div>

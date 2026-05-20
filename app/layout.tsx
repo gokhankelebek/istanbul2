@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title:
       "Turkish Restaurant Las Vegas | Fremont Street | Istanbul Mediterranean 2 (Halal)",
     description:
-      "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).",
+      "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Fri-Sat).",
     url: "https://www.istanbul2.com",
     siteName: "Istanbul Mediterranean",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title:
       "Turkish Restaurant Las Vegas | Fremont Street | Istanbul Mediterranean 2 (Halal)",
     description:
-      "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Thu-Sat).",
+      "Now Open: Istanbul Mediterranean Restaurant-2 (Halal) on Fremont Street. Expanded menu with Turkish breakfast, pizza, boats, and pastries. Open 10 AM - 2 AM (5 AM Fri-Sat).",
     images: [
       "https://www.istanbul2.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
     ],

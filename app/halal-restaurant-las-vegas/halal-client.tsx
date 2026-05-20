@@ -118,7 +118,7 @@ export default function HalalPageClient() {
               From our signature <Link href="/iskender-kebab" className="text-crimson hover:underline">doner kebab</Link> and <Link href="/turkish-pide" className="text-crimson hover:underline">Turkish pide</Link> to our daily <Link href="/turkish-breakfast" className="text-crimson hover:underline">Kahvalti (Turkish breakfast)</Link>, every dish is prepared with care. We offer full table service in a spacious dining room with living green walls and an open kitchen where you can see our chefs at work.
             </p>
             <p>
-              We are open daily at 505 Fremont Street. Sunday through Wednesday we close at 2 AM; Thursday through Saturday we stay open until 5 AM. Perfect for late-night Halal food in Las Vegas.
+              We are open daily at 505 Fremont Street. Sunday through Thursday we close at 2 AM; Friday through Saturday we stay open until 5 AM. Perfect for late-night Halal food in Las Vegas.
             </p>
           </div>
         </div>

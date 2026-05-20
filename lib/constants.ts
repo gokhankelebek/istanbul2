@@ -13,8 +13,8 @@ export const RESTAURANT = {
 } as const;
 
 export const HOURS = [
-  { days: "Sunday – Wednesday", hours: "10 AM – 2 AM" },
-  { days: "Thursday – Saturday", hours: "10 AM – 5 AM" },
+  { days: "Sunday – Thursday", hours: "10 AM – 2 AM" },
+  { days: "Friday – Saturday", hours: "10 AM – 5 AM" },
 ] as const;
 
 export const LINKS = {
@@ -106,7 +106,7 @@ export const FAQ_ITEMS = [
   {
     question: "What are the Fremont Street location hours?",
     answer:
-      "We're open daily from 10 AM. Sunday through Wednesday we close at 2 AM, and Thursday through Saturday we stay open until 5 AM. We serve breakfast, lunch, dinner, and late-night dining.",
+      "We're open daily from 10 AM. Sunday through Thursday we close at 2 AM, and Friday through Saturday we stay open until 5 AM. We serve breakfast, lunch, dinner, and late-night dining.",
   },
   {
     question: "What makes the Fremont location different from the Strip?",
@@ -197,7 +197,7 @@ export const JSON_LD = {
         "Turkish Restaurant Fremont Street",
       ],
       description:
-        "Turkish restaurant in Downtown Las Vegas serving doner kebab, Turkish breakfast, pide, and lahmacun. 100% Zabiha Halal. Late night dining on Fremont Street. Open until 5 AM Thu–Sat.",
+        "Turkish restaurant in Downtown Las Vegas serving doner kebab, Turkish breakfast, pide, and lahmacun. 100% Zabiha Halal. Late night dining on Fremont Street. Open until 5 AM Fri–Sat.",
       image:
         "https://www.istanbul2.com/images/2026-march/fremont/fremont-exterior-night-505.webp",
       telephone: "(702) 861-6905",
@@ -220,13 +220,19 @@ export const JSON_LD = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday"],
+          dayOfWeek: [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+          ],
           opens: "10:00",
           closes: "02:00",
         },
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Thursday", "Friday", "Saturday"],
+          dayOfWeek: ["Friday", "Saturday"],
           opens: "10:00",
           closes: "05:00",
         },
@@ -249,7 +255,7 @@ export const HOMEPAGE_FAQ_JSON_LD = {
       name: "What are the Fremont Street location hours?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We're open daily from 10 AM. Sunday through Wednesday we close at 2 AM, Thursday through Saturday we stay open until 5 AM.",
+        text: "We're open daily from 10 AM. Sunday through Thursday we close at 2 AM, Friday through Saturday we stay open until 5 AM.",
       },
     },
     {
@@ -297,7 +303,7 @@ export const HOMEPAGE_FAQ_JSON_LD = {
       name: "Where is the best Turkish restaurant in Downtown Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Istanbul Mediterranean 2 at 505 Fremont Street in the Fremont East District. We offer full table service, doner kebab, Turkish breakfast, pide, lahmacun, and 100% Zabiha Halal cuisine. Open daily until 2 AM Sun–Wed, 5 AM Thu–Sat.",
+        text: "Istanbul Mediterranean 2 at 505 Fremont Street in the Fremont East District. We offer full table service, doner kebab, Turkish breakfast, pide, lahmacun, and 100% Zabiha Halal cuisine. Open daily until 2 AM Sun–Thu, 5 AM Fri–Sat.",
       },
     },
     {

@@ -11,12 +11,12 @@ const LATE_NIGHT_FAQ = [
   {
     question: "What time does Istanbul Mediterranean 2 close?",
     answer:
-      "Sunday through Wednesday we close at 2 AM. Thursday through Saturday we stay open until 5 AM. We open daily at 10 AM, so we serve breakfast, lunch, dinner, and late-night dining.",
+      "Sunday through Thursday we close at 2 AM. Friday through Saturday we stay open until 5 AM. We open daily at 10 AM, so we serve breakfast, lunch, dinner, and late-night dining.",
   },
   {
     question: "Is there late night food on Fremont Street?",
     answer:
-      "Yes. Istanbul Mediterranean 2 is open late every night at 505 Fremont Street. We serve full Turkish cuisine—doner kebab, pide, lahmacun, and more—until 2 AM Sun–Wed and until 5 AM Thu–Sat.",
+      "Yes. Istanbul Mediterranean 2 is open late every night at 505 Fremont Street. We serve full Turkish cuisine—doner kebab, pide, lahmacun, and more—until 2 AM Sun–Thu and until 5 AM Fri–Sat.",
   },
   {
     question: "What food is available after midnight in Downtown Las Vegas?",
@@ -62,7 +62,7 @@ export default function LateNightPageClient() {
             className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold backdrop-blur-sm mb-4"
           >
             <Clock size={18} />
-            Open Until 5 AM Thu–Sat
+            Open Until 5 AM Fri–Sat
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -80,7 +80,7 @@ export default function LateNightPageClient() {
             transition={{ delay: 0.4 }}
             className="mt-6 max-w-2xl text-lg text-cream/80"
           >
-            Turkish restaurant on Fremont Street. Doner kebab, pide, lahmacun—until 2 AM Sun–Wed, 5 AM Thu–Sat. 100% Halal.
+            Turkish restaurant on Fremont Street. Doner kebab, pide, lahmacun—until 2 AM Sun–Thu, 5 AM Fri–Sat. 100% Halal.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -113,7 +113,7 @@ export default function LateNightPageClient() {
           </h2>
           <div className="prose prose-stone max-w-none space-y-6 text-warm-gray leading-relaxed">
             <p>
-              Istanbul Mediterranean 2 is one of the few Turkish restaurants in Downtown Las Vegas that stays open late. Located at 505 Fremont Street in the Fremont East District, we serve authentic Turkish and Mediterranean food until 2 AM Sunday through Wednesday, and until 5 AM Thursday through Saturday.
+              Istanbul Mediterranean 2 is one of the few Turkish restaurants in Downtown Las Vegas that stays open late. Located at 505 Fremont Street in the Fremont East District, we serve authentic Turkish and Mediterranean food until 2 AM Sunday through Thursday, and until 5 AM Friday through Saturday.
             </p>
             <p>
               Whether you are finishing a shift on the Strip, heading home from a night out, or simply craving real food after midnight, we have you covered. Our full menu is available until closing: doner kebab, Iskender, Turkish pide, lahmacun, falafel, rice bowls, and more. Everything is 100% Zabiha Halal.

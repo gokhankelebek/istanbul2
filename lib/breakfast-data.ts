@@ -44,7 +44,7 @@ export const BREAKFAST_FAQ = [
   {
     question: "What time does Istanbul Mediterranean 2 serve breakfast?",
     answer:
-      "We serve breakfast daily starting at 10 AM. Our full hours are Sunday through Wednesday 10 AM to 2 AM, and Thursday through Saturday 10 AM to 5 AM. The Turkish breakfast menu is available throughout the day.",
+      "We serve breakfast daily starting at 10 AM. Our full hours are Sunday through Thursday 10 AM to 2 AM, and Friday through Saturday 10 AM to 5 AM. The Turkish breakfast menu is available throughout the day.",
   },
   {
     question: "Is the Turkish breakfast halal?",
@@ -221,7 +221,7 @@ export const BREAKFAST_JSON_LD = {
           name: "What time does Istanbul Mediterranean 2 serve breakfast?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Breakfast is served daily starting at 10 AM. Full hours: Sunday-Wednesday 10 AM to 2 AM, Thursday-Saturday 10 AM to 5 AM.",
+            text: "Breakfast is served daily starting at 10 AM. Full hours: Sunday-Thursday 10 AM to 2 AM, Friday-Saturday 10 AM to 5 AM.",
           },
         },
         {

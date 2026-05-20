@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Doner Kebab Las Vegas | Turkish Doner on Fremont Street | Istanbul Mediterranean 2",
     description:
-      "Authentic Turkish doner kebab on Fremont Street. Iskender, pita, rice bowls, wraps. 100% Zabiha Halal. Open until 5 AM Thu–Sat.",
+      "Authentic Turkish doner kebab on Fremont Street. Iskender, pita, rice bowls, wraps. 100% Zabiha Halal. Open until 5 AM Fri–Sat.",
     url: "https://www.istanbul2.com/doner-kebab-las-vegas",
     images: [
       {

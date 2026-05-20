@@ -78,7 +78,7 @@ export default function BlogPostCta({
       >
         Open daily{" "}
         <span className="font-semibold">
-          10 AM – 2 AM (5 AM Thu–Sat)
+          10 AM – 2 AM (5 AM Fri–Sat)
         </span>{" "}
         ·{" "}
         <a
