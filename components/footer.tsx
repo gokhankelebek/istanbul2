@@ -168,7 +168,7 @@ export default function Footer() {
           <p className="text-xs text-cream/40">
             Also visit us at{" "}
             <a
-              href={LINKS.website}
+              href={LINKS.stripWebsite}
               target="_blank"
               rel="noopener noreferrer"
               className="text-cream/60 hover:text-gold transition-colors"

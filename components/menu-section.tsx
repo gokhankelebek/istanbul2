@@ -21,10 +21,10 @@ const POPULAR_ITEMS = new Set([
 const VEGETARIAN_ITEMS = new Set([
   "Falafel Turkish Pita",
   "Falafel Pita",
-  "Falafel Lavash Wrap",
+  "Falafel Wrap",
   "Falafel Salad Bowl",
   "Falafel Rice Bowl",
-  "Falafel French Fries Bowl",
+  "Falafel Fries Bowl",
   "Falafel (Side)",
   "Hummus",
   "French Fries",

@@ -94,6 +94,13 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         image: "/images/Chicken-Doner-Shawarma-Lavash-Wrap.webp",
       },
       {
+        name: "Mix Wrap",
+        description:
+          "Beef & Lamb + Chicken wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+        price: "$15.95",
+        image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Lavash-Wrap.webp",
+      },
+      {
         name: "Falafel Wrap",
         description:
           "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
@@ -150,6 +157,20 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         price: "$21.95",
         image: "/images/Chicken-Doner-Shawarma-French-Fries-Bowl.webp",
       },
+      {
+        name: "Mix Fries Bowl",
+        description:
+          "Beef & Lamb + Chicken over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
+        price: "$22.95",
+        image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-French-Fries-Bowl.webp",
+      },
+      {
+        name: "Falafel Fries Bowl",
+        description:
+          "Falafel over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
+        price: "$21.95",
+        image: "/images/Falafel-French-Fries-Bowl.webp",
+      },
       // Salad Bowl
       {
         name: "Beef & Lamb Salad Bowl",
@@ -164,6 +185,20 @@ export const MENU_CATEGORIES: MenuCategory[] = [
           "Chicken doner over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
         price: "$21.95",
         image: "/images/Chicken-Doner-Shawarma-Salad-Bowl.webp",
+      },
+      {
+        name: "Mix Salad Bowl",
+        description:
+          "Beef & Lamb + Chicken over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+        price: "$22.95",
+        image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Salad-Bowl.webp",
+      },
+      {
+        name: "Falafel Salad Bowl",
+        description:
+          "Falafel over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+        price: "$21.95",
+        image: "/images/Falafel-Salad-Bowl.webp",
       },
     ],
   },
@@ -528,6 +563,12 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Dubai Cheesecake",
         description:
           "Creamy cheesecake with pistachio and kunafa topped with chocolate",
+        price: "Market",
+      },
+      {
+        name: "Sheker-Pare",
+        description:
+          "Soft semolina cookies baked until golden, soaked in a light, sweet syrup",
         price: "Market",
       },
     ],

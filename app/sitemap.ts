@@ -39,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/catering`,
+      lastModified: siteLastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/halal-restaurant-las-vegas`,
       lastModified: siteLastModified,
       changeFrequency: "monthly" as const,

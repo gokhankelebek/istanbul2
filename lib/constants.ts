@@ -8,6 +8,7 @@ export const RESTAURANT = {
   neighborhood: "Fremont East District, Downtown Las Vegas",
   building: "The Inspire building",
   phone: "(702) 861-6905",
+  cateringEmail: "catering@istanbul2.com",
   coordinates: { lat: 36.1711, lng: -115.1441 },
   opened: "January 21, 2026",
 } as const;
@@ -21,6 +22,8 @@ export const LINKS = {
   website: "https://www.istanbul2.com",
   fremontPage: "https://www.istanbul2.com",
   fremontMenu: "https://www.istanbul2.com/menu",
+  /** Flagship Strip location — Grand Bazaar Shops */
+  stripWebsite: "https://www.istanbullv.com",
   orderOnline: "https://istanbullasvegas.square.site",
   instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
@@ -59,6 +62,7 @@ export const FOOTER_SEO_LINKS = [
 
 /** Dining in Las Vegas — SEO landing pages for local search */
 export const FOOTER_DINING_LINKS = [
+  { label: "Catering Las Vegas", href: "/catering" },
   { label: "Halal Restaurant Las Vegas", href: "/halal-restaurant-las-vegas" },
   {
     label: "Late Night Food Downtown",
@@ -70,6 +74,7 @@ export const FOOTER_DINING_LINKS = [
 export const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
+  { label: "Catering", href: "/catering" },
   { label: "Gallery", href: "/gallery" },
   { label: "Our Story", href: "/our-story" },
   { label: "Blog", href: "/blog" },
@@ -139,9 +144,14 @@ export const FAQ_ITEMS = [
       "Yes. There is metered street parking on Fremont Street and surrounding blocks, plus several parking garages within a short walk including the Fremont East lot. Rideshare drop-off is easy at our 505 Fremont Street entrance.",
   },
   {
+    question: "Do you offer catering in Las Vegas?",
+    answer:
+      "Yes — we cater corporate lunches, construction crews, conventions, private parties, and late-night events across the Las Vegas Valley. Individually packaged meals, family-style trays, and hot buffet setup available. Minimum 10 guests. Request a quote at istanbul2.com/catering or call (702) 861-6905.",
+  },
+  {
     question: "Can I order online for pickup or delivery from Istanbul 2?",
     answer:
-      "Yes — Istanbul Mediterranean 2 on Fremont now offers online ordering for pickup and delivery. Place your order at istanbullasvegas.square.site (our official Square store) for the full Halal menu straight from our kitchen. We're also on major delivery apps. For large catering, call (702) 861-6905.",
+      "Yes — Istanbul Mediterranean 2 on Fremont now offers online ordering for pickup and delivery. Place your order at istanbullasvegas.square.site (our official Square store) for the full Halal menu straight from our kitchen. We're also on major delivery apps. For large catering, visit istanbul2.com/catering or call (702) 861-6905.",
   },
 ] as const;
 
@@ -292,10 +302,18 @@ export const HOMEPAGE_FAQ_JSON_LD = {
     },
     {
       "@type": "Question",
+      name: "Do you offer catering in Las Vegas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We cater corporate lunches, construction crews, conventions, private parties, and late-night events across Las Vegas. Individually packaged meals, family-style trays, and hot buffet setup. Minimum 10 guests. Request a quote at istanbul2.com/catering or call (702) 861-6905.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Can I order online for pickup or delivery from Istanbul 2?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Istanbul Mediterranean 2 on Fremont offers online ordering for pickup and delivery at istanbullasvegas.square.site — the full Halal menu from our kitchen. Major delivery apps also carry us. For catering, call (702) 861-6905.",
+        text: "Yes. Istanbul Mediterranean 2 on Fremont offers online ordering for pickup and delivery at istanbullasvegas.square.site — the full Halal menu from our kitchen. Major delivery apps also carry us. For catering, visit istanbul2.com/catering or call (702) 861-6905.",
       },
     },
     {
