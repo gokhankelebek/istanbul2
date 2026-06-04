@@ -87,6 +87,9 @@ export async function POST(request: Request) {
   const resendKey = process.env.RESEND_API_KEY;
   const notifyEmail =
     process.env.CATERING_NOTIFY_EMAIL ?? RESTAURANT.cateringEmail;
+  const fromEmail =
+    process.env.RESEND_FROM_EMAIL ??
+    "Istanbul 2 Catering <catering@istanbul2.com>";
 
   if (resendKey) {
     try {
@@ -97,7 +100,7 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Istanbul 2 Catering <catering@istanbul2.com>",
+          from: fromEmail,
           to: [notifyEmail],
           reply_to: body.email,
           subject: decodeURIComponent(subject),
