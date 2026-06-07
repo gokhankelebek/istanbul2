@@ -317,6 +317,28 @@ export const CATERING_FAQ = [
   },
 ];
 
+export interface CateringVideo {
+  /** YouTube video ID — the part after `watch?v=`, `/shorts/`, or `youtu.be/` */
+  youtubeId: string;
+  title: string;
+  description: string;
+  /** "portrait" for vertical Shorts (9:16), "landscape" for normal 16:9 */
+  orientation?: "portrait" | "landscape";
+}
+
+// To add a video: upload to YouTube (public), copy the ID from the URL, and
+// add an entry below. Set orientation to "portrait" for vertical Shorts.
+//   • Normal video: youtube.com/watch?v=ABC123        → "ABC123"
+//   • Short:        youtube.com/shorts/ABC123         → "ABC123" (portrait)
+export const CATERING_VIDEOS: CateringVideo[] = [
+  {
+    youtubeId: "jEaHgAtEEVs",
+    title: "Catering, On the Line",
+    description: "Fresh Turkish catering off our Fremont Street kitchen.",
+    orientation: "portrait",
+  },
+];
+
 export const CATERING_EVENT_TYPES = [
   "Corporate / Office Lunch",
   "Construction / Job Site",

@@ -31,6 +31,7 @@ import {
   CATERING_FAQ,
 } from "@/lib/catering-data";
 import CateringInquiryForm from "@/components/catering-inquiry-form";
+import CateringVideos from "@/components/catering-videos";
 
 const SERVICE_ICONS = {
   box: Box,
@@ -286,6 +287,9 @@ export default function CateringPageClient() {
           </div>
         </div>
       </section>
+
+      {/* Videos */}
+      <CateringVideos />
 
       {/* Packages */}
       <section className="py-20 lg:py-28">
