@@ -85,8 +85,13 @@ export async function POST(request: Request) {
 
   // Resend integration — set RESEND_API_KEY + CATERING_NOTIFY_EMAIL in env to enable email delivery
   const resendKey = process.env.RESEND_API_KEY;
-  const notifyEmail =
-    process.env.CATERING_NOTIFY_EMAIL ?? RESTAURANT.cateringEmail;
+  // Supports a comma-separated list, e.g. "a@x.com, b@y.com"
+  const notifyEmails = (
+    process.env.CATERING_NOTIFY_EMAIL ?? RESTAURANT.cateringEmail
+  )
+    .split(",")
+    .map((e) => e.trim())
+    .filter(Boolean);
   const fromEmail =
     process.env.RESEND_FROM_EMAIL ??
     "Istanbul 2 Catering <catering@istanbul2.com>";
@@ -101,7 +106,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: fromEmail,
-          to: [notifyEmail],
+          to: notifyEmails,
           reply_to: body.email,
           subject: decodeURIComponent(subject),
           text: emailBody,
