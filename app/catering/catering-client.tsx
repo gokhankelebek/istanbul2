@@ -104,8 +104,8 @@ export default function CateringPageClient() {
       <section className="relative min-h-[85vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/2026-march/food/lahmacun-pide-spread.webp"
-            alt="Turkish catering spread with lahmacun, pide, and doner at Istanbul Mediterranean 2 Las Vegas"
+            src="/images/catering/halal-catering-trays-spread-las-vegas.webp"
+            alt="Halal catering trays from Istanbul Mediterranean 2 Las Vegas — salad, doner, rice, pide bread, baklava and hummus ready for delivery"
             fill
             priority
             className="object-cover"
@@ -288,6 +288,57 @@ export default function CateringPageClient() {
         </div>
       </section>
 
+      {/* Kitchen photo gallery */}
+      <section className="py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
+              Real Orders, Real Kitchen
+            </p>
+            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+              From Our Catering Kitchen
+            </h2>
+            <p className="mt-4 text-warm-gray max-w-2xl mx-auto">
+              Every tray is prepared fresh at 505 Fremont Street — hand-sliced
+              doner, garnished to order, and packed ready for your event.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                src: "/images/catering/chicken-beef-doner-catering-tray.webp",
+                alt: "Catering tray of hand-sliced Halal chicken and beef-lamb doner with fresh garnish at Istanbul Mediterranean 2",
+              },
+              {
+                src: "/images/catering/doner-catering-tray-garnish-prep.webp",
+                alt: "Chef garnishing a Halal doner catering tray with fresh parsley in the Istanbul Mediterranean 2 kitchen",
+              },
+              {
+                src: "/images/catering/catering-salad-tray-prep.webp",
+                alt: "Team member preparing a fresh salad catering tray with cucumber and tomato at Istanbul Mediterranean 2",
+              },
+            ].map((photo, i) => (
+              <motion.div
+                key={photo.src}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="relative aspect-[16/10] overflow-hidden rounded-2xl"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Videos */}
       <CateringVideos />
 
@@ -399,8 +450,8 @@ export default function CateringPageClient() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/2026-march/food/iskender-hummus-table.webp"
-                alt="Iskender kebab and hummus catering spread at Istanbul Mediterranean 2"
+                src="/images/catering/catering-spread-fremont-kitchen.webp"
+                alt="Full Halal catering spread prepared in the Istanbul Mediterranean 2 Fremont kitchen — fresh salad, doner, rice and pide trays"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 500px"

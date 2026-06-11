@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Phone, ExternalLink } from "lucide-react";
-import { LINKS, ORDER_ONLINE_COPY, RESTAURANT } from "@/lib/constants";
+import { ORDER_CHANNELS, RESTAURANT } from "@/lib/constants";
 
 export default function BlogPostCta({
   variant = "stone",
@@ -24,20 +24,33 @@ export default function BlogPostCta({
           variant === "stone" ? "text-cream/95" : "text-stone"
         }`}
       >
-        <a
-          href={LINKS.orderOnline}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center gap-1 font-bold underline-offset-2 ${
-            variant === "stone"
-              ? "text-gold hover:text-gold-light"
-              : "text-crimson hover:text-crimson-light"
-          }`}
-          aria-label={ORDER_ONLINE_COPY.ariaLabel}
-        >
-          {ORDER_ONLINE_COPY.label}
-          <ExternalLink size={14} aria-hidden />
-        </a>
+        {ORDER_CHANNELS.map((channel, i) => (
+          <span key={channel.key}>
+            {i > 0 && (
+              <span
+                className={`mx-2 sm:mx-3 ${
+                  variant === "stone" ? "text-cream/40" : "text-stone/35"
+                }`}
+              >
+                ·
+              </span>
+            )}
+            <a
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1 font-bold underline-offset-2 ${
+                variant === "stone"
+                  ? "text-gold hover:text-gold-light"
+                  : "text-crimson hover:text-crimson-light"
+              }`}
+              aria-label={channel.ariaLabel}
+            >
+              {channel.label}
+              <ExternalLink size={14} aria-hidden />
+            </a>
+          </span>
+        ))}
         <span
           className={`mx-2 sm:mx-3 ${
             variant === "stone" ? "text-cream/40" : "text-stone/35"

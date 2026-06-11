@@ -13,7 +13,7 @@ import {
   Navigation,
   ArrowRight,
 } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS, ORDER_CHANNELS } from "@/lib/constants";
 import type { MenuItemWithMeta } from "@/lib/menu-utils";
 
 export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
@@ -104,15 +104,18 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
             )}
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={LINKS.orderOnline}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
-                aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              >
-                {ORDER_ONLINE_COPY.label}
-              </a>
+              {ORDER_CHANNELS.map((channel) => (
+                <a
+                  key={channel.key}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
+                  aria-label={channel.ariaLabel}
+                >
+                  {channel.label}
+                </a>
+              ))}
               <Link
                 href="/menu"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-stone/15 px-8 py-3.5 text-base font-semibold text-stone transition-all hover:border-crimson hover:text-crimson active:scale-95"
@@ -283,15 +286,18 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
                 <Navigation size={16} />
                 Get Directions
               </a>
-              <a
-                href={LINKS.orderOnline}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
-                aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              >
-                {ORDER_ONLINE_COPY.label}
-              </a>
+              {ORDER_CHANNELS.map((channel) => (
+                <a
+                  key={channel.key}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                  aria-label={channel.ariaLabel}
+                >
+                  {channel.label}
+                </a>
+              ))}
             </div>
           </motion.div>
         </div>

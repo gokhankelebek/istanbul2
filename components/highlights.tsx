@@ -107,13 +107,23 @@ export default function Highlights() {
           <p className="mt-4 text-cream/60 max-w-2xl text-sm sm:text-base">
             From our <Link href="/turkish-breakfast" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish breakfast</Link> to our <Link href="/doner-kebab-las-vegas" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Halal doner kebab</Link>, we bring authentic Turkish cuisine to <Link href="/" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Fremont Street</Link>.{" "}
             <a
-              href={LINKS.orderOnline}
+              href={LINKS.orderPickup}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:text-gold-light transition-colors underline underline-offset-2 font-medium"
-              aria-label={ORDER_ONLINE_COPY.ariaLabel}
+              aria-label="Order pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
             >
-              Order pickup &amp; delivery
+              Order pickup
+            </a>{" "}
+            or{" "}
+            <a
+              href={LINKS.orderDelivery}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold-light transition-colors underline underline-offset-2 font-medium"
+              aria-label="Order delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+            >
+              delivery
             </a>{" "}
             from our kitchen, or see our full <Link href="/menu" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish restaurant menu</Link>.
           </p>

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { NAV_ITEMS, LINKS, RESTAURANT, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { NAV_ITEMS, RESTAURANT, ORDER_CHANNELS } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -77,21 +77,24 @@ export default function Navbar() {
             ))}
             <a
               href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
-              className="rounded-full border border-cream/20 px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+              className="hidden lg:inline-block rounded-full border border-cream/20 px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95 whitespace-nowrap"
             >
               Call to Reserve
             </a>
-            <a
-              href={LINKS.orderOnline}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 rounded-full bg-crimson px-4 py-2.5 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95 whitespace-nowrap"
-              aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              title={ORDER_ONLINE_COPY.ariaLabel}
-            >
-              <span className="hidden lg:inline">{ORDER_ONLINE_COPY.label}</span>
-              <span className="lg:hidden">{ORDER_ONLINE_COPY.labelShort}</span>
-            </a>
+            {ORDER_CHANNELS.map((channel) => (
+              <a
+                key={channel.key}
+                href={channel.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 rounded-full bg-crimson px-4 py-2.5 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95 whitespace-nowrap"
+                aria-label={channel.ariaLabel}
+                title={channel.ariaLabel}
+              >
+                <span className="hidden lg:inline">{channel.label}</span>
+                <span className="lg:hidden">{channel.labelShort}</span>
+              </a>
+            ))}
           </div>
 
           {/* Mobile toggle */}
@@ -148,15 +151,18 @@ export default function Navbar() {
                 >
                   Call to Reserve
                 </a>
-                <a
-                  href={LINKS.orderOnline}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light text-center max-w-[min(100%,280px)]"
-                  aria-label={ORDER_ONLINE_COPY.ariaLabel}
-                >
-                  {ORDER_ONLINE_COPY.label}
-                </a>
+                {ORDER_CHANNELS.map((channel) => (
+                  <a
+                    key={channel.key}
+                    href={channel.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light text-center max-w-[min(100%,280px)]"
+                    aria-label={channel.ariaLabel}
+                  >
+                    {channel.label}
+                  </a>
+                ))}
               </motion.div>
             </nav>
           </motion.div>

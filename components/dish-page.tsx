@@ -13,7 +13,7 @@ import {
   Navigation,
   ArrowRight,
 } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS, ORDER_CHANNELS } from "@/lib/constants";
 import type { DishPageData } from "@/lib/dish-pages-data";
 
 export default function DishPage({ dish }: { dish: DishPageData }) {
@@ -91,15 +91,18 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
             >
               {dish.heroCtaLabel}
             </a>
-            <a
-              href={LINKS.orderOnline}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-              aria-label={ORDER_ONLINE_COPY.ariaLabel}
-            >
-              {ORDER_ONLINE_COPY.label}
-            </a>
+            {ORDER_CHANNELS.map((channel) => (
+              <a
+                key={channel.key}
+                href={channel.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+                aria-label={channel.ariaLabel}
+              >
+                {channel.label}
+              </a>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -431,15 +434,18 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
                 <Navigation size={16} />
                 Get Directions
               </a>
-              <a
-                href={LINKS.orderOnline}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
-                aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              >
-                {ORDER_ONLINE_COPY.label}
-              </a>
+              {ORDER_CHANNELS.map((channel) => (
+                <a
+                  key={channel.key}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                  aria-label={channel.ariaLabel}
+                >
+                  {channel.label}
+                </a>
+              ))}
             </div>
           </motion.div>
         </div>

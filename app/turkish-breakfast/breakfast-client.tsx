@@ -13,7 +13,7 @@ import {
   Navigation,
   ExternalLink,
 } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
 import { MENU_CATEGORIES } from "@/lib/menu-data";
 import {
   BREAKFAST_STORY,
@@ -103,13 +103,22 @@ export default function BreakfastPageClient() {
               See the Breakfast Menu
             </a>
             <a
-              href={LINKS.orderOnline}
+              href={LINKS.orderPickup}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-              aria-label={ORDER_ONLINE_COPY.ariaLabel}
+              aria-label="Order breakfast pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
             >
-              Order breakfast — pickup &amp; delivery
+              Breakfast pickup
+            </a>
+            <a
+              href={LINKS.orderDelivery}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+              aria-label="Order breakfast delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+            >
+              Breakfast delivery
             </a>
           </motion.div>
 
@@ -539,13 +548,22 @@ export default function BreakfastPageClient() {
                   Get Directions
                 </a>
                 <a
-                  href={LINKS.orderOnline}
+                  href={LINKS.orderPickup}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-6 py-3 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
-                  aria-label={ORDER_ONLINE_COPY.ariaLabel}
+                  aria-label="Order breakfast pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
                 >
-                  Breakfast — pickup &amp; delivery
+                  Breakfast pickup
+                </a>
+                <a
+                  href={LINKS.orderDelivery}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-6 py-3 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
+                  aria-label="Order breakfast delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+                >
+                  Breakfast delivery
                 </a>
               </div>
             </motion.div>
