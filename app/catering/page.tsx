@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: "https://www.istanbul2.com/catering",
     images: [
       {
-        url: "https://www.istanbul2.com/images/2026-march/food/lahmacun-pide-spread.webp",
-        width: 1200,
-        height: 630,
-        alt: "Turkish catering spread at Istanbul Mediterranean 2 Las Vegas",
+        url: "https://www.istanbul2.com/images/catering/halal-catering-trays-spread-las-vegas.webp",
+        width: 1600,
+        height: 900,
+        alt: "Halal catering trays from Istanbul Mediterranean 2 Las Vegas ready for delivery",
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "Halal Turkish & Mediterranean catering for corporate, construction, conventions, and private events across Las Vegas.",
     images: [
-      "https://www.istanbul2.com/images/2026-march/food/lahmacun-pide-spread.webp",
+      "https://www.istanbul2.com/images/catering/halal-catering-trays-spread-las-vegas.webp",
     ],
   },
 };
