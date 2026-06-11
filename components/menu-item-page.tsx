@@ -27,7 +27,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
     },
     {
       question: `Where can I get ${item.name} in Las Vegas?`,
-      answer: `Istanbul Mediterranean 2 at 505 Fremont Street, Downtown Las Vegas serves ${item.name} for ${item.price}. We're open daily from 10 AM. Order pickup or delivery online at istanbullasvegas.square.site — same Halal menu from our Fremont kitchen.`,
+      answer: `Istanbul Mediterranean 2 at 505 Fremont Street, Downtown Las Vegas serves ${item.name} for ${item.price}. We're open daily from 10 AM. Order pickup or delivery online at cash.app/order/$istanbulmediterrane2 — same Halal menu from our Fremont kitchen.`,
     },
   ];
 

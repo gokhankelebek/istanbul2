@@ -449,7 +449,7 @@ Kahvalti is a traditional Turkish breakfast experience featuring a spread of fre
 - **Website:** [www.istanbullv.com](https://www.istanbullv.com)
 - **Fremont Page:** [www.istanbullv.com/fremont-street](https://www.istanbullv.com/fremont-street)
 - **Fremont Menu:** [www.istanbullv.com/fremont-menu](https://www.istanbullv.com/fremont-menu)
-- **Order Online:** [Square Site](https://istanbullasvegas.square.site)
+- **Order Online:** [Cash App](https://cash.app/order/$istanbulmediterrane2)
 - **Instagram:** [@istanbulinvegas](https://www.instagram.com/istanbulinvegas/)
 - **Google Maps:** [Get Directions](https://maps.google.com/?q=Istanbul+Mediterranean+Fremont+Street+505+Fremont+Las+Vegas)
 - **Press:** [WhatNow Las Vegas Article](https://whatnow.com/las-vegas/restaurants/istanbul-mediterranean-to-set-up-shop-on-fremont-street/)

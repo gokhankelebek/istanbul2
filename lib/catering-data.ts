@@ -283,7 +283,7 @@ export const CATERING_FAQ = [
   {
     question: "What is the minimum order for catering?",
     answer:
-      "Our minimum catering order is 10 guests. For smaller groups, we recommend ordering pickup from our Square store or dining in at 505 Fremont Street.",
+      "Our minimum catering order is 10 guests. For smaller groups, we recommend ordering pickup from our Cash App ordering page or dining in at 505 Fremont Street.",
   },
   {
     question: "How far in advance should I book catering?",
