@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Download, ShieldCheck } from "lucide-react";
 import { MENU_CATEGORIES } from "@/lib/menu-data";
-import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { ORDER_CHANNELS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import MenuSection from "@/components/menu-section";
 
 export default function MenuPageClient() {
@@ -71,15 +71,20 @@ export default function MenuPageClient() {
               Celebrating the full spectrum of Turkish cuisine — from morning
               Kahvalti to late-night Pide
             </p>
-            <a
-              href={LINKS.orderOnline}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold/20 border border-gold/40 px-8 py-3.5 text-sm font-semibold text-cream transition-all hover:bg-gold/30 hover:border-gold active:scale-95"
-              aria-label={ORDER_ONLINE_COPY.ariaLabel}
-            >
-              {ORDER_ONLINE_COPY.label}
-            </a>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {ORDER_CHANNELS.map((channel) => (
+                <a
+                  key={channel.key}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gold/20 border border-gold/40 px-8 py-3.5 text-sm font-semibold text-cream transition-all hover:bg-gold/30 hover:border-gold active:scale-95"
+                  aria-label={channel.ariaLabel}
+                >
+                  {channel.label}
+                </a>
+              ))}
+            </div>
             <p className="mt-3 text-xs text-cream/45 max-w-md mx-auto">
               {ORDER_ONLINE_COPY.promo}
             </p>

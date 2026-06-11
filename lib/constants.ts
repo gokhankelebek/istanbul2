@@ -24,7 +24,10 @@ export const LINKS = {
   fremontMenu: "https://www.istanbul2.com/menu",
   /** Flagship Strip location — Grand Bazaar Shops */
   stripWebsite: "https://www.istanbullv.com",
+  /** Cash App ordering — base page plus direct pickup/delivery entry points */
   orderOnline: "https://cash.app/order/$istanbulmediterrane2",
+  orderPickup: "https://cash.app/order/$istanbulmediterrane2/pickup",
+  orderDelivery: "https://cash.app/order/$istanbulmediterrane2/delivery",
   instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
     "https://maps.google.com/?q=505+Fremont+Street,+Las+Vegas,+NV+89101",
@@ -42,6 +45,26 @@ export const ORDER_ONLINE_COPY = {
   ariaLabel:
     "Order pickup or delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
 } as const;
+
+/** Pickup / Delivery CTA pair — map over this wherever ordering buttons appear */
+export const ORDER_CHANNELS = [
+  {
+    key: "pickup",
+    href: LINKS.orderPickup,
+    label: "Order Pickup",
+    labelShort: "Pickup",
+    ariaLabel:
+      "Order pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
+  },
+  {
+    key: "delivery",
+    href: LINKS.orderDelivery,
+    label: "Order Delivery",
+    labelShort: "Delivery",
+    ariaLabel:
+      "Order delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
+  },
+] as const;
 
 /** SEO landing pages for footer links — helps crawlability and internal linking */
 export const FOOTER_SEO_LINKS = [

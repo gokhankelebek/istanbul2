@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { ORDER_CHANNELS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -105,16 +105,19 @@ export default function Hero() {
           >
             View Menu
           </Link>
-          <a
-            href={LINKS.orderOnline}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-            title={ORDER_ONLINE_COPY.ariaLabel}
-            aria-label={ORDER_ONLINE_COPY.ariaLabel}
-          >
-            {ORDER_ONLINE_COPY.label}
-          </a>
+          {ORDER_CHANNELS.map((channel) => (
+            <a
+              key={channel.key}
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+              title={channel.ariaLabel}
+              aria-label={channel.ariaLabel}
+            >
+              {channel.label}
+            </a>
+          ))}
         </motion.div>
         <motion.p
           initial={{ opacity: 0 }}

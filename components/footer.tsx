@@ -8,7 +8,7 @@ import {
   NAV_ITEMS,
   FOOTER_SEO_LINKS,
   FOOTER_DINING_LINKS,
-  ORDER_ONLINE_COPY,
+  ORDER_CHANNELS,
 } from "@/lib/constants";
 
 export default function Footer() {
@@ -54,15 +54,18 @@ export default function Footer() {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href={LINKS.orderOnline}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1 font-medium text-gold/90"
-                aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              >
-                {ORDER_ONLINE_COPY.label} <ExternalLink size={12} />
-              </a>
+              {ORDER_CHANNELS.map((channel) => (
+                <a
+                  key={channel.key}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1 font-medium text-gold/90"
+                  aria-label={channel.ariaLabel}
+                >
+                  {channel.label} <ExternalLink size={12} />
+                </a>
+              ))}
               {(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review") && (
                 <a
                   href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review"}
