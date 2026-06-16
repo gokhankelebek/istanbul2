@@ -332,6 +332,13 @@ export interface CateringVideo {
 //   • Short:        youtube.com/shorts/ABC123         → "ABC123" (portrait)
 export const CATERING_VIDEOS: CateringVideo[] = [
   {
+    youtubeId: "Xfy3bWLEXws",
+    title: "Halal Catering in Las Vegas",
+    description:
+      "Fresh Turkish & Mediterranean catering, prepared and plated at our Fremont Street kitchen.",
+    orientation: "landscape",
+  },
+  {
     youtubeId: "jEaHgAtEEVs",
     title: "Catering, On the Line",
     description: "Fresh Turkish catering off our Fremont Street kitchen.",
