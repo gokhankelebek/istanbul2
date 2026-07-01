@@ -1,5 +1,37 @@
 import { MENU_CATEGORIES, type MenuItem, type MenuCategory } from "./menu-data";
 
+/** Items flagged as crowd favorites — shown with a "Popular" tag. */
+export const POPULAR_ITEMS = new Set([
+  "Beef & Lamb Turkish Pita",
+  "Chicken Lavash Wrap",
+  "Mix Rice Bowl",
+  "Iskender",
+  "Lahmacun",
+  "Doner & Cheese Pide",
+  "Turkish Breakfast",
+  "Baklava",
+  "Falafel Lavash Wrap",
+]);
+
+/** Items that are vegetarian — shown with a "Vegetarian" tag. */
+export const VEGETARIAN_ITEMS = new Set([
+  "Falafel Turkish Pita",
+  "Falafel Pita",
+  "Falafel Wrap",
+  "Falafel Salad Bowl",
+  "Falafel Rice Bowl",
+  "Falafel Fries Bowl",
+  "Falafel (Side)",
+  "Hummus",
+  "French Fries",
+  "Side Rice",
+  "Stuffed Grape Leaves",
+  "Menemen",
+  "Cheese Pide",
+  "Veggie Pide",
+  "Extra Pita",
+]);
+
 export function slugify(name: string): string {
   return name
     .toLowerCase()
@@ -62,6 +94,34 @@ export function getMenuItemBySlug(
 
 export function getAllMenuItemSlugs(): string[] {
   return getAllMenuItems().map((entry) => entry.slug);
+}
+
+/**
+ * Every menu item (deduped by slug) for the in-store /in-store route.
+ * Unlike getAllMenuItems, this does NOT exclude items that have rich SEO
+ * pages — the in-store experience keeps everything self-contained and
+ * ordering-free, so each item gets its own /in-store/[slug] detail page.
+ */
+export function getAllInStoreItems(): MenuItemWithMeta[] {
+  const seen = new Set<string>();
+  const results: MenuItemWithMeta[] = [];
+
+  for (const category of MENU_CATEGORIES) {
+    for (const item of category.items) {
+      const slug = slugify(item.name);
+      if (!slug || seen.has(slug)) continue;
+      seen.add(slug);
+      results.push({ item, category, slug });
+    }
+  }
+
+  return results;
+}
+
+export function getInStoreItemBySlug(
+  slug: string
+): MenuItemWithMeta | undefined {
+  return getAllInStoreItems().find((entry) => entry.slug === slug);
 }
 
 const RICH_PAGE_NAME_TO_SLUG: Record<string, string> = {

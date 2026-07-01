@@ -14,7 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { RESTAURANT, HOURS, LINKS, ORDER_CHANNELS } from "@/lib/constants";
-import type { MenuItemWithMeta } from "@/lib/menu-utils";
+import { getMenuItemHref, type MenuItemWithMeta } from "@/lib/menu-utils";
 
 export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
   const { item, category } = entry;
@@ -34,7 +34,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
   return (
     <div className="min-h-screen bg-cream">
       {/* ── HERO ── */}
-      <section className="relative h-[50vh] min-h-[360px] overflow-hidden">
+      <section className="relative h-[50vh] min-h-[360px] overflow-hidden lg:h-[68vh] lg:max-h-[760px]">
         <div className="absolute inset-0">
           <Image
             src={heroImage}
@@ -158,34 +158,38 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.04 }}
-                  className="flex gap-3 rounded-xl border border-cream/8 bg-cream/5 p-4 transition-all hover:bg-cream/10"
                 >
-                  {other.image && (
-                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg">
-                      <Image
-                        src={other.image}
-                        alt={other.name}
-                        fill
-                        className="object-cover"
-                        sizes="64px"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="font-heading text-sm font-bold text-cream">
-                        {other.name}
-                      </h3>
-                      <span className="shrink-0 text-xs font-bold text-gold">
-                        {other.price}
-                      </span>
-                    </div>
-                    {other.description && (
-                      <p className="mt-1 text-xs leading-relaxed text-cream/50 line-clamp-2">
-                        {other.description}
-                      </p>
+                  <Link
+                    href={getMenuItemHref(other.name)}
+                    className="group flex h-full gap-3 rounded-xl border border-cream/8 bg-cream/5 p-4 transition-all hover:bg-cream/10 hover:-translate-y-0.5"
+                  >
+                    {other.image && (
+                      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg">
+                        <Image
+                          src={other.image}
+                          alt={other.name}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          sizes="64px"
+                        />
+                      </div>
                     )}
-                  </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="font-heading text-sm font-bold text-cream transition-colors group-hover:text-gold">
+                          {other.name}
+                        </h3>
+                        <span className="shrink-0 text-xs font-bold text-gold">
+                          {other.price}
+                        </span>
+                      </div>
+                      {other.description && (
+                        <p className="mt-1 text-xs leading-relaxed text-cream/50 line-clamp-2">
+                          {other.description}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
           </div>

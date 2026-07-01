@@ -119,8 +119,8 @@ export default function MenuPageClient() {
 
       {/* Menu content */}
       <div className="mx-auto max-w-4xl px-5 py-12 lg:px-8 lg:py-16 space-y-16">
-        {MENU_CATEGORIES.map((category, index) => (
-          <MenuSection key={category.id} category={category} index={index} />
+        {MENU_CATEGORIES.map((category) => (
+          <MenuSection key={category.id} category={category} />
         ))}
 
         {/* Download PDF */}

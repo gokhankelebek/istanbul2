@@ -4,6 +4,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import MobileCtaBar from "@/components/mobile-cta-bar";
+import ConditionalChrome from "@/components/conditional-chrome";
 import { JSON_LD } from "@/lib/constants";
 import "./globals.css";
 
@@ -103,10 +104,14 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <Navbar />
+        <ConditionalChrome>
+          <Navbar />
+        </ConditionalChrome>
         <main className="pb-16 md:pb-0">{children}</main>
-        <Footer />
-        <MobileCtaBar />
+        <ConditionalChrome>
+          <Footer />
+          <MobileCtaBar />
+        </ConditionalChrome>
       </body>
     </html>
   );
