@@ -18,6 +18,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     id: "doner-shawarma",
     title: "Doner & Shawarma",
     subtitle: "Authentic Turkish doner kebab served your way",
+    image: "/images/2026-march/food/doner-salad-plate.webp",
     items: [
       // Turkish Pita
       {
@@ -25,7 +26,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Served in warm, oven-baked Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$15.95",
-        image: "/images/beef-and-lamb-turkish-pita.webp",
+        image: "/images/Beef-and-Lamb-Doner-Shawarma-Turkish-Pita.webp",
       },
       {
         name: "Chicken Turkish Pita",
@@ -54,14 +55,14 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/beef-and-lamb-pita.webp",
+        image: "/images/Beef-and-Lamb-Doner-Shawarma-Pita.webp",
       },
       {
         name: "Chicken Pita",
         description:
           "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/chicken-pita.webp",
+        image: "/images/Chicken-Doner-Shawarma-Pita.webp",
       },
       {
         name: "Mix Pita",
@@ -75,7 +76,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/falafel-pita.webp",
+        image: "/images/Falafel-Pita.webp",
       },
       // Wraps
       {
@@ -83,14 +84,14 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/beef-and-lamb-wrap.webp",
+        image: "/images/Beef-and-Lamb-Doner-Shawarma-Lavash-Wrap.webp",
       },
       {
         name: "Chicken Wrap",
         description:
           "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/chicken-wrap.webp",
+        image: "/images/Chicken-Doner-Shawarma-Lavash-Wrap.webp",
       },
       {
         name: "Mix Wrap",
@@ -104,14 +105,13 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/falafel-wrap.webp",
+        image: "/images/Falafel-Lavash-Wrap.webp",
       },
       {
         name: "Chikofte Wrap",
         description:
           "Spicy bulgur balls wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
         price: "$14.95",
-        image: "/images/chikofte-wrap.webp",
       },
       // Rice Bowl
       {
@@ -140,7 +140,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Falafel over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
         price: "$21.95",
-        image: "/images/falafel-rice-bowl.webp",
+        image: "/images/Falafel-Rice-Bowl.webp",
       },
       // Fries Bowl
       {
@@ -148,7 +148,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Your choice of protein over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
         price: "$21.95",
-        image: "/images/beef-and-lamb-fries-bowl.webp",
+        image: "/images/Beef-and-Lamb-Doner-Shawarma-French-Fries-Bowl.webp",
       },
       {
         name: "Chicken Fries Bowl",
@@ -162,7 +162,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Beef & Lamb + Chicken over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
         price: "$22.95",
-        image: "/images/mixed-fries-bowl.webp",
+        image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-French-Fries-Bowl.webp",
       },
       {
         name: "Falafel Fries Bowl",
@@ -177,7 +177,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "A lighter option with doner over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
         price: "$21.95",
-        image: "/images/beef-and-lamb-salad-bowl.webp",
+        image: "/images/Beef-and-Lamb-Doner-Shawarma-Salad-Bowl.webp",
       },
       {
         name: "Chicken Salad Bowl",
@@ -191,14 +191,14 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Beef & Lamb + Chicken over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
         price: "$22.95",
-        image: "/images/mixed-salad-bowl.webp",
+        image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Salad-Bowl.webp",
       },
       {
         name: "Falafel Salad Bowl",
         description:
           "Falafel over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
         price: "$21.95",
-        image: "/images/falafel-salad-bowl.webp",
+        image: "/images/Falafel-Salad-Bowl.webp",
       },
     ],
   },
@@ -213,42 +213,36 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Turkish style flatbread topped with tender diced beef and melted cheese, baked to perfection",
         price: "$17.95",
-        image: "/images/diced-meat-cheese-pide.webp",
       },
       {
         name: "Cheese Pide",
         description:
           "Golden baked Turkish flatbread with melted cheese — crispy outside, soft inside",
         price: "$14.95",
-        image: "/images/cheese-pide.webp",
       },
       {
         name: "Spinach & Feta Pide",
         description:
           "Traditional Turkish flatbread topped with sauteed spinach and creamy feta cheese, baked fresh",
         price: "$17.95",
-        image: "/images/spinach-and-feta-pide.webp",
       },
       {
         name: "Sujuk & Cheese Pide",
         description:
           "Turkish flatbread topped with spicy sujuk sausage and melted cheese, baked fresh",
         price: "$17.95",
-        image: "/images/sujuk-and-cheese-pide.webp",
       },
       {
         name: "Lahmacun",
         description:
           "Flatbread with minced meat, tomatoes, peppers, herbs. Served with parsley, onion, lemon",
         price: "$12.95",
-        image: "/images/lahmacun.webp",
       },
       {
         name: "Doner & Cheese Pide",
         description:
           "Fan favorite Turkish flatbread topped with beef & lamb doner and melted cheese, baked fresh",
         price: "$19.95",
-        image: "/images/doner-cheese-pide.webp",
       },
     ],
   },
@@ -280,32 +274,31 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Babaganoush",
         description: "Smoky eggplant, garlic, yoghurt",
         price: "$6.95",
-        image: "/images/babaganoush.webp",
       },
       {
         name: "Tzatziki Dip",
         description: "Yoghurt with cucumber, garlic, olive oil and mint",
         price: "$6.95",
-        image: "/images/tzatziki-dip.webp",
+        image: "/images/Tzatziki-Dip.webp",
       },
       {
         name: "Hummus",
         description: "Creamy chickpea dip with garlic, lemon juice, olive oil",
         price: "$6.95",
-        image: "/images/hummus.webp",
+        image: "/images/Hummus.webp",
       },
       {
         name: "French Fries",
         description: "Crispy golden fries",
         price: "$5.95",
-        image: "/images/french-fries.webp",
+        image: "/images/French-Fries.webp",
       },
       {
         name: "Mozzarella Sticks (4 pcs)",
         description:
           "Crispy breaded mozzarella, fried golden, served with marinara",
         price: "$7.95",
-        image: "/images/mozzarella-sticks.webp",
+        image: "/images/Mozzarella-Sticks.webp",
       },
       {
         name: "Stuffed Grape Leaves (4 pcs)",
@@ -318,14 +311,12 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Spicy hand-shaped bulgur balls with herbs, served with lettuce, lemon",
         price: "$7.95",
-        image: "/images/chikofte-side.webp",
       },
       {
         name: "Red Lentil Soup",
         description:
           "Traditional Turkish red lentil soup with hint of spices, served with homemade pita bread",
         price: "$6.95",
-        image: "/images/red-lentil-soup.webp",
       },
     ],
   },
@@ -340,35 +331,18 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Sliced doner kebab over pita, topped with tomato sauce, yoghurt and melted butter",
         price: "$26.95",
-        image: "/images/iskender-kebab.webp",
       },
       {
         name: "Beyti Doner Kebab",
         description:
           "Seasoned doner wrapped in lavash, grilled, sliced and topped with tomato sauce and yoghurt",
         price: "$26.95",
-        image: "/images/beyti-doner-kebab.webp",
       },
       {
         name: "Doner Box",
         description:
           "Sliced doner over crispy fries with lettuce, tomatoes and sumac onions and signature house and white sauce",
         price: "$16.95",
-        image: "/images/doner-box.webp",
-      },
-      {
-        // TODO: set real price and description
-        name: "Doner Cheese Burger",
-        description: "",
-        price: "$0.00",
-        image: "/images/doner-cheese-burger.webp",
-      },
-      {
-        // TODO: set real price and description
-        name: "Lahmacun Doner",
-        description: "",
-        price: "$0.00",
-        image: "/images/lahmacun-doner.webp",
       },
       {
         name: "Istanbul Salad",
@@ -381,7 +355,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Fan favorite Turkish flatbread topped with beef & lamb doner and melted cheese, baked fresh",
         price: "$19.95",
-        image: "/images/doner-cheese-pide.webp",
       },
     ],
   },
@@ -397,14 +370,12 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Turkish breakfast with honey & clotted cream, choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers and simit",
         price: "$24.95",
-        image: "/images/single-breakfast-plate.webp",
       },
       {
         name: "Double Breakfast Plate",
         description:
           "Turkish breakfast spread, honey & cream, cheese, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers, simit, choice of 2 eggs and 1 borek",
         price: "$44.95",
-        image: "/images/double-breakfast-plate.webp",
       },
       {
         name: "Menemen",
@@ -423,14 +394,12 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Sunny Egg",
         description: "Perfectly cooked sunny side up eggs served with bread",
         price: "$10.95",
-        image: "/images/sunny-egg.webp",
       },
       {
         name: "Feta Mozzarella Omelette",
         description:
           "Feta and mozzarella cheese omelette served with bread",
         price: "$13.95",
-        image: "/images/feta-spinach-omelette.webp",
       },
     ],
   },
@@ -451,7 +420,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Sesame crusted Turkish bread ring, crisp outside, soft inside",
         price: "$3.95",
-        image: "/images/simit.webp",
       },
       {
         name: "Almond Croissant",
@@ -460,35 +428,20 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         price: "$3.95",
       },
       {
-        name: "Classic Pogaca",
-        description: "Soft Turkish savory pastry, classic plain",
+        name: "Pogaca",
+        description: "Classic, Cheese, Mozzarella, Potato, Olive",
         price: "$3.95",
-        image: "/images/classic-pogaca.webp",
-      },
-      {
-        name: "Cheese Pogaca",
-        description: "Soft Turkish savory pastry filled with cheese",
-        price: "$3.95",
-        image: "/images/cheese-pogaca.webp",
-      },
-      {
-        name: "Potato Pogaca",
-        description: "Soft Turkish savory pastry filled with seasoned potato",
-        price: "$3.95",
-        image: "/images/potato-pogaca.webp",
       },
       {
         name: "Acma",
         description: "Olive, Chocolate, Classic",
         price: "$3.95",
-        image: "/images/chocolate-acma.webp",
       },
       {
         name: "Gozleme",
         description:
           "White Cheese, Mozzarella, Potato, Spinach and Cheese, Ground Beef, Eggplant",
         price: "$7.95",
-        image: "/images/gozleme.webp",
       },
       {
         name: "Chocolate Croissant",
@@ -521,21 +474,18 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Delicate carrot-shaped baklava with sweet pistachio filling and golden syrup",
         price: "$7.95",
-        image: "/images/carrot-baklava.webp",
       },
       {
         name: "Chocolate Baklava",
         description:
           "Rich chocolate baklava with layers of flaky pastry, nut filling and a chocolate drizzle",
         price: "$2.45",
-        image: "/images/chocolate-baklava.webp",
       },
       {
         name: "Shobyet Pistachio Baklava",
         description:
           "Flaky phyllo with velvety semolina cream and pistachios, baked golden in sweet syrup",
         price: "$3.95",
-        image: "/images/shobiyet-baklava.webp",
       },
       {
         name: "Mussel Baklava",
@@ -572,7 +522,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Golden, crispy kunefe filled with melted cheese, sweet syrup and crunchy pistachios",
         price: "$12.95",
-        image: "/images/pistachio-kunefe.webp",
       },
       {
         name: "Rice Pudding",
@@ -597,7 +546,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Moist red velvet cake layered with creamy smooth frosting",
         price: "$7.95",
-        image: "/images/red-velvet-cake.webp",
       },
       {
         name: "Devils Fudge",
@@ -610,14 +558,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Layered espresso-soaked ladyfingers with rich mascarpone cream",
         price: "$7.95",
-        image: "/images/tiramisu.webp",
-      },
-      {
-        // TODO: set real price and description
-        name: "Tres Leches Cake",
-        description: "",
-        price: "$0.00",
-        image: "/images/tres-leches-cake.webp",
       },
       {
         name: "Dubai Cheesecake",
@@ -640,38 +580,21 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     items: [
       { name: "Nestle Water", price: "$1.95" },
       { name: "Perrier Sparkling Water", price: "$3.95" },
-      {
-        name: "Hibiscus Lemonade",
-        price: "$3.95",
-        image: "/images/hibiscus-lemonade.webp",
-      },
+      { name: "Hibiscus Lemonade", price: "$3.95" },
       {
         name: "Soda Can",
         description: "Coke, Diet, Zero, Sprite, Dr. Pepper",
         price: "$2.95",
       },
-      {
-        name: "Ayran",
-        description: "Traditional yogurt drink",
-        price: "$4.95",
-        image: "/images/ayran.webp",
-      },
+      { name: "Ayran", description: "Traditional yogurt drink", price: "$4.95" },
       {
         name: "Salgam",
         description: "Fermented turnip juice",
         price: "$4.95",
       },
-      {
-        name: "Turkish Tea Cup",
-        price: "$2.45",
-        image: "/images/turkish-tea-cup.webp",
-      },
+      { name: "Turkish Tea Cup", price: "$2.45" },
       { name: "Tea Thermos", price: "$9.95" },
-      {
-        name: "Turkish Coffee",
-        price: "$3.95",
-        image: "/images/turkish-coffee.webp",
-      },
+      { name: "Turkish Coffee", price: "$3.95" },
       {
         name: "Menenguc",
         description: "Pistachio Coffee",
