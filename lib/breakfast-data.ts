@@ -60,7 +60,7 @@ export const BREAKFAST_FAQ = [
     question:
       "What is the difference between single and double breakfast plates?",
     answer:
-      "The Single Breakfast Plate ($20.95) is a complete Turkish breakfast for one person with honey & clotted cream, your choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers, and simit. The Double Breakfast Plate ($38.95) is a generous spread for two people that includes everything in the single plate plus 2 eggs, a borek pastry, and larger portions of all accompaniments.",
+      "The Single Breakfast Plate ($24.95) is a complete Turkish breakfast for one person with honey & clotted cream, your choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers, and simit. The Double Breakfast Plate ($44.95) is a generous spread for two people that includes everything in the single plate plus 2 eggs, a borek pastry, and larger portions of all accompaniments.",
   },
 ];
 
@@ -113,7 +113,7 @@ export const BREAKFAST_JSON_LD = {
                   "Turkish breakfast with honey & clotted cream, choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers and simit",
                 offers: {
                   "@type": "Offer",
-                  price: "20.95",
+                  price: "24.95",
                   priceCurrency: "USD",
                 },
                 suitableForDiet: "https://schema.org/HalalDiet",
@@ -125,7 +125,7 @@ export const BREAKFAST_JSON_LD = {
                   "Turkish breakfast spread for two with honey & cream, cheese, olives, pastirma, ezine cheese, tomatoes, cucumbers, simit, 2 eggs and borek",
                 offers: {
                   "@type": "Offer",
-                  price: "38.95",
+                  price: "44.95",
                   priceCurrency: "USD",
                 },
                 suitableForDiet: "https://schema.org/HalalDiet",
@@ -245,7 +245,7 @@ export const BREAKFAST_JSON_LD = {
           name: "What is the difference between single and double breakfast plates?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The Single Plate ($20.95) is a complete Turkish breakfast for one. The Double Plate ($38.95) is a generous spread for two with larger portions, 2 eggs, and a borek pastry.",
+            text: "The Single Plate ($24.95) is a complete Turkish breakfast for one. The Double Plate ($44.95) is a generous spread for two with larger portions, 2 eggs, and a borek pastry.",
           },
         },
       ],

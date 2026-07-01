@@ -754,7 +754,7 @@ const menemen: DishPageData = {
       items: [
         { name: "Menemen", description: "Sauteed tomatoes, green peppers, onions and eggs — Turkish breakfast classic with bread", price: "$13.95" },
         { name: "Sujuk & Eggs", description: "Spicy Turkish beef sausage pan fried with eggs served with bread", price: "$13.95" },
-        { name: "Single Breakfast Plate", description: "Full Turkish breakfast — honey, cream, eggs, olives, pastirma, cheese, simit", price: "$20.95" },
+        { name: "Single Breakfast Plate", description: "Full Turkish breakfast — honey, cream, eggs, olives, pastirma, cheese, simit", price: "$24.95" },
         { name: "Feta Mozzarella Omelette", description: "Feta and mozzarella cheese omelette served with bread", price: "$13.95" },
       ],
     },

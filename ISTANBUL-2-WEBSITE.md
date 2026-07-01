@@ -259,8 +259,8 @@ More spacious than our Strip location, with room to relax and enjoy the full Tur
 
 | Item | Description | Price |
 |------|-------------|-------|
-| Single Breakfast Plate | Turkish breakfast with honey & clotted cream, choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers and simit | $20.95 |
-| Double Breakfast Plate | Turkish breakfast spread, honey & cream, cheese, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers, simit, choice of 2 eggs and 1 borek | $38.95 |
+| Single Breakfast Plate | Turkish breakfast with honey & clotted cream, choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers and simit | $24.95 |
+| Double Breakfast Plate | Turkish breakfast spread, honey & cream, cheese, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers, simit, choice of 2 eggs and 1 borek | $44.95 |
 | Menemen | Sauteed tomatoes, green peppers, onions and eggs — Turkish breakfast classic with bread | $13.95 |
 | Sujuk & Eggs | Spicy Turkish beef sausage pan fried with eggs served with bread | $13.95 |
 | Sunny Egg | Perfectly cooked sunny side up eggs served with bread | $10.95 |

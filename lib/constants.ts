@@ -196,7 +196,7 @@ export const FEATURED_DISHES = [
   {
     name: "Turkish Breakfast",
     description: "Fresh cheeses, olives, honey, jams, eggs & baked breads",
-    price: "$20.95",
+    price: "$24.95",
     image: "/images/2026-march/breakfast/turkish-breakfast-spread.webp",
     href: "/turkish-breakfast",
   },
