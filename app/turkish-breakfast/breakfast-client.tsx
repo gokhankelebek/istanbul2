@@ -577,7 +577,7 @@ export default function BreakfastPageClient() {
             >
               <iframe
                 title="Istanbul Mediterranean 2 — Fremont Street Location"
-                src="https://www.google.com/maps?q=505+Fremont+Street,+Las+Vegas,+NV+89101&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3226.0!2d-115.1398!3d36.1698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDEwJzExLjMiTiAxMTXCsDA4JzIzLjMiVw%3D%3D!5e0!3m2!1sen!2sus!4v1751572800000"
                 width="100%"
                 height="420"
                 style={{ border: 0 }}

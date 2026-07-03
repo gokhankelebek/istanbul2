@@ -9,7 +9,8 @@ export const RESTAURANT = {
   building: "The Inspire building",
   phone: "(702) 861-6905",
   cateringEmail: "catering@istanbul2.com",
-  coordinates: { lat: 36.1711, lng: -115.1441 },
+  // 505 Fremont St — Fremont & Las Vegas Blvd (Inspire building), Fremont East
+  coordinates: { lat: 36.1698, lng: -115.1398 },
   opened: "January 21, 2026",
 } as const;
 
