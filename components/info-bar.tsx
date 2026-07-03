@@ -1,8 +1,50 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { MapPin, Clock, Phone, ShoppingBag, Bike } from "lucide-react";
 import { motion } from "framer-motion";
 import { RESTAURANT, LINKS } from "@/lib/constants";
+
+/** Closing hour (AM) for the night that starts on the given weekday (0 = Sun). */
+function closingHourFor(day: number): number {
+  return day === 5 || day === 6 ? 5 : 2;
+}
+
+/**
+ * Live open/closed status in restaurant time (Las Vegas), as an
+ * `open:`/`closed:`-prefixed string so useSyncExternalStore can compare
+ * snapshots by value. Doors open 10 AM daily.
+ */
+function getOpenStatusSnapshot(): string {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Los_Angeles",
+    hour12: false,
+    weekday: "short",
+    hour: "numeric",
+  }).formatToParts(new Date());
+  const get = (type: string) =>
+    parts.find((p) => p.type === type)?.value ?? "";
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const day = days.indexOf(get("weekday"));
+  const hour = Number(get("hour")) % 24;
+
+  if (day === -1 || Number.isNaN(hour)) {
+    return "open:Open Daily from 10 AM";
+  }
+  if (hour >= 10) {
+    return `open:Open now · until ${closingHourFor(day)} AM`;
+  }
+  const prevDay = (day + 6) % 7;
+  if (hour < closingHourFor(prevDay)) {
+    return `open:Open now · until ${closingHourFor(prevDay)} AM`;
+  }
+  return "closed:Closed · opens at 10 AM";
+}
+
+function subscribeToMinuteTick(onTick: () => void): () => void {
+  const interval = setInterval(onTick, 60_000);
+  return () => clearInterval(interval);
+}
 
 const containerVariants = {
   hidden: {},
@@ -21,6 +63,19 @@ const itemVariants = {
 };
 
 export default function InfoBar() {
+  // Server snapshot is null so SSR/hydration render the static fallback text.
+  const snapshot = useSyncExternalStore(
+    subscribeToMinuteTick,
+    getOpenStatusSnapshot,
+    () => null
+  );
+  const status = snapshot
+    ? {
+        open: snapshot.startsWith("open:"),
+        label: snapshot.slice(snapshot.indexOf(":") + 1),
+      }
+    : null;
+
   return (
     <div className="bg-stone text-cream overflow-hidden">
       <motion.div
@@ -43,7 +98,19 @@ export default function InfoBar() {
         </motion.a>
         <motion.div variants={itemVariants} className="flex items-center gap-2">
           <Clock size={16} className="text-gold" />
-          <span>Open Daily from 10 AM</span>
+          {status ? (
+            <span className="flex items-center gap-2">
+              {status.open && (
+                <span
+                  aria-hidden="true"
+                  className="h-2 w-2 rounded-full bg-olive-light animate-pulse"
+                />
+              )}
+              {status.label}
+            </span>
+          ) : (
+            <span>Open Daily from 10 AM</span>
+          )}
         </motion.div>
         <motion.a
           variants={itemVariants}

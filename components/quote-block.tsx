@@ -35,7 +35,7 @@ export default function QuoteBlock() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={ref} className="relative py-28 lg:py-36 overflow-hidden">
+    <section ref={ref} className="relative py-16 sm:py-24 lg:py-36 overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <Image
           src="/images/2026-march/ambiance/dining-room-tea.webp"

@@ -84,7 +84,7 @@ const cardVariants = {
 
 export default function Highlights() {
   return (
-    <section className="relative bg-stone py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-stone py-12 sm:py-16 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}

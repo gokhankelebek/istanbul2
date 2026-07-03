@@ -29,14 +29,14 @@ const cardVariants = {
 
 export default function FeaturedDishes() {
   return (
-    <section className="bg-stone py-20 lg:py-28 overflow-hidden">
+    <section className="bg-stone py-12 sm:py-16 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center mb-14"
+          className="text-center mb-8 sm:mb-14"
         >
           <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
             Signature Dishes

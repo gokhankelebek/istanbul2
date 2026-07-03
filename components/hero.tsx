@@ -35,7 +35,7 @@ export default function Hero() {
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/25" />
       <motion.div
         className="absolute inset-0 bg-black pointer-events-none"
         style={{ opacity: overlayOpacity }}
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="mb-3 text-sm font-medium tracking-wide text-cream/70"
+          className="mb-3 text-sm font-medium tracking-wide text-cream/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]"
         >
           Downtown Las Vegas Turkish Restaurant
         </motion.p>
@@ -59,10 +59,10 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mb-4 flex flex-wrap items-center justify-center gap-3"
         >
-          <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
+          <span className="inline-block rounded-full border border-gold/50 bg-black/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
             Now Open on Fremont Street
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-olive/40 bg-olive/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-olive-light backdrop-blur-sm">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-olive/50 bg-black/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-olive-light backdrop-blur-sm">
             <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.5 6.7-4 4a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 1 1 1.06-1.06L7 9.14l3.47-3.47a.75.75 0 1 1 1.06 1.06Z"/></svg>
             100% Zabiha Halal
           </span>
@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="font-heading text-4xl font-bold leading-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl"
+          className="font-heading text-4xl font-bold leading-tight text-cream drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl"
         >
           The Heart of Istanbul,
           <br />
@@ -83,14 +83,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mt-6 max-w-xl text-lg text-cream/90 sm:text-xl"
+          className="mt-6 max-w-xl text-lg text-cream/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)] sm:text-xl"
         >
           Authentic doner kebab, Turkish breakfast &amp; Mediterranean
           hospitality — now on Fremont Street.{" "}
-          <span className="text-cream font-medium">
-            Order pickup &amp; delivery
-          </span>{" "}
-          from our kitchen. 100% Zabiha Halal.
+          <span className="hidden sm:inline">
+            <span className="text-cream font-medium">
+              Order pickup &amp; delivery
+            </span>{" "}
+            from our kitchen. 100% Zabiha Halal.
+          </span>
         </motion.p>
 
         <motion.div
@@ -111,7 +113,7 @@ export default function Hero() {
               href={channel.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
+              className="hidden sm:inline-block rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
               title={channel.ariaLabel}
               aria-label={channel.ariaLabel}
             >
@@ -123,7 +125,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.05 }}
-          className="mt-4 max-w-md text-sm text-cream/70 text-center sm:text-left sm:mx-0 mx-auto"
+          className="mt-4 hidden max-w-md text-sm text-cream/70 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] sm:block sm:text-left"
         >
           {ORDER_ONLINE_COPY.promo}
         </motion.p>
@@ -132,7 +134,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 1 }}
-          className="absolute bottom-8"
+          className="absolute bottom-8 hidden sm:block"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

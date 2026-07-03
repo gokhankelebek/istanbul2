@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
+import { LINKS } from "@/lib/constants";
 
 const REVIEWS = [
   {
@@ -53,14 +54,14 @@ const cardVariants = {
 
 export default function Reviews() {
   return (
-    <section className="bg-cream py-20 lg:py-28 turkish-pattern-subtle overflow-hidden">
+    <section className="bg-cream py-12 sm:py-16 lg:py-28 turkish-pattern-subtle overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center mb-14"
+          className="text-center mb-8 sm:mb-14"
         >
           <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
             What Our Guests Say
@@ -105,6 +106,23 @@ export default function Reviews() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10 text-center"
+        >
+          <a
+            href={LINKS.googleMaps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-crimson hover:text-crimson-light transition-colors"
+          >
+            Read all our reviews on Google <ArrowRight size={16} />
+          </a>
         </motion.div>
       </div>
     </section>

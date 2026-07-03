@@ -107,7 +107,7 @@ export default function RootLayout({
         <ConditionalChrome>
           <Navbar />
         </ConditionalChrome>
-        <main className="pb-16 md:pb-0">{children}</main>
+        <main className="relative pb-16 md:pb-0">{children}</main>
         <ConditionalChrome>
           <Footer />
           <MobileCtaBar />

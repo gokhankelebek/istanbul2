@@ -183,7 +183,7 @@ export const FEATURED_DISHES = [
     name: "Iskender Kebab",
     description: "Sliced doner over pita with tomato sauce, yoghurt & butter",
     price: "$26.95",
-    image: "/images/2026-march/food/iskender-plate.webp",
+    image: "/images/iskender-kebab.webp",
     href: "/iskender-kebab",
   },
   {

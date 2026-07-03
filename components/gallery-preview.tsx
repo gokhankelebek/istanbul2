@@ -26,14 +26,14 @@ const imageVariants = [
 
 export default function GalleryPreview() {
   return (
-    <section className="relative bg-cream py-20 lg:py-28 turkish-pattern-subtle overflow-hidden">
+    <section className="relative bg-cream py-12 sm:py-16 lg:py-28 turkish-pattern-subtle overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="flex items-end justify-between mb-14"
+          className="flex items-end justify-between mb-8 sm:mb-14"
         >
           <div>
             <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
@@ -72,7 +72,9 @@ export default function GalleryPreview() {
               className={`group relative overflow-hidden rounded-2xl ${
                 i === 0
                   ? "col-span-2 row-span-2 aspect-square md:aspect-auto"
-                  : "aspect-square"
+                  : i === PREVIEW_IMAGES.length - 1
+                    ? "col-span-2 aspect-[2/1] md:col-span-1 md:aspect-square"
+                    : "aspect-square"
               }`}
             >
               <Image

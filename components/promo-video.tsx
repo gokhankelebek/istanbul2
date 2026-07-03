@@ -56,7 +56,7 @@ export default function PromoVideo({ variant = "dark" }: PromoVideoProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative py-20 lg:py-28 overflow-hidden ${
+      className={`relative py-12 sm:py-16 lg:py-28 overflow-hidden ${
         isDark ? "bg-stone" : "bg-cream"
       }`}
     >

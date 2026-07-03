@@ -6,6 +6,8 @@ import FeaturedDishes from "@/components/featured-dishes";
 import GalleryPreview from "@/components/gallery-preview";
 import QuoteBlock from "@/components/quote-block";
 import Reviews from "@/components/reviews";
+import CateringBanner from "@/components/catering-banner";
+import BlogTeaser from "@/components/blog-teaser";
 import FaqAccordion from "@/components/faq-accordion";
 import LocationSection from "@/components/location-section";
 import PromoVideo from "@/components/promo-video";
@@ -31,8 +33,11 @@ export default function HomePage() {
       <QuoteBlock />
       <TurkishPatternDivider />
       <Reviews />
+      <CateringBanner />
       <TurkishPatternDivider />
       <FaqAccordion />
+      <TurkishPatternDivider variant="light" />
+      <BlogTeaser />
       <TurkishPatternDivider variant="light" />
       <LocationSection />
       <TurkishPatternDivider variant="light" />
