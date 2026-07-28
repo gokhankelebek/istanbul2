@@ -2,9 +2,9 @@ import { MENU_CATEGORIES, type MenuItem, type MenuCategory } from "./menu-data";
 
 /** Items flagged as crowd favorites — shown with a "Popular" tag. */
 export const POPULAR_ITEMS = new Set([
-  "Beef & Lamb Turkish Pita",
+  "Beef & Lamb Döner (Shawarma) Turkish Pita",
   "Chicken Lavash Wrap",
-  "Mix Rice Bowl",
+  "Mixed Döner (Shawarma) Rice Bowl",
   "Iskender",
   "Lahmacun",
   "Doner & Cheese Pide",
@@ -35,6 +35,9 @@ export const VEGETARIAN_ITEMS = new Set([
 export function slugify(name: string): string {
   return name
     .toLowerCase()
+    // Strip diacritics so "Döner" slugs as "doner", not "d-ner".
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/&/g, "")
     .replace(/\(.*?\)/g, "")
     .replace(/[^a-z0-9]+/g, "-")

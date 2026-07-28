@@ -16,187 +16,188 @@ export interface MenuCategory {
 export const MENU_CATEGORIES: MenuCategory[] = [
   {
     id: "doner-shawarma",
-    title: "Doner & Shawarma",
-    subtitle: "Authentic Turkish doner kebab served your way",
+    title: "Döner & Shawarma",
+    subtitle:
+      "Authentic Turkish döner (shawarma) carved fresh — sauces: tzatziki, tahini, house, garlic or chili",
     items: [
       // Turkish Pita
       {
-        name: "Beef & Lamb Turkish Pita",
+        name: "Beef & Lamb Döner (Shawarma) Turkish Pita",
         description:
-          "Served in warm, oven-baked Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Served in warm, oven-baked Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$15.95",
         image: "/images/beef-and-lamb-turkish-pita.webp",
       },
       {
-        name: "Chicken Turkish Pita",
+        name: "Chicken Döner (Shawarma) Turkish Pita",
         description:
-          "Served in warm, oven-baked Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Served in warm, oven-baked Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$15.95",
         image: "/images/Chicken-Doner-Shawarma-Turkish-Pita.webp",
       },
       {
-        name: "Mix Turkish Pita",
+        name: "Mixed Döner (Shawarma) Turkish Pita",
         description:
-          "Beef & Lamb + Chicken in warm Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Beef & Lamb + Chicken in warm Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$16.95",
         image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Turkish-Pita.webp",
       },
       {
         name: "Falafel Turkish Pita",
         description:
-          "Crispy falafel in warm Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Crispy falafel in warm Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$15.95",
         image: "/images/Falafel-Turkish-Pita.webp",
       },
       // Pita
       {
-        name: "Beef & Lamb Pita",
+        name: "Beef & Lamb Döner (Shawarma) Pita",
         description:
-          "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/beef-and-lamb-pita.webp",
       },
       {
-        name: "Chicken Pita",
+        name: "Chicken Döner (Shawarma) Pita",
         description:
-          "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/chicken-pita.webp",
       },
       {
-        name: "Mix Pita",
+        name: "Mixed Döner (Shawarma) Pita",
         description:
-          "Beef & Lamb + Chicken with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Beef & Lamb + Chicken with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$15.95",
         image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Pita.webp",
       },
       {
         name: "Falafel Pita",
         description:
-          "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/falafel-pita.webp",
       },
       // Wraps
       {
-        name: "Beef & Lamb Wrap",
+        name: "Beef & Lamb Döner (Shawarma) Wrap",
         description:
-          "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/beef-and-lamb-wrap.webp",
       },
       {
-        name: "Chicken Wrap",
+        name: "Chicken Döner (Shawarma) Wrap",
         description:
-          "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/chicken-wrap.webp",
       },
       {
-        name: "Mix Wrap",
+        name: "Mixed Döner (Shawarma) Wrap",
         description:
-          "Beef & Lamb + Chicken wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Beef & Lamb + Chicken wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$15.95",
         image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Lavash-Wrap.webp",
       },
       {
         name: "Falafel Wrap",
         description:
-          "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/falafel-wrap.webp",
       },
       {
         name: "Chikofte Wrap",
         description:
-          "Spicy bulgur balls wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and hummus spread",
+          "Spicy bulgur balls wrapped in lavash with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
         image: "/images/chikofte-wrap.webp",
       },
       // Rice Bowl
       {
-        name: "Beef & Lamb Rice Bowl",
+        name: "Beef & Lamb Döner (Shawarma) Rice Bowl",
         description:
-          "Your choice of protein over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Your choice of protein over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/Beef-and-Lamb-Doner-Shawarma-Rice-Bowl.webp",
       },
       {
-        name: "Chicken Rice Bowl",
+        name: "Chicken Döner (Shawarma) Rice Bowl",
         description:
-          "Chicken doner over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Chicken doner over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/Chicken-Doner-Shawarma-Rice-Bowl.webp",
       },
       {
-        name: "Mix Rice Bowl",
+        name: "Mixed Döner (Shawarma) Rice Bowl",
         description:
-          "Beef & Lamb + Chicken over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Beef & Lamb + Chicken over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$22.95",
         image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Rice-Bowl.webp",
       },
       {
         name: "Falafel Rice Bowl",
         description:
-          "Falafel over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Falafel over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/falafel-rice-bowl.webp",
       },
       // Fries Bowl
       {
-        name: "Beef & Lamb Fries Bowl",
+        name: "Beef & Lamb Döner (Shawarma) Fries Bowl",
         description:
-          "Your choice of protein over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
+          "Your choice of protein over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/beef-and-lamb-fries-bowl.webp",
       },
       {
-        name: "Chicken Fries Bowl",
+        name: "Chicken Döner (Shawarma) Fries Bowl",
         description:
-          "Chicken doner over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
+          "Chicken doner over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/Chicken-Doner-Shawarma-French-Fries-Bowl.webp",
       },
       {
-        name: "Mix Fries Bowl",
+        name: "Mixed Döner (Shawarma) Fries Bowl",
         description:
-          "Beef & Lamb + Chicken over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
+          "Beef & Lamb + Chicken over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$22.95",
         image: "/images/mixed-fries-bowl.webp",
       },
       {
         name: "Falafel Fries Bowl",
         description:
-          "Falafel over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with bread",
+          "Falafel over crispy fries with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/Falafel-French-Fries-Bowl.webp",
       },
       // Salad Bowl
       {
-        name: "Beef & Lamb Salad Bowl",
+        name: "Beef & Lamb Döner (Shawarma) Salad Bowl",
         description:
-          "A lighter option with doner over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "A lighter option with doner over lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/beef-and-lamb-salad-bowl.webp",
       },
       {
-        name: "Chicken Salad Bowl",
+        name: "Chicken Döner (Shawarma) Salad Bowl",
         description:
-          "Chicken doner over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Chicken doner over lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/Chicken-Doner-Shawarma-Salad-Bowl.webp",
       },
       {
-        name: "Mix Salad Bowl",
+        name: "Mixed Döner (Shawarma) Salad Bowl",
         description:
-          "Beef & Lamb + Chicken over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Beef & Lamb + Chicken over lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$22.95",
         image: "/images/mixed-salad-bowl.webp",
       },
       {
         name: "Falafel Salad Bowl",
         description:
-          "Falafel over lettuce, tomatoes, onions, red cabbage, cucumbers and hummus with fresh bread",
+          "Falafel over lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
         image: "/images/falafel-salad-bowl.webp",
       },
@@ -212,41 +213,41 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Diced Meat & Cheese Pide",
         description:
           "Turkish style flatbread topped with tender diced beef and melted cheese, baked to perfection",
-        price: "$17.95",
+        price: "$19.95",
         image: "/images/diced-meat-cheese-pide.webp",
       },
       {
         name: "Cheese Pide",
         description:
           "Golden baked Turkish flatbread with melted cheese — crispy outside, soft inside",
-        price: "$14.95",
+        price: "$19.95",
         image: "/images/cheese-pide.webp",
       },
       {
-        name: "Spinach & Feta Pide",
+        name: "Spinach & Cheese Pide",
         description:
-          "Traditional Turkish flatbread topped with sauteed spinach and creamy feta cheese, baked fresh",
-        price: "$17.95",
+          "Turkish flatbread topped with sauteed spinach and creamy cheese, baked fresh",
+        price: "$19.95",
         image: "/images/spinach-and-feta-pide.webp",
       },
       {
         name: "Sujuk & Cheese Pide",
         description:
           "Turkish flatbread topped with spicy sujuk sausage and melted cheese, baked fresh",
-        price: "$17.95",
+        price: "$19.95",
         image: "/images/sujuk-and-cheese-pide.webp",
       },
       {
         name: "Lahmacun",
         description:
-          "Flatbread with minced meat, tomatoes, peppers, herbs. Served with parsley, onion, lemon",
+          "Crispy, stone oven thin crust topped with a savory, spiced blend of minced meat. Served traditional style with fresh parsley, sumac onions and lemon wedge for rolling",
         price: "$12.95",
         image: "/images/lahmacun.webp",
       },
       {
         name: "Doner & Cheese Pide",
         description:
-          "Fan favorite Turkish flatbread topped with beef & lamb doner and melted cheese, baked fresh",
+          "Turkish flatbread filled with beef & lamb doner and melted cheese, baked fresh",
         price: "$19.95",
         image: "/images/doner-cheese-pide.webp",
       },
@@ -261,36 +262,40 @@ export const MENU_CATEGORIES: MenuCategory[] = [
       {
         name: "Cigar Borek (4 pcs)",
         description:
-          "Crispy Turkish filo rolls filled with feta cheese and fresh parsley",
+          "Crispy golden pastry rolls filled with savory cheese, served with a side of smoky homemade babaganoush for dipping",
         price: "$7.95",
       },
       {
         name: "Falafel (4 pcs)",
-        description: "Crispy chickpea fritters seasoned with herbs and spices",
+        description:
+          "House-made falafel, fried fresh to order and served with a side of creamy hummus",
         price: "$7.95",
         image: "/images/Falafel-Side.webp",
       },
       {
         name: "Kibbeh (2 pcs)",
         description:
-          "Crispy bulgur shell filled with ground beef, spices and fried golden",
+          "Golden-fried cracked wheat shells stuffed with seasoned ground beef, served with tzatziki sauce and a lemon wedge",
         price: "$7.95",
       },
       {
         name: "Babaganoush",
-        description: "Smoky eggplant, garlic, yoghurt",
+        description:
+          "Smoky roasted eggplant dip blended with yogurt, garlic, and lemon, served with fresh bread",
         price: "$6.95",
         image: "/images/babaganoush.webp",
       },
       {
         name: "Tzatziki Dip",
-        description: "Yoghurt with cucumber, garlic, olive oil and mint",
+        description:
+          "Creamy homemade yogurt, cucumber, garlic, and herb dip paired with freshly baked bread. Great for dipping",
         price: "$6.95",
         image: "/images/tzatziki-dip.webp",
       },
       {
         name: "Hummus",
-        description: "Creamy chickpea dip with garlic, lemon juice, olive oil",
+        description:
+          "Creamy chickpea dip blended with garlic, lemon, and olive oil. Served with freshly baked bread",
         price: "$6.95",
         image: "/images/hummus.webp",
       },
@@ -303,20 +308,21 @@ export const MENU_CATEGORIES: MenuCategory[] = [
       {
         name: "Mozzarella Sticks (4 pcs)",
         description:
-          "Crispy breaded mozzarella, fried golden, served with marinara",
+          "Crispy breaded mozzarella, fried until golden and served with marinara sauce",
         price: "$7.95",
         image: "/images/mozzarella-sticks.webp",
       },
       {
         name: "Stuffed Grape Leaves (4 pcs)",
-        description: "Vine leaves stuffed with rice, herbs and spices",
+        description:
+          "Tender grape leaves stuffed with seasoned rice and herbs, served with a side of creamy tzatziki sauce",
         price: "$7.95",
         image: "/images/Stuffed-Grape-Leaves.webp",
       },
       {
         name: "Chikofte (4 pcs)",
         description:
-          "Spicy hand-shaped bulgur balls with herbs, served with lettuce, lemon",
+          "Turkish-style seasoned bulgur made with herbs and spices, served with crisp romaine lettuce, fresh lemon, and pomegranate molasses",
         price: "$7.95",
         image: "/images/chikofte-side.webp",
       },
@@ -324,7 +330,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Red Lentil Soup",
         description:
           "Traditional Turkish red lentil soup with hint of spices, served with homemade pita bread",
-        price: "$6.95",
+        price: "$7.95",
         image: "/images/red-lentil-soup.webp",
       },
     ],
@@ -345,41 +351,41 @@ export const MENU_CATEGORIES: MenuCategory[] = [
       {
         name: "Beyti Doner Kebab",
         description:
-          "Seasoned doner wrapped in lavash, grilled, sliced and topped with tomato sauce and yoghurt",
+          "Seasoned doner wrapped in warm lavash, grilled and sliced, served over smoky babaganoush and topped with rich tomato sauce and melted butter",
         price: "$26.95",
         image: "/images/beyti-doner-kebab.webp",
       },
       {
         name: "Doner Box",
         description:
-          "Sliced doner over crispy fries with lettuce, tomatoes and sumac onions and signature house and white sauce",
-        price: "$16.95",
+          "Sliced doner over crispy fries with lettuce, tomatoes, sumac onions and signature house and tzatziki sauce (add feta $1)",
+        price: "$19.95",
         image: "/images/doner-box.webp",
       },
       {
-        // TODO: set real price and description
         name: "Doner Cheese Burger",
-        description: "",
-        price: "$0.00",
+        description:
+          "Fresh baked bread filled with beef & lamb doner and melted cheese blend, dusted with sesame and black cumin. Served with tzatziki and house sauce",
+        price: "$19.95",
         image: "/images/doner-cheese-burger.webp",
       },
       {
-        // TODO: set real price and description
         name: "Lahmacun Doner",
-        description: "",
-        price: "$0.00",
+        description:
+          "Fresh baked lahmacun filled with red cabbage, onion, lettuce and tzatziki sauce, with beef & lamb doner",
+        price: "$21.95",
         image: "/images/lahmacun-doner.webp",
       },
       {
-        name: "Istanbul Salad",
+        name: "Mediterranean Greek Salad",
         description:
-          "Arugula, olives & cherry tomatoes, onions, ezine cheese with pomegranate dressing",
+          "Tomatoes, cucumbers, onions, capers, feta cheese, olive oil & pomegranate molasses",
         price: "$14.95",
       },
       {
         name: "Doner & Cheese Pide",
         description:
-          "Fan favorite Turkish flatbread topped with beef & lamb doner and melted cheese, baked fresh",
+          "Turkish flatbread filled with beef & lamb doner and melted cheese, baked fresh",
         price: "$19.95",
         image: "/images/doner-cheese-pide.webp",
       },
@@ -389,47 +395,48 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     id: "breakfast",
     title: "Breakfast",
     subtitle:
-      "Traditional Turkish breakfast — exclusive to the Fremont location",
+      "Breakfast flavors from the Mediterranean — served 10 AM to 2 PM, exclusive to the Fremont location",
     image: "/images/2026-march/breakfast/turkish-breakfast-spread.webp",
     items: [
       {
         name: "Single Breakfast Plate",
         description:
-          "Turkish breakfast with honey & clotted cream, choice of egg, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers and simit",
+          "A classic Turkish breakfast featuring your choice of eggs, olives, pastirma, Ezine cheese, kaymak & honey, tomatoes, cucumbers, jam, Nutella, acuka breakfast spread, freshly baked bread, simit, and a personal tea thermos",
         price: "$24.95",
         image: "/images/single-breakfast-plate.webp",
       },
       {
         name: "Double Breakfast Plate",
         description:
-          "Turkish breakfast spread, honey & cream, cheese, breakfast sauce, olives, pastirma, ezine cheese, tomatoes, cucumbers, simit, choice of 2 eggs and 1 borek",
+          "A classic Turkish breakfast for two featuring 2 eggs, olives, pastirma, Ezine cheese, kaymak & honey, tomatoes, cucumbers, jam, Nutella, acuka, fresh borek, freshly baked bread, simit, and a tea thermos for two",
         price: "$44.95",
         image: "/images/double-breakfast-plate.webp",
       },
       {
         name: "Menemen",
         description:
-          "Sauteed tomatoes, green peppers, onions and eggs — Turkish breakfast classic with bread",
-        price: "$13.95",
+          "A traditional Turkish breakfast of softly scrambled eggs gently simmered in a rich, savory sauce of ripe tomatoes, green peppers, onions, and olive oil. Served hot in a traditional pan with freshly baked bread",
+        price: "$14.95",
       },
       {
         name: "Sujuk & Eggs",
         description:
-          "Spicy Turkish beef sausage pan fried with eggs served with bread",
-        price: "$13.95",
+          "Sizzling spiced Turkish beef sausage fried with 3 sunny-side-up eggs. Served hot in a skillet with freshly baked bread",
+        price: "$14.95",
         image: "/images/2026-march/breakfast/sucuk-eggs-skillet.webp",
       },
       {
         name: "Sunny Egg",
-        description: "Perfectly cooked sunny side up eggs served with bread",
-        price: "$10.95",
+        description:
+          "Three sunny-side-up eggs with rich, runny yolks. Served with freshly baked bread",
+        price: "$12.95",
         image: "/images/sunny-egg.webp",
       },
       {
-        name: "Feta Mozzarella Omelette",
+        name: "Spinach Cheese Omelet",
         description:
-          "Feta and mozzarella cheese omelette served with bread",
-        price: "$13.95",
+          "Three fluffy eggs folded with fresh spinach and melted cheese. Served with freshly baked bread",
+        price: "$14.95",
         image: "/images/feta-spinach-omelette.webp",
       },
     ],
@@ -454,41 +461,30 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         image: "/images/simit.webp",
       },
       {
+        name: "Gozleme",
+        description:
+          "Freshly made Turkish stuffed flatbread grilled to crispy perfection with your choice of filling — white cheese, mozzarella or potato",
+        price: "$7.95",
+        image: "/images/gozleme.webp",
+      },
+      {
         name: "Almond Croissant",
         description:
           "Buttery, flaky croissant filled with rich almond cream and topped with sliced almonds and powdered sugar",
         price: "$3.95",
       },
       {
-        name: "Classic Pogaca",
-        description: "Soft Turkish savory pastry, classic plain",
-        price: "$3.95",
-        image: "/images/classic-pogaca.webp",
-      },
-      {
-        name: "Cheese Pogaca",
-        description: "Soft Turkish savory pastry filled with cheese",
+        name: "Pogaca",
+        description:
+          "Soft, freshly baked Turkish pastry with your choice of savory filling — white cheese, mozzarella or potato",
         price: "$3.95",
         image: "/images/cheese-pogaca.webp",
-      },
-      {
-        name: "Potato Pogaca",
-        description: "Soft Turkish savory pastry filled with seasoned potato",
-        price: "$3.95",
-        image: "/images/potato-pogaca.webp",
       },
       {
         name: "Acma",
         description: "Olive, Chocolate, Classic",
         price: "$3.95",
         image: "/images/chocolate-acma.webp",
-      },
-      {
-        name: "Gozleme",
-        description:
-          "White Cheese, Mozzarella, Potato, Spinach and Cheese, Ground Beef, Eggplant",
-        price: "$7.95",
-        image: "/images/gozleme.webp",
       },
       {
         name: "Chocolate Croissant",
@@ -564,20 +560,26 @@ export const MENU_CATEGORIES: MenuCategory[] = [
       {
         name: "Kunefe",
         description:
-          "Warm, cheesy kunefe with crispy shredded pastry, soaked in sweet syrup",
+          "Golden, crispy shredded pastry baked in the oven with stretchy melted cheese, finished with warm syrup. Add one slice of Marash ice cream $3",
         price: "$11.95",
       },
       {
         name: "Kunefe Pistachio",
         description:
-          "Golden, crispy kunefe filled with melted cheese, sweet syrup and crunchy pistachios",
+          "Golden, crispy shredded pastry with stretchy melted cheese and crunchy pistachios, finished with warm syrup. Add one slice of Marash ice cream $3",
         price: "$12.95",
         image: "/images/pistachio-kunefe.webp",
       },
       {
         name: "Rice Pudding",
         description:
-          "Classic Turkish rice pudding, rich and creamy, lightly sweetened with vanilla",
+          "Oven-baked Turkish rice pudding (sutlac) with a silky texture and caramelized crust. Add walnuts for an extra crunch",
+        price: "$7.95",
+      },
+      {
+        name: "Marash Ice Cream",
+        description:
+          "Maras ice cream is a rich, stretchy Turkish ice cream known for its creamy texture and unique flavor",
         price: "$7.95",
       },
       {
@@ -613,10 +615,10 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         image: "/images/tiramisu.webp",
       },
       {
-        // TODO: set real price and description
         name: "Tres Leches Cake",
-        description: "",
-        price: "$0.00",
+        description:
+          "Light sponge cake soaked in three milks and finished with soft whipped cream",
+        price: "$7.95",
         image: "/images/tres-leches-cake.webp",
       },
       {
@@ -666,10 +668,11 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         price: "$2.45",
         image: "/images/turkish-tea-cup.webp",
       },
+      { name: "Assorted Teas", price: "$3.95" },
       { name: "Tea Thermos", price: "$9.95" },
       {
         name: "Turkish Coffee",
-        price: "$3.95",
+        price: "$4.95",
         image: "/images/turkish-coffee.webp",
       },
       {

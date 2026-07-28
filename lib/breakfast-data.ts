@@ -134,10 +134,10 @@ export const BREAKFAST_JSON_LD = {
                 "@type": "MenuItem",
                 name: "Menemen",
                 description:
-                  "Sauteed tomatoes, green peppers, onions and eggs — Turkish breakfast classic with bread",
+                  "Softly scrambled eggs simmered with tomatoes, green peppers, onions and olive oil, served with freshly baked bread",
                 offers: {
                   "@type": "Offer",
-                  price: "13.95",
+                  price: "14.95",
                   priceCurrency: "USD",
                 },
               },
@@ -145,10 +145,10 @@ export const BREAKFAST_JSON_LD = {
                 "@type": "MenuItem",
                 name: "Sujuk & Eggs",
                 description:
-                  "Spicy Turkish beef sausage pan fried with eggs served with bread",
+                  "Spiced Turkish beef sausage fried with 3 sunny-side-up eggs, served in a skillet with freshly baked bread",
                 offers: {
                   "@type": "Offer",
-                  price: "13.95",
+                  price: "14.95",
                   priceCurrency: "USD",
                 },
                 suitableForDiet: "https://schema.org/HalalDiet",

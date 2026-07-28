@@ -204,7 +204,7 @@ export const FEATURED_DISHES = [
   {
     name: "Sujuk & Cheese Pide",
     description: "Spicy sujuk sausage & melted cheese on Turkish flatbread",
-    price: "$17.95",
+    price: "$19.95",
     image: "/images/2026-march/food/sucuk-pide-slices.webp",
     href: "/turkish-pide",
   },

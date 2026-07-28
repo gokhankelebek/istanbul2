@@ -191,7 +191,7 @@ const lahmacun: DishPageData = {
         {
           name: "Lahmacun",
           description:
-            "Flatbread with minced meat, tomatoes, peppers, herbs. Served with parsley, onion, lemon",
+            "Crispy, stone oven thin crust topped with spiced minced meat. Served with fresh parsley, sumac onions and lemon wedge",
           price: "$12.95",
         },
       ],
@@ -203,12 +203,12 @@ const lahmacun: DishPageData = {
         {
           name: "Diced Meat & Cheese Pide",
           description: "Turkish flatbread topped with tender diced beef and melted cheese",
-          price: "$17.95",
+          price: "$19.95",
         },
         {
           name: "Sujuk & Cheese Pide",
           description: "Turkish flatbread topped with spicy sujuk sausage and melted cheese",
-          price: "$17.95",
+          price: "$19.95",
         },
         {
           name: "Doner & Cheese Pide",
@@ -325,13 +325,13 @@ const iskender: DishPageData = {
         },
         {
           name: "Beyti Doner Kebab",
-          description: "Seasoned doner wrapped in lavash, grilled, sliced and topped with tomato sauce and yoghurt",
+          description: "Seasoned doner wrapped in warm lavash, grilled and sliced, served over smoky babaganoush with tomato sauce and melted butter",
           price: "$26.95",
         },
         {
           name: "Doner Box",
           description: "Sliced doner over crispy fries with lettuce, tomatoes and sumac onions",
-          price: "$16.95",
+          price: "$19.95",
         },
       ],
     },
@@ -420,7 +420,7 @@ const pide: DishPageData = {
     {
       title: "Six Varieties, One Tradition",
       content:
-        "Our pide menu ranges from the classic Cheese Pide ($14.95) — a simple celebration of melted cheese in golden dough — to our fan-favorite Doner & Cheese Pide ($19.95), which combines sliced beef and lamb doner with melted cheese for an unforgettable combination.\n\nFor something with a kick, try the Sujuk & Cheese Pide ($17.95), featuring spicy Turkish sausage. Each pide is hand-shaped and baked fresh to order, arriving at your table golden and bubbling.",
+        "Our pide menu ranges from the classic Cheese Pide ($19.95) — a simple celebration of melted cheese in golden dough — to our fan-favorite Doner & Cheese Pide ($19.95), which combines sliced beef and lamb doner with melted cheese for an unforgettable combination.\n\nFor something with a kick, try the Sujuk & Cheese Pide ($19.95), featuring spicy Turkish sausage. Each pide is hand-shaped and baked fresh to order, arriving at your table golden and bubbling.",
       image: "/images/2026-march/food/lahmacun-pide-table.webp",
       imageAlt: "Variety of Turkish Pide and flatbreads at Istanbul Mediterranean 2",
     },
@@ -431,10 +431,10 @@ const pide: DishPageData = {
       title: "Turkish Pide",
       subtitle: "Traditional Turkish flatbreads baked fresh to order",
       items: [
-        { name: "Cheese Pide", description: "Golden baked Turkish flatbread with melted cheese — crispy outside, soft inside", price: "$14.95" },
-        { name: "Diced Meat & Cheese Pide", description: "Turkish flatbread topped with tender diced beef and melted cheese, baked to perfection", price: "$17.95" },
-        { name: "Spinach & Feta Pide", description: "Traditional flatbread topped with sauteed spinach and creamy feta cheese", price: "$17.95" },
-        { name: "Sujuk & Cheese Pide", description: "Turkish flatbread topped with spicy sujuk sausage and melted cheese", price: "$17.95" },
+        { name: "Cheese Pide", description: "Golden baked Turkish flatbread with melted cheese — crispy outside, soft inside", price: "$19.95" },
+        { name: "Diced Meat & Cheese Pide", description: "Turkish flatbread topped with tender diced beef and melted cheese, baked to perfection", price: "$19.95" },
+        { name: "Spinach & Cheese Pide", description: "Turkish flatbread topped with sauteed spinach and creamy cheese, baked fresh", price: "$19.95" },
+        { name: "Sujuk & Cheese Pide", description: "Turkish flatbread topped with spicy sujuk sausage and melted cheese", price: "$19.95" },
         { name: "Doner & Cheese Pide", description: "Fan favorite — beef & lamb doner and melted cheese, baked fresh", price: "$19.95" },
         { name: "Lahmacun", description: "Paper-thin flatbread with minced meat, tomatoes, peppers, herbs", price: "$12.95" },
       ],
@@ -455,7 +455,7 @@ const pide: DishPageData = {
     {
       question: "What is the most popular Pide?",
       answer:
-        "Our Doner & Cheese Pide ($19.95) is the fan favorite — combining sliced beef and lamb doner with melted cheese on freshly baked flatbread. The Sujuk & Cheese Pide ($17.95) with spicy Turkish sausage is a close second.",
+        "Our Doner & Cheese Pide ($19.95) is the fan favorite — combining sliced beef and lamb doner with melted cheese on freshly baked flatbread. The Sujuk & Cheese Pide ($19.95) with spicy Turkish sausage is a close second.",
     },
     {
       question: "Is Pide different from pizza?",
@@ -473,8 +473,8 @@ const pide: DishPageData = {
     menuSectionName: "Turkish Pide",
     menuItems: [
       { name: "Cheese Pide", description: "Golden Turkish flatbread with melted cheese", price: "14.95" },
-      { name: "Diced Meat & Cheese Pide", description: "Flatbread with diced beef and melted cheese", price: "17.95" },
-      { name: "Sujuk & Cheese Pide", description: "Flatbread with spicy sujuk sausage and cheese", price: "17.95" },
+      { name: "Diced Meat & Cheese Pide", description: "Flatbread with diced beef and melted cheese", price: "19.95" },
+      { name: "Sujuk & Cheese Pide", description: "Flatbread with spicy sujuk sausage and cheese", price: "19.95" },
       { name: "Doner & Cheese Pide", description: "Flatbread with doner and melted cheese", price: "19.95" },
     ],
     faq: [
@@ -545,7 +545,7 @@ const kunefe: DishPageData = {
       title: "More Turkish Desserts",
       items: [
         { name: "Double Pistachio Baklava", description: "Flaky baklava loaded with pistachio filling and sweet syrup", price: "$2.45" },
-        { name: "Rice Pudding", description: "Classic Turkish rice pudding, rich and creamy, lightly sweetened", price: "$7.95" },
+        { name: "Rice Pudding", description: "Oven-baked Turkish rice pudding with a silky texture and caramelized crust", price: "$7.95" },
       ],
     },
   ],
@@ -741,7 +741,7 @@ const menemen: DishPageData = {
     {
       title: "Fresh from the Skillet",
       content:
-        "Our Menemen ($13.95) arrives at your table still sizzling in the pan, with a side of fresh bread for dipping and scooping. It's the kind of dish that makes you slow down — tearing off pieces of bread, scooping up eggs and tomatoes, and sipping Turkish tea between bites.\n\nIt's also the perfect gateway to Turkish breakfast. If you're new to the cuisine, menemen is familiar enough to feel like home — scrambled eggs, after all — but distinctive enough to show you just how much more breakfast can be.",
+        "Our Menemen ($14.95) arrives at your table still sizzling in the pan, with a side of fresh bread for dipping and scooping. It's the kind of dish that makes you slow down — tearing off pieces of bread, scooping up eggs and tomatoes, and sipping Turkish tea between bites.\n\nIt's also the perfect gateway to Turkish breakfast. If you're new to the cuisine, menemen is familiar enough to feel like home — scrambled eggs, after all — but distinctive enough to show you just how much more breakfast can be.",
       image: "/images/2026-march/fremont/fremont-open-kitchen-doner.webp",
       imageAlt: "Open kitchen at Istanbul Mediterranean 2 Fremont Street",
     },
@@ -752,10 +752,10 @@ const menemen: DishPageData = {
       title: "Breakfast Favorites",
       subtitle: "Traditional Turkish breakfast — exclusive to the Fremont location",
       items: [
-        { name: "Menemen", description: "Sauteed tomatoes, green peppers, onions and eggs — Turkish breakfast classic with bread", price: "$13.95" },
-        { name: "Sujuk & Eggs", description: "Spicy Turkish beef sausage pan fried with eggs served with bread", price: "$13.95" },
+        { name: "Menemen", description: "Softly scrambled eggs simmered with tomatoes, green peppers, onions and olive oil, served with freshly baked bread", price: "$14.95" },
+        { name: "Sujuk & Eggs", description: "Spiced Turkish beef sausage fried with 3 sunny-side-up eggs, served in a skillet with freshly baked bread", price: "$14.95" },
         { name: "Single Breakfast Plate", description: "Full Turkish breakfast — honey, cream, eggs, olives, pastirma, cheese, simit", price: "$24.95" },
-        { name: "Feta Mozzarella Omelette", description: "Feta and mozzarella cheese omelette served with bread", price: "$13.95" },
+        { name: "Spinach Cheese Omelet", description: "Three fluffy eggs folded with fresh spinach and melted cheese, served with freshly baked bread", price: "$14.95" },
       ],
     },
   ],
@@ -769,7 +769,7 @@ const menemen: DishPageData = {
     {
       question: "Where can I get Menemen in Las Vegas?",
       answer:
-        "Istanbul Mediterranean 2 at 505 Fremont Street serves authentic Menemen for $13.95, prepared fresh and served sizzling. Available daily from 10 AM. 100% Zabiha Halal certified.",
+        "Istanbul Mediterranean 2 at 505 Fremont Street serves authentic Menemen for $14.95, prepared fresh and served sizzling. Available daily from 10 AM. 100% Zabiha Halal certified.",
     },
     {
       question: "Is Menemen the same as Shakshuka?",
@@ -791,7 +791,7 @@ const menemen: DishPageData = {
     pageDescription: "Authentic Menemen in Downtown Las Vegas. Served daily at 505 Fremont Street. 100% Halal.",
     menuSectionName: "Breakfast",
     menuItems: [
-      { name: "Menemen", description: "Sauteed tomatoes, green peppers, onions and eggs with bread", price: "13.95" },
+      { name: "Menemen", description: "Softly scrambled eggs simmered with tomatoes, green peppers, onions and olive oil", price: "14.95" },
     ],
     faq: [
       { question: "What is Menemen?", answer: "Turkish eggs scrambled with tomatoes, green peppers, and onions, served sizzling with bread." },
@@ -842,7 +842,7 @@ const gozleme: DishPageData = {
     {
       title: "Choose Your Filling",
       content:
-        "At Istanbul Mediterranean 2, our Gozleme ($7.95) comes with six filling options: White Cheese, Mozzarella, Potato, Spinach and Cheese, Ground Beef, or Eggplant. Each is prepared with hand-rolled dough, filled generously, and cooked until golden and crispy on both sides.\n\nWhether you grab one as a quick snack or pair it with a cup of Turkish tea for a light meal, gozleme is one of the best values on our menu — and one of the most authentic Turkish experiences we offer.",
+        "At Istanbul Mediterranean 2, our Gozleme ($7.95) comes with three filling options: White Cheese, Mozzarella, and Potato. Each is prepared with hand-rolled dough, filled generously, and cooked until golden and crispy on both sides.\n\nWhether you grab one as a quick snack or pair it with a cup of Turkish tea for a light meal, gozleme is one of the best values on our menu — and one of the most authentic Turkish experiences we offer.",
       image: "/images/2026-march/bakery/bakery-display-case-3.webp",
       imageAlt: "Fresh baked goods at Istanbul Mediterranean 2 bakery",
     },
@@ -853,7 +853,7 @@ const gozleme: DishPageData = {
       title: "Gozleme",
       subtitle: "Hand-rolled Turkish flatbread — choose your filling",
       items: [
-        { name: "Gozleme", description: "White Cheese, Mozzarella, Potato, Spinach and Cheese, Ground Beef, Eggplant", price: "$7.95" },
+        { name: "Gozleme", description: "Freshly made Turkish stuffed flatbread grilled crisp with your choice of filling — white cheese, mozzarella or potato", price: "$7.95" },
       ],
     },
     {
@@ -861,7 +861,7 @@ const gozleme: DishPageData = {
       items: [
         { name: "Su Borek", description: "Flaky layers of thin pastry filled with creamy cheese and herbs", price: "$8.95" },
         { name: "Simit", description: "Sesame crusted Turkish bread ring, crisp outside, soft inside", price: "$3.95" },
-        { name: "Pogaca", description: "Classic, Cheese, Mozzarella, Potato, Olive", price: "$3.95" },
+        { name: "Pogaca", description: "Soft, freshly baked Turkish pastry with your choice of savory filling — white cheese, mozzarella or potato", price: "$3.95" },
       ],
     },
   ],
@@ -875,7 +875,7 @@ const gozleme: DishPageData = {
     {
       question: "What fillings are available for Gozleme?",
       answer:
-        "Istanbul Mediterranean 2 offers six Gozleme fillings: White Cheese, Mozzarella, Potato, Spinach and Cheese, Ground Beef, and Eggplant. All options are $7.95. The cheese and spinach-cheese varieties are vegetarian-friendly.",
+        "Istanbul Mediterranean 2 offers three Gozleme fillings: White Cheese, Mozzarella, and Potato. All options are $7.95. The cheese and spinach-cheese varieties are vegetarian-friendly.",
     },
     {
       question: "Where can I get Gozleme in Las Vegas?",
@@ -901,7 +901,7 @@ const gozleme: DishPageData = {
     ],
     faq: [
       { question: "What is Gozleme?", answer: "Gozleme is a Turkish flatbread made from hand-rolled dough, filled and cooked on a griddle until golden." },
-      { question: "What fillings are available?", answer: "White Cheese, Mozzarella, Potato, Spinach and Cheese, Ground Beef, and Eggplant. All $7.95." },
+      { question: "What fillings are available?", answer: "White Cheese, Mozzarella, and Potato. All $7.95." },
     ],
   }),
 };
@@ -960,7 +960,7 @@ const simit: DishPageData = {
       subtitle: "Fresh-baked Turkish pastries from our bakery",
       items: [
         { name: "Simit", description: "Sesame crusted Turkish bread ring, crisp outside, soft inside", price: "$3.95" },
-        { name: "Pogaca", description: "Classic, Cheese, Mozzarella, Potato, Olive", price: "$3.95" },
+        { name: "Pogaca", description: "Soft, freshly baked Turkish pastry with your choice of savory filling — white cheese, mozzarella or potato", price: "$3.95" },
         { name: "Acma", description: "Olive, Chocolate, Classic", price: "$3.95" },
         { name: "Gozleme", description: "Turkish flatbread with choice of filling", price: "$7.95" },
       ],
@@ -1168,7 +1168,7 @@ const turkishTea: DishPageData = {
     {
       title: "More Beverages",
       items: [
-        { name: "Turkish Coffee", description: "Traditional Turkish coffee brewed in a cezve", price: "$3.95" },
+        { name: "Turkish Coffee", description: "Traditional Turkish coffee brewed in a cezve", price: "$4.95" },
         { name: "Ayran", description: "Traditional Turkish yogurt drink", price: "$4.95" },
         { name: "Salgam", description: "Fermented turnip juice — a Turkish classic", price: "$4.95" },
       ],
@@ -1258,7 +1258,7 @@ const turkishCoffee: DishPageData = {
     {
       title: "Our Coffee Menu",
       content:
-        "At Istanbul Mediterranean 2, we offer traditional Turkish Coffee ($3.95) brewed to order in a cezve. Tell us your sugar preference: sade (no sugar), az şekerli (a little sugar), orta (medium), or çok şekerli (sweet). Each cup comes with the care and patience the tradition demands.\n\nFor something unique, try our Menenguc ($4.95) — a specialty pistachio coffee that blends finely ground pistachios with coffee for a nutty, aromatic experience unique to southeastern Turkey. It's one of the most unusual beverages you'll find in Las Vegas.",
+        "At Istanbul Mediterranean 2, we offer traditional Turkish Coffee ($4.95) brewed to order in a cezve. Tell us your sugar preference: sade (no sugar), az şekerli (a little sugar), orta (medium), or çok şekerli (sweet). Each cup comes with the care and patience the tradition demands.\n\nFor something unique, try our Menenguc ($4.95) — a specialty pistachio coffee that blends finely ground pistachios with coffee for a nutty, aromatic experience unique to southeastern Turkey. It's one of the most unusual beverages you'll find in Las Vegas.",
       image: "/images/2026-march/fremont/fremont-open-kitchen-doner.webp",
       imageAlt: "Open kitchen at Istanbul Mediterranean 2",
     },
@@ -1269,7 +1269,7 @@ const turkishCoffee: DishPageData = {
       title: "Turkish Coffee & More",
       subtitle: "Traditional Turkish beverages brewed to order",
       items: [
-        { name: "Turkish Coffee", description: "Brewed in a cezve — tell us your sugar preference", price: "$3.95" },
+        { name: "Turkish Coffee", description: "Brewed in a cezve — tell us your sugar preference", price: "$4.95" },
         { name: "Menenguc", description: "Pistachio coffee — a specialty from southeastern Turkey", price: "$4.95" },
         { name: "Single Shot Espresso", description: "For those who prefer Italian-style", price: "$4.95" },
         { name: "Double Shot Espresso", description: "Double the intensity", price: "$5.95" },
@@ -1291,7 +1291,7 @@ const turkishCoffee: DishPageData = {
     {
       question: "Where can I get Turkish Coffee in Las Vegas?",
       answer:
-        "Istanbul Mediterranean 2 at 505 Fremont Street brews authentic Turkish Coffee ($3.95) to order in a traditional cezve. We also offer Menenguc pistachio coffee ($4.95). Available daily from 10 AM.",
+        "Istanbul Mediterranean 2 at 505 Fremont Street brews authentic Turkish Coffee ($4.95) to order in a traditional cezve. We also offer Menenguc pistachio coffee ($4.95). Available daily from 10 AM.",
     },
     {
       question: "How strong is Turkish Coffee?",
@@ -1308,7 +1308,7 @@ const turkishCoffee: DishPageData = {
     pageDescription: "UNESCO-recognized Turkish Coffee brewed in a cezve. 505 Fremont Street, Downtown Las Vegas.",
     menuSectionName: "Coffee",
     menuItems: [
-      { name: "Turkish Coffee", description: "Traditional Turkish coffee brewed in a cezve", price: "3.95" },
+      { name: "Turkish Coffee", description: "Traditional Turkish coffee brewed in a cezve", price: "4.95" },
       { name: "Menenguc", description: "Pistachio coffee from southeastern Turkey", price: "4.95" },
     ],
     faq: [
@@ -1371,7 +1371,7 @@ const ricePudding: DishPageData = {
       title: "Rice Pudding & Desserts",
       subtitle: "Handcrafted Turkish sweets",
       items: [
-        { name: "Rice Pudding", description: "Classic Turkish rice pudding, rich and creamy, lightly sweetened with vanilla", price: "$7.95" },
+        { name: "Rice Pudding", description: "Oven-baked Turkish rice pudding with a silky texture and caramelized crust", price: "$7.95" },
         { name: "Kunefe", description: "Warm, cheesy kunefe with crispy shredded pastry, soaked in sweet syrup", price: "$11.95" },
         { name: "Double Pistachio Baklava", description: "Flaky baklava loaded with pistachio filling", price: "$2.45" },
         { name: "Dubai Cheesecake", description: "Creamy cheesecake with pistachio, kunafa, and chocolate", price: "Market" },
