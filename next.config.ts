@@ -39,6 +39,16 @@ const RENAMED_ITEM_SLUGS: Record<string, string> = {
 const nextConfig: NextConfig = {
   reactCompiler: true,
 
+  images: {
+    // Next's defaults emit 8 device + 8 image widths, so a single <Image>
+    // advertises ~16 srcset URLs. A browser fetches one; a crawler that walks
+    // the srcset fetches all of them, and every one is an edge request plus an
+    // optimizer transform. /menu alone advertised 1,061 image URLs for 66
+    // images. These widths still cover phone through 2x desktop.
+    deviceSizes: [640, 828, 1200, 1920],
+    imageSizes: [96, 256, 384],
+  },
+
   async redirects() {
     return Object.entries(RENAMED_ITEM_SLUGS).flatMap(([from, to]) =>
       ["/menu", "/in-store"].map((base) => ({
