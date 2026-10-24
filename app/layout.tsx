@@ -100,6 +100,24 @@ export default function RootLayout({
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${gaId}');
+                // Conversion clicks (calls, directions, Cash App orders) as GA4 events.
+                // Delegated so it covers links rendered after hydration; never blocks navigation.
+                document.addEventListener('click', function (e) {
+                  if (!(e.target instanceof Element)) return;
+                  var a = e.target.closest('a[href]');
+                  if (!a) return;
+                  var u = new URL(a.href, location.href);
+                  if (u.protocol === 'tel:') {
+                    gtag('event', 'click_to_call', { link_url: a.href });
+                  } else if (u.hostname === 'cash.app') {
+                    var last = u.pathname.split('/').filter(Boolean).pop();
+                    var type = last === 'delivery' || last === 'pickup' ? last : 'menu';
+                    gtag('event', 'order_online_click', { platform: 'cash_app', order_type: type, link_url: a.href });
+                  } else if (u.hostname === 'maps.app.goo.gl' || u.hostname === 'maps.google.com' ||
+                             ((u.hostname === 'www.google.com' || u.hostname === 'google.com') && u.pathname.indexOf('/maps') === 0)) {
+                    gtag('event', 'get_directions', { link_url: a.href });
+                  }
+                }, { capture: true, passive: true });
               `}
             </Script>
           </>
