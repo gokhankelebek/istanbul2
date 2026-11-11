@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { MapPin, Clock, Phone, ShoppingBag, Bike } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { RESTAURANT, LINKS } from "@/lib/constants";
 
@@ -119,28 +119,6 @@ export default function InfoBar() {
         >
           <Phone size={16} className="text-gold" />
           <span>{RESTAURANT.phone}</span>
-        </motion.a>
-        <motion.a
-          variants={itemVariants}
-          href={LINKS.orderPickup}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 font-semibold text-gold/95 hover:text-gold transition-colors"
-          aria-label="Order pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
-        >
-          <ShoppingBag size={16} className="text-gold shrink-0" />
-          <span>Pickup</span>
-        </motion.a>
-        <motion.a
-          variants={itemVariants}
-          href={LINKS.orderDelivery}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 font-semibold text-gold/95 hover:text-gold transition-colors"
-          aria-label="Order delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab"
-        >
-          <Bike size={16} className="text-gold shrink-0" />
-          <span>Delivery</span>
         </motion.a>
         <motion.span
           variants={itemVariants}

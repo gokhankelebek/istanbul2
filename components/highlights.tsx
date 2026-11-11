@@ -50,7 +50,7 @@ const HIGHLIGHTS = [
     title: ORDER_ONLINE_COPY.label,
     subtitle: "Istanbul 2 — Fremont Street.",
     description:
-      "Same Halal menu as dine-in: order online for pickup at 505 Fremont or delivery to your door.",
+      "Same Halal menu as dine-in: pickup at 505 Fremont, or delivery through Cash App, Uber Eats or DoorDash.",
     image: "/images/2026-march/food/doner-salad-plate.webp",
     alt: "Turkish doner and fresh salad plate from Istanbul Mediterranean 2",
     span: "col-span-2" as const,
@@ -107,25 +107,13 @@ export default function Highlights() {
           <p className="mt-4 text-cream/60 max-w-2xl text-sm sm:text-base">
             From our <Link href="/turkish-breakfast" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish breakfast</Link> to our <Link href="/doner-kebab-las-vegas" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Halal doner kebab</Link>, we bring authentic Turkish cuisine to <Link href="/" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Fremont Street</Link>.{" "}
             <a
-              href={LINKS.orderPickup}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={LINKS.orderOnline}
               className="text-gold hover:text-gold-light transition-colors underline underline-offset-2 font-medium"
-              aria-label="Order pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+              aria-label={ORDER_ONLINE_COPY.ariaLabel}
             >
-              Order pickup
+              Order online
             </a>{" "}
-            or{" "}
-            <a
-              href={LINKS.orderDelivery}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold hover:text-gold-light transition-colors underline underline-offset-2 font-medium"
-              aria-label="Order delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab"
-            >
-              delivery
-            </a>{" "}
-            from our kitchen, or see our full <Link href="/menu" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish restaurant menu</Link>.
+            for pickup or delivery from our kitchen, or see our full <Link href="/menu" className="text-gold hover:text-gold-light transition-colors underline underline-offset-2">Turkish restaurant menu</Link>.
           </p>
         </motion.div>
 
@@ -182,8 +170,6 @@ export default function Highlights() {
                 <motion.a
                   key={item.title}
                   href={item.externalHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   variants={cardVariants}
                   className={`${cardClass} block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-stone`}
                   aria-label={item.externalLabel}

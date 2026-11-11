@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ORDER_CHANNELS, ORDER_ONLINE_COPY } from "@/lib/constants";
+import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -101,33 +101,27 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-start"
         >
+          <a
+            href={LINKS.orderOnline}
+            className="rounded-full bg-crimson px-10 py-3.5 text-base font-semibold text-cream shadow-lg shadow-black/30 transition-all hover:bg-crimson-light hover:shadow-crimson/25 active:scale-95"
+            aria-label={ORDER_ONLINE_COPY.ariaLabel}
+          >
+            {ORDER_ONLINE_COPY.label}
+          </a>
           <Link
             href="/menu"
-            className="rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
+            className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
           >
             View Menu
           </Link>
-          {ORDER_CHANNELS.map((channel) => (
-            <a
-              key={channel.key}
-              href={channel.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-block rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-              title={channel.ariaLabel}
-              aria-label={channel.ariaLabel}
-            >
-              {channel.label}
-            </a>
-          ))}
         </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.05 }}
-          className="mt-4 hidden max-w-md text-sm text-cream/70 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] sm:block sm:text-left"
+          className="mt-4 hidden max-w-md text-sm text-cream/70 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] sm:block"
         >
-          {ORDER_ONLINE_COPY.promo}
+          Pickup or delivery · Cash App, Uber Eats &amp; DoorDash
         </motion.p>
 
         <motion.div

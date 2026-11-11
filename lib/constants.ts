@@ -25,14 +25,12 @@ export const LINKS = {
   fremontMenu: "https://www.istanbul2.com/menu",
   /** Flagship Strip location — Grand Bazaar Shops */
   stripWebsite: "https://www.istanbullv.com",
-  /** Ordering hub — store.istanbul2.com (served by app/store). Use `orderHub` for links inside the site. */
+  /** Ordering hub — store.istanbul2.com (served by app/store). */
   store: "https://store.istanbul2.com",
-  orderHub: "/store",
-  orderOnline: "/store",
-  /** Pickup goes straight to Cash App */
+  /** The one "Order Online" button: the hub, opened in the same tab */
+  orderOnline: "https://store.istanbul2.com/",
+  /** Cash App pickup — used by the hub's Pickup button */
   orderPickup: "https://cash.app/order/$istanbulmediterrane2/pickup",
-  /** Delivery opens the hub, where guests pick Cash App, Uber Eats or DoorDash */
-  orderDelivery: "/store#delivery",
   cashAppDelivery: "https://cash.app/order/$istanbulmediterrane2/delivery",
   uberEats:
     "https://www.order.store/store/istanbul-mediterranean/0t2idtJrWsK57ikiFt06BA?diningMode=DELIVERY",
@@ -47,34 +45,14 @@ export const LINKS = {
 
 /** Primary CTA copy for Istanbul 2 online ordering (pickup & delivery from Fremont) */
 export const ORDER_ONLINE_COPY = {
-  label: "Order Pickup & Delivery",
+  label: "Order Online",
   /** Shorter label for tight mobile UI */
-  labelShort: "Pickup & Delivery",
+  labelShort: "Order",
   promo:
-    "Pickup and delivery are live — order direct from Istanbul 2 on Fremont, same Halal menu as the dining room.",
+    "Pickup through Cash App, or delivery through Cash App, Uber Eats or DoorDash — same Halal menu as the dining room.",
   ariaLabel:
-    "Order pickup or delivery from Istanbul Mediterranean 2 — opens our ordering page in a new tab",
+    "Order online from Istanbul Mediterranean 2 — pickup or delivery",
 } as const;
-
-/** Pickup / Delivery CTA pair — map over this wherever ordering buttons appear */
-export const ORDER_CHANNELS = [
-  {
-    key: "pickup",
-    href: LINKS.orderPickup,
-    label: "Order Pickup",
-    labelShort: "Pickup",
-    ariaLabel:
-      "Order pickup from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
-  },
-  {
-    key: "delivery",
-    href: LINKS.orderDelivery,
-    label: "Order Delivery",
-    labelShort: "Delivery",
-    ariaLabel:
-      "Order delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab",
-  },
-] as const;
 
 /** Delivery partners listed on the ordering hub. Entries with an empty href are hidden. */
 export const DELIVERY_PARTNERS = [
