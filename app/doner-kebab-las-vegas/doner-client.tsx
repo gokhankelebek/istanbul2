@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, MapPin, ArrowRight } from "lucide-react";
 import { RESTAURANT, LINKS } from "@/lib/constants";
@@ -43,69 +42,20 @@ export default function DonerPageClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(DONER_FAQ_JSON_LD) }}
       />
 
-      <section className="relative min-h-[70vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/2026-march/food/iskender-plate.webp"
-            alt="Iskender kebab with doner meat at Istanbul Mediterranean 2"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        </div>
-        <div className="relative flex min-h-[70vh] flex-col items-center justify-center px-5 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold backdrop-blur-sm mb-4"
-          >
-            Authentic Turkish Doner
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-heading text-4xl font-bold text-cream sm:text-5xl md:text-6xl max-w-4xl"
-          >
-            Doner Kebab
-            <br />
-            <span className="text-gold">Las Vegas</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 max-w-2xl text-lg text-cream/80"
-          >
-            Authentic Turkish doner on Fremont Street. Iskender, pita, rice bowls, wraps. 100% Zabiha Halal.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <Link
-              href="/menu"
-              className="rounded-full bg-crimson px-8 py-3.5 font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg"
-            >
-              See Doner Menu
-            </Link>
-            <Link
-              href="/iskender-kebab"
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 font-semibold text-cream backdrop-blur-sm hover:border-gold hover:text-gold"
-            >
-              Our Iskender Kebab
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={["100% Zabiha Halal", "Carved to order"]}
+        eyebrow="Authentic Turkish döner"
+        title={<>Döner kebab <span className="text-crimson">Las Vegas</span></>}
+        subtitle="Authentic Turkish döner on Fremont Street: Iskender, pita, rice bowls and wraps, sliced off the spit for every order."
+        image={{ src: "/images/2026-march/food/iskender-plate.webp", alt: "Iskender kebab with doner meat at Istanbul Mediterranean 2" }}
+      >
+        <Link href="/menu" className={btnPrimary}>See the döner menu</Link>
+        <Link href="/iskender-kebab" className={btnSecondary}>Our Iskender kebab</Link>
+      </PageHeader>
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-8">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-8">
             Turkish Doner on Fremont Street
           </h2>
           <div className="prose prose-stone max-w-none space-y-6 text-warm-gray leading-relaxed">
@@ -125,9 +75,9 @@ export default function DonerPageClient() {
         </div>
       </section>
 
-      <section className="bg-stone/5 py-20 lg:py-28">
+      <section className="bg-stone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-10 text-center">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-10 text-center">
             Doner Kebab FAQs
           </h2>
           <Accordion.Root type="single" collapsible className="space-y-3">
@@ -135,7 +85,7 @@ export default function DonerPageClient() {
               <Accordion.Item
                 key={i}
                 value={`faq-${i}`}
-                className="overflow-hidden rounded-xl border border-stone/8 bg-white"
+                className="overflow-hidden rounded-xl border border-stone-200 bg-white"
               >
                 <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone hover:text-crimson [&[data-state=open]>svg]:rotate-180">
                   {item.question}
@@ -152,7 +102,7 @@ export default function DonerPageClient() {
 
       <section className="bg-stone py-20">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
             Doner Kebab on Fremont Street
           </h2>
           <p className="mt-4 text-cream/60">

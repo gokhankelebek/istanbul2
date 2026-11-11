@@ -36,7 +36,7 @@ export default function GalleryPreview() {
           className="flex items-end justify-between mb-8 sm:mb-14"
         >
           <div>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Inside Istanbul 2
             </h2>
             <p className="mt-4 text-warm-gray max-w-xl">

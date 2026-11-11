@@ -1,5 +1,6 @@
 "use client";
 
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -74,44 +75,20 @@ const SPACE_FEATURES = [
 
 export default function StoryPageClient() {
   return (
-    <div className="min-h-screen bg-cream pt-24">
-      {/* Hero */}
-      <div className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/fremont/d24561c8-8aea-4681-b32b-26c5f0de5ec6.JPG"
-            alt="Istanbul Mediterranean Restaurant interior"
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h1 className="font-heading text-4xl font-bold text-cream sm:text-5xl lg:text-6xl">
-              Our Story
-            </h1>
-            <p className="mt-6 text-lg text-cream/60 max-w-2xl mx-auto">
-              More than just food — we&apos;re bringing Turkish hospitality and
-              centuries-old culinary traditions to Downtown Las Vegas.
-            </p>
-            <p className="mt-4 text-base text-cream/55 max-w-2xl mx-auto">
-              <Link
-                href="/blog"
-                className="font-medium text-gold hover:text-gold-light underline underline-offset-2"
-              >
-                Read news and guides on our blog
-              </Link>
-            </p>
-          </motion.div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white">
+      <PageHeader
+        eyebrow="Our story"
+        title="A family from Istanbul, cooking on Fremont Street."
+        subtitle="More than just food: we're bringing Turkish hospitality and centuries-old culinary traditions to Downtown Las Vegas."
+        image={{ src: "/images/fremont/d24561c8-8aea-4681-b32b-26c5f0de5ec6.JPG", alt: "Istanbul Mediterranean Restaurant interior" }}
+      >
+        <a href={LINKS.orderOnline} className={btnPrimary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
+          {ORDER_ONLINE_COPY.label}
+        </a>
+        <Link href="/blog" className={btnSecondary}>
+          News &amp; guides
+        </Link>
+      </PageHeader>
 
       <PromoVideo variant="light" />
 
@@ -129,10 +106,9 @@ export default function StoryPageClient() {
             }`}
           >
             <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
-              <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl">
+              <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
                 {section.title}
               </h2>
-              <div className="mt-2 h-0.5 w-12 bg-crimson/40 rounded-full" />
               {section.content.split("\n\n").map((p, j) => (
                 <p
                   key={j}
@@ -160,7 +136,7 @@ export default function StoryPageClient() {
       </div>
 
       {/* Halal commitment */}
-      <section className="bg-olive/8 py-16 lg:py-20">
+      <section className="bg-stone-50 py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-5 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -171,7 +147,7 @@ export default function StoryPageClient() {
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-olive/15 text-olive">
               <ShieldCheck size={32} />
             </div>
-            <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               100% Zabiha Halal
             </h2>
             <p className="mt-4 text-warm-gray max-w-2xl mx-auto leading-relaxed">
@@ -194,7 +170,7 @@ export default function StoryPageClient() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Designed for Community
             </h2>
             <p className="mt-4 text-warm-gray max-w-xl mx-auto">
@@ -212,7 +188,7 @@ export default function StoryPageClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="rounded-2xl border border-stone/8 bg-white p-8 text-center"
+                  className="rounded-[20px] border border-stone-200 bg-white p-8 text-center"
                 >
                   <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold-dark">
                     <Icon size={24} />
@@ -238,7 +214,7 @@ export default function StoryPageClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               Come Experience Istanbul
             </h2>
             <p className="mt-4 text-cream/50 max-w-lg mx-auto">

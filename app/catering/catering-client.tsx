@@ -1,5 +1,6 @@
 "use client";
 
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -101,90 +102,32 @@ export default function CateringPageClient() {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[85vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/catering/halal-catering-trays-spread-las-vegas.webp"
-            alt="Halal catering trays from Istanbul Mediterranean 2 Las Vegas — salad, doner, rice, pide bread, baklava and hummus ready for delivery"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/30" />
-        </div>
-        <div className="relative flex min-h-[85vh] flex-col items-center justify-center px-5 text-center pt-20">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold backdrop-blur-sm mb-4"
-          >
-            <ShieldCheck size={18} />
-            100% Zabiha Halal Catering
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="font-heading text-4xl font-bold text-cream sm:text-5xl md:text-6xl max-w-5xl leading-tight"
-          >
-            Las Vegas Catering
-            <br />
-            <span className="text-gold">Fresh Mediterranean. Any Size.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-6 max-w-2xl text-lg text-cream/80 leading-relaxed"
-          >
-            Corporate lunches, construction crews, conventions, private parties, and
-            late-night events — individually packaged or family-style. Beef &amp; lamb
-            doner, chicken, falafel, and full Turkish spreads delivered across Las
-            Vegas.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <button
-              type="button"
-              onClick={scrollToForm}
-              className="rounded-full bg-crimson px-10 py-4 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-xl hover:shadow-crimson/30 active:scale-95"
-            >
-              Get a Free Quote
-            </button>
-            <a
-              href={`tel:${RESTAURANT.phone.replace(/\D/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/30 px-10 py-4 text-base font-semibold text-cream backdrop-blur-sm hover:border-gold hover:text-gold transition-all"
-            >
-              <Phone size={18} />
-              {RESTAURANT.phone}
-            </a>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-cream/60"
-          >
-            <span className="flex items-center gap-1.5">
-              <Clock size={14} className="text-gold" /> Response within 24 hrs
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Users size={14} className="text-gold" /> 10 – 200+ guests
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Truck size={14} className="text-gold" /> Valley-wide delivery
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Moon size={14} className="text-gold" /> Late-night available
-            </span>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={["100% Zabiha Halal catering", "10 – 200+ guests"]}
+        eyebrow="Catering · Las Vegas"
+        title={<>Las Vegas catering. <span className="text-crimson">Fresh Mediterranean, any size.</span></>}
+        subtitle="Corporate lunches, construction crews, conventions, private parties and late-night events, individually packaged or family-style. Beef & lamb döner, chicken, falafel and full Turkish spreads delivered across Las Vegas."
+        image={{
+          src: "/images/catering/halal-catering-trays-spread-las-vegas.webp",
+          alt: "Halal catering trays from Istanbul Mediterranean 2 Las Vegas — salad, doner, rice, pide bread, baklava and hummus ready for delivery",
+        }}
+        note={
+          <span className="flex flex-wrap gap-x-5 gap-y-2">
+            <span className="flex items-center gap-1.5"><Clock size={14} className="text-crimson" aria-hidden="true" /> Response within 24 hrs</span>
+            <span className="flex items-center gap-1.5"><Truck size={14} className="text-crimson" aria-hidden="true" /> Valley-wide delivery</span>
+            <span className="flex items-center gap-1.5"><Moon size={14} className="text-crimson" aria-hidden="true" /> Late-night available</span>
+            <span className="flex items-center gap-1.5"><Users size={14} className="text-crimson" aria-hidden="true" /> Any group size</span>
+          </span>
+        }
+      >
+        <button type="button" onClick={scrollToForm} className={btnPrimary}>
+          Get a free quote
+        </button>
+        <a href={`tel:${RESTAURANT.phone.replace(/\D/g, "")}`} className={btnSecondary}>
+          <Phone size={18} aria-hidden="true" />
+          {RESTAURANT.phone}
+        </a>
+      </PageHeader>
 
       {/* Trust bar */}
       <section className="bg-stone py-6">
@@ -216,7 +159,7 @@ export default function CateringPageClient() {
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               Who We Serve
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Catering for Every Las Vegas Event
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-warm-gray leading-relaxed">
@@ -232,7 +175,7 @@ export default function CateringPageClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="rounded-2xl border border-stone/8 bg-white p-6 transition-all hover:shadow-lg hover:shadow-stone/5 hover:-translate-y-0.5"
+                className="rounded-[20px] border border-stone-200 bg-white p-6 transition-all hover:shadow-lg hover:shadow-stone/5 hover:-translate-y-0.5"
               >
                 <h3 className="font-heading text-base font-bold text-stone mb-2">
                   {market.title}
@@ -247,13 +190,13 @@ export default function CateringPageClient() {
       </section>
 
       {/* Service styles */}
-      <section className="bg-stone/5 py-20 lg:py-28">
+      <section className="bg-stone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               How We Serve
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Four Ways to Cater
             </h2>
           </div>
@@ -267,7 +210,7 @@ export default function CateringPageClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="rounded-2xl bg-white border border-stone/8 p-6 flex flex-col"
+                  className="rounded-2xl bg-white border border-stone-200 p-6 flex flex-col"
                 >
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-crimson/10 text-crimson">
                     <Icon size={24} />
@@ -295,7 +238,7 @@ export default function CateringPageClient() {
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               Real Orders, Real Kitchen
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               From Our Catering Kitchen
             </h2>
             <p className="mt-4 text-warm-gray max-w-2xl mx-auto">
@@ -349,7 +292,7 @@ export default function CateringPageClient() {
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               Sample Packages
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Popular Catering Packages
             </h2>
             <p className="mt-4 max-w-xl mx-auto text-warm-gray">
@@ -368,7 +311,7 @@ export default function CateringPageClient() {
                 className={`rounded-2xl border p-6 flex flex-col ${
                   pkg.highlight
                     ? "border-crimson/40 bg-crimson/5 shadow-lg shadow-crimson/10 ring-2 ring-crimson/20"
-                    : "border-stone/8 bg-white"
+                    : "border-stone-200 bg-white"
                 }`}
               >
                 {pkg.highlight && (
@@ -425,7 +368,7 @@ export default function CateringPageClient() {
               <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
                 Full Catering Menu
               </p>
-              <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+              <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
                 Build Your Perfect Spread
               </h2>
               <p className="mt-4 text-cream/60 leading-relaxed">
@@ -485,7 +428,7 @@ export default function CateringPageClient() {
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Why Las Vegas Chooses Istanbul 2
             </h2>
           </div>
@@ -497,7 +440,7 @@ export default function CateringPageClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="rounded-2xl border border-stone/8 bg-white p-6"
+                className="rounded-[20px] border border-stone-200 bg-white p-6"
               >
                 <h3 className="font-heading text-lg font-bold text-stone mb-2">
                   {item.title}
@@ -512,10 +455,10 @@ export default function CateringPageClient() {
       </section>
 
       {/* Process */}
-      <section className="bg-stone/5 py-20 lg:py-28">
+      <section className="bg-stone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               How It Works
             </h2>
             <p className="mt-4 text-warm-gray">
@@ -530,7 +473,7 @@ export default function CateringPageClient() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex gap-5 items-start rounded-2xl border border-stone/8 bg-white p-6"
+                className="flex gap-5 items-start rounded-[20px] border border-stone-200 bg-white p-6"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-crimson font-heading text-lg font-bold text-cream">
                   {step.step}
@@ -556,7 +499,7 @@ export default function CateringPageClient() {
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               Get Started
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Request a Catering Quote
             </h2>
             <p className="mt-4 text-warm-gray leading-relaxed">
@@ -565,13 +508,13 @@ export default function CateringPageClient() {
               order: 10 guests.
             </p>
           </div>
-          <div className="rounded-2xl border border-stone/8 bg-white p-6 sm:p-10 shadow-xl shadow-stone/5">
+          <div className="rounded-[20px] border border-stone-200 bg-white p-6 sm:p-10 shadow-xl shadow-stone/5">
             <CateringInquiryForm />
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3 text-center text-sm">
             <a
               href={`tel:${RESTAURANT.phone.replace(/\D/g, "")}`}
-              className="flex flex-col items-center gap-2 rounded-xl border border-stone/8 bg-white p-5 hover:border-crimson/30 hover:shadow-md transition-all"
+              className="flex flex-col items-center gap-2 rounded-xl border border-stone-200 bg-white p-5 hover:border-crimson/30 hover:shadow-md transition-all"
             >
               <Phone size={22} className="text-crimson" />
               <span className="font-semibold text-stone">{RESTAURANT.phone}</span>
@@ -579,7 +522,7 @@ export default function CateringPageClient() {
             </a>
             <a
               href={`mailto:${RESTAURANT.cateringEmail}`}
-              className="flex flex-col items-center gap-2 rounded-xl border border-stone/8 bg-white p-5 hover:border-crimson/30 hover:shadow-md transition-all"
+              className="flex flex-col items-center gap-2 rounded-xl border border-stone-200 bg-white p-5 hover:border-crimson/30 hover:shadow-md transition-all"
             >
               <Mail size={22} className="text-crimson" />
               <span className="font-semibold text-stone text-xs break-all">
@@ -587,7 +530,7 @@ export default function CateringPageClient() {
               </span>
               <span className="text-warm-gray text-xs">Email your event details</span>
             </a>
-            <div className="flex flex-col items-center gap-2 rounded-xl border border-stone/8 bg-white p-5">
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-stone-200 bg-white p-5">
               <Clock size={22} className="text-crimson" />
               <span className="font-semibold text-stone">Kitchen Hours</span>
               <span className="text-warm-gray text-xs">
@@ -601,9 +544,9 @@ export default function CateringPageClient() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-stone/5 py-20 lg:py-28">
+      <section className="bg-stone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-10 text-center">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-10 text-center">
             Catering FAQs
           </h2>
           <Accordion.Root type="single" collapsible className="space-y-3">
@@ -611,7 +554,7 @@ export default function CateringPageClient() {
               <Accordion.Item
                 key={i}
                 value={`faq-${i}`}
-                className="overflow-hidden rounded-xl border border-stone/8 bg-white"
+                className="overflow-hidden rounded-xl border border-stone-200 bg-white"
               >
                 <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone hover:text-crimson [&[data-state=open]>svg]:rotate-180">
                   {item.question}
@@ -629,7 +572,7 @@ export default function CateringPageClient() {
       {/* Bottom CTA */}
       <section className="bg-stone py-20">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
             Ready to Feed Your Event?
           </h2>
           <p className="mt-4 text-cream/60 leading-relaxed">
@@ -656,7 +599,7 @@ export default function CateringPageClient() {
       </section>
 
       {/* Sticky mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-stone/10 bg-cream/95 backdrop-blur-lg p-4 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-stone-200 bg-cream/95 backdrop-blur-lg p-4 md:hidden">
         <button
           type="button"
           onClick={scrollToForm}

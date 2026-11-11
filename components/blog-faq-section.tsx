@@ -10,12 +10,12 @@ export default function BlogFaqSection({
   if (faqs.length === 0) return null;
   return (
     <section
-      className="border-t border-stone/10 pt-12"
+      className="border-t border-stone-200 pt-12"
       aria-labelledby="blog-faq-heading"
     >
       <h2
         id="blog-faq-heading"
-        className="font-heading text-2xl font-bold text-stone sm:text-3xl"
+        className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl"
       >
         {heading}
       </h2>
@@ -23,7 +23,7 @@ export default function BlogFaqSection({
         {faqs.map((item, i) => (
           <details
             key={i}
-            className="group overflow-hidden rounded-xl border border-stone/10 bg-white shadow-sm transition-shadow open:shadow-md"
+            className="group overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition-shadow open:shadow-md"
           >
             <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-stone transition-colors hover:bg-cream/50 [&::-webkit-details-marker]:hidden">
               <span className="flex items-center justify-between gap-4">
@@ -36,7 +36,7 @@ export default function BlogFaqSection({
                 </span>
               </span>
             </summary>
-            <div className="border-t border-stone/8 px-5 py-4 text-sm leading-relaxed text-warm-gray">
+            <div className="border-t border-stone-200 px-5 py-4 text-sm leading-relaxed text-warm-gray">
               {item.answer}
             </div>
           </details>

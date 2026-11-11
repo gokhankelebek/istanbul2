@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, ShieldCheck } from "lucide-react";
+import { Download } from "lucide-react";
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import { MENU_CATEGORIES } from "@/lib/menu-data";
 import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import MenuSection from "@/components/menu-section";
@@ -47,50 +48,27 @@ export default function MenuPageClient() {
   };
 
   return (
-    <div className="min-h-screen bg-cream pt-24">
-      {/* Header */}
-      <div className="bg-stone py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-olive/15 px-4 py-1.5 text-xs font-semibold text-olive-light border border-olive/20">
-              <ShieldCheck size={14} />
-              100% Zabiha Halal Certified
-            </div>
-            <h1 className="font-heading text-4xl font-bold text-cream sm:text-5xl">
-              Turkish Restaurant Menu
-            </h1>
-            <p className="text-cream/60 text-sm mt-1">
-              Full Turkish Menu — Fremont Street
-            </p>
-            <p className="mt-4 text-cream/50 max-w-xl mx-auto">
-              Celebrating the full spectrum of Turkish cuisine — from morning
-              Kahvalti to late-night Pide
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={LINKS.orderOnline}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold/20 border border-gold/40 px-8 py-3.5 text-sm font-semibold text-cream transition-all hover:bg-gold/30 hover:border-gold active:scale-95"
-                aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              >
-                {ORDER_ONLINE_COPY.label}
-              </a>
-            </div>
-            <p className="mt-3 text-xs text-cream/45 max-w-md mx-auto">
-              {ORDER_ONLINE_COPY.promo}
-            </p>
-          </motion.div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white">
+      <PageHeader
+        badges={["100% Zabiha Halal", "Breakfast to late night"]}
+        eyebrow="Full menu · Fremont Street"
+        title="Turkish restaurant menu"
+        subtitle="Döner, pide, lahmacun, kebab plates, Turkish breakfast and our bakery case. Every dish is on the menu for pickup and delivery too."
+        image={{ src: "/images/2026-march/food/lahmacun-pide-table.webp", alt: "Lahmacun and pide on the table at Istanbul 2" }}
+        note={ORDER_ONLINE_COPY.promo}
+      >
+        <a href={LINKS.orderOnline} className={btnPrimary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
+          {ORDER_ONLINE_COPY.label}
+        </a>
+        <a href="/istanbul-2-menu.pdf" download className={btnSecondary}>
+          <Download size={18} aria-hidden="true" /> PDF menu
+        </a>
+      </PageHeader>
 
       {/* Sticky category nav */}
       <div
-        className={`sticky top-[60px] z-30 bg-cream/95 backdrop-blur-lg border-b transition-shadow ${
-          isSticky ? "shadow-md border-stone/10" : "border-transparent"
+        className={`sticky top-[68px] z-30 bg-white/95 backdrop-blur-lg border-b transition-shadow ${
+          isSticky ? "shadow-md border-stone-200" : "border-transparent"
         }`}
       >
         <div className="mx-auto max-w-4xl overflow-x-auto scrollbar-hide">
@@ -99,10 +77,10 @@ export default function MenuPageClient() {
               <button
                 key={cat.id}
                 onClick={() => scrollToCategory(cat.id)}
-                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                className={`h-11 whitespace-nowrap rounded-full border px-[18px] text-sm font-semibold transition-colors ${
                   activeCategory === cat.id
-                    ? "bg-crimson text-cream shadow-sm"
-                    : "text-warm-gray hover:bg-stone/5 hover:text-stone"
+                    ? "border-stone bg-stone text-white"
+                    : "border-stone-300 bg-white text-stone-light hover:border-stone hover:text-stone"
                 }`}
               >
                 {cat.title}
@@ -128,7 +106,7 @@ export default function MenuPageClient() {
           <a
             href="/istanbul-2-menu.pdf"
             download
-            className="inline-flex items-center gap-2 rounded-full border-2 border-stone/15 px-6 py-3 text-sm font-semibold text-stone transition-all hover:border-crimson hover:text-crimson hover:shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold text-stone transition-colors hover:border-stone hover:bg-stone-50"
           >
             <Download size={18} />
             Download PDF Menu

@@ -7,7 +7,7 @@ function MdxImg(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   const { src, alt, ...rest } = props;
   if (typeof src === "string" && src.startsWith("/")) {
     return (
-      <span className="relative my-8 block aspect-video w-full overflow-hidden rounded-xl border border-stone/10">
+      <span className="relative my-8 block aspect-video w-full overflow-hidden rounded-xl border border-stone-200">
         <Image
           src={src}
           alt={alt ?? ""}
@@ -100,14 +100,14 @@ export const mdxComponents: MDXComponents = {
   a: MdxA,
   img: MdxImg,
   table: (props) => (
-    <div className="my-6 overflow-x-auto rounded-xl border border-stone/10">
+    <div className="my-6 overflow-x-auto rounded-xl border border-stone-200">
       <table className="w-full min-w-[320px] text-left text-sm text-warm-gray" {...props} />
     </div>
   ),
   th: (props) => (
     <th className="border-b border-stone/15 bg-cream px-4 py-3 font-semibold text-stone" {...props} />
   ),
-  td: (props) => <td className="border-b border-stone/8 px-4 py-3" {...props} />,
+  td: (props) => <td className="border-b border-stone-200 px-4 py-3" {...props} />,
   code: (props) => {
     const { className, children, ...rest } = props;
     const isBlock = className?.includes("language-");

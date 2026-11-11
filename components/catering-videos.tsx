@@ -25,7 +25,7 @@ function VideoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ delay: index * 0.08 }}
-      className={`group flex flex-col overflow-hidden rounded-2xl border border-stone/8 bg-white shadow-sm transition-all hover:shadow-lg hover:shadow-stone/5 ${
+      className={`group flex flex-col overflow-hidden rounded-[20px] border border-stone-200 bg-white shadow-sm transition-all hover:shadow-lg hover:shadow-stone/5 ${
         portrait ? "w-full max-w-[330px]" : "w-full"
       }`}
     >
@@ -95,7 +95,7 @@ export default function CateringVideos() {
   }));
 
   return (
-    <section className="bg-stone/5 py-20 lg:py-28">
+    <section className="bg-stone-50 py-20 lg:py-28">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
@@ -105,7 +105,7 @@ export default function CateringVideos() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-crimson">
             See It in Action
           </p>
-          <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
             Catering, On the Table
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-warm-gray">

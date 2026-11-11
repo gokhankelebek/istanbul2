@@ -38,7 +38,7 @@ export default function FeaturedDishes() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-8 sm:mb-14"
         >
-          <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
             Signature Dishes
           </h2>
           <p className="mt-4 text-cream/50 max-w-xl mx-auto">
