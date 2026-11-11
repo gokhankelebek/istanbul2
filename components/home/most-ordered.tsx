@@ -11,7 +11,7 @@ export default function MostOrdered() {
         <div className="flex flex-col gap-2">
           <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-crimson">Most ordered</span>
           <h2 className="font-heading text-[34px] font-bold leading-none text-stone sm:text-5xl">
-            What Fremont orders at 2 AM
+            What Fremont orders most
           </h2>
         </div>
         <Link href="/menu" className="text-[15px] font-semibold text-crimson hover:text-crimson-dark">

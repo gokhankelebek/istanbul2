@@ -48,7 +48,7 @@ export default function OrderHero() {
 
           <h1 className="font-heading text-[44px] font-bold leading-[0.98] text-stone sm:text-6xl lg:text-[76px]">
             Döner, pide &amp; Turkish breakfast.{" "}
-            <span className="text-crimson">Hot to your door</span> till 5 AM.
+            <span className="text-crimson">Delivered hot,</span> late.
           </h1>
           <p className="max-w-[520px] text-lg leading-relaxed text-stone-light">
             Fremont Street&rsquo;s late-night Turkish kitchen. Order for delivery or skip the
