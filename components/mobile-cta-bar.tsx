@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import SiteLink from "@/components/site-link";
 import { Phone, MapPin, ShoppingBag, UtensilsCrossed } from "lucide-react";
 import { RESTAURANT, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
@@ -25,13 +25,13 @@ export default function MobileCtaBar() {
             <MapPin size={20} className="text-gold" />
             <span className="text-[11px] font-semibold">Directions</span>
           </a>
-          <Link
+          <SiteLink
             href="/menu"
             className="flex flex-col items-center gap-1 rounded-xl py-2.5 text-cream/80 transition-colors active:bg-cream/10"
           >
             <UtensilsCrossed size={20} className="text-gold" />
             <span className="text-[11px] font-semibold">Menu</span>
-          </Link>
+          </SiteLink>
           <a
             href={LINKS.orderOnline}
             className="flex flex-col items-center justify-center gap-1 rounded-xl bg-crimson py-2.5 text-cream transition-colors active:bg-crimson-light"
