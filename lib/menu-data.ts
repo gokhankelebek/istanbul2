@@ -472,23 +472,11 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         image: "/images/GOZLEME.webp",
       },
       {
-        name: "Almond Croissant",
-        description:
-          "Buttery, flaky croissant filled with rich almond cream and topped with sliced almonds and powdered sugar",
-        price: "$3.95",
-      },
-      {
         name: "Pogaca",
         description:
           "Soft, freshly baked Turkish pastry with your choice of savory filling — white cheese, mozzarella or potato",
         price: "$3.95",
         image: "/images/cheese-pogaca.webp",
-      },
-      {
-        name: "Acma",
-        description: "Olive, Chocolate, Classic",
-        price: "$3.95",
-        image: "/images/chocolate-acma.webp",
       },
       {
         name: "Chocolate Croissant",
@@ -540,23 +528,11 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         image: "/images/shobiyet-baklava.webp",
       },
       {
-        name: "Mussel Baklava",
-        description:
-          "Elegant, shell-shaped phyllo filled with ground pistachios and fragrant syrup",
-        price: "$3.95",
-      },
-      {
         name: "Pistachio Roll",
         description:
           "Fluffy sponge cake rolled with pistachio cream and light sweet syrup",
         price: "$3.95",
         image: "/images/menu/pistachio-roll.webp",
-      },
-      {
-        name: "Kadayif Baklava",
-        description:
-          "Crispy shredded phyllo filled with pistachios, baked to perfection and soaked in light syrup",
-        price: "$7.95",
       },
       {
         name: "Diyarbakir Burma",
@@ -591,12 +567,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         price: "$7.95",
       },
       {
-        name: "Lemon Cheesecake",
-        description:
-          "Creamy lemon cheesecake with a bright citrus finish on a buttery crust",
-        price: "$7.95",
-      },
-      {
         name: "Pistachio Dream Cake",
         description:
           "Decadent pistachio cake with creamy frosting and crunchy pistachios",
@@ -611,12 +581,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         image: "/images/red-velvet-cake.webp",
       },
       {
-        name: "Devils Fudge",
-        description:
-          "Decadent fudge cake with rich, gooey chocolate layers and luscious frosting",
-        price: "$7.95",
-      },
-      {
         name: "Tiramisu",
         description:
           "Layered espresso-soaked ladyfingers with rich mascarpone cream",
@@ -629,18 +593,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
           "Light sponge cake soaked in three milks and finished with soft whipped cream",
         price: "$7.95",
         image: "/images/tres-leches-cake.webp",
-      },
-      {
-        name: "Dubai Cheesecake",
-        description:
-          "Creamy cheesecake with pistachio and kunafa topped with chocolate",
-        price: "Market",
-      },
-      {
-        name: "Sheker-Pare",
-        description:
-          "Soft semolina cookies baked until golden, soaked in a light, sweet syrup",
-        price: "Market",
       },
     ],
   },

@@ -602,15 +602,15 @@ const baklava: DishPageData = {
 
   metaTitle: "Turkish Baklava Las Vegas | Istanbul Mediterranean 2 Fremont St",
   metaDescription:
-    "Handcrafted Turkish Baklava in Downtown Las Vegas. Nine varieties with pistachios, walnuts, and chocolate. Fresh daily at 505 Fremont Street. 100% Halal.",
+    "Handcrafted Turkish Baklava in Downtown Las Vegas. Seven varieties with pistachios, walnuts, and chocolate. Fresh daily at 505 Fremont Street. 100% Halal.",
   metaKeywords:
     "Turkish baklava Las Vegas, baklava near me, best baklava Las Vegas, pistachio baklava Las Vegas, halal baklava, Mediterranean dessert Downtown Las Vegas",
   ogDescription:
-    "Nine varieties of handcrafted Turkish Baklava — from classic pistachio to chocolate to Diyarbakir Burma. Fresh daily at 505 Fremont Street.",
+    "Seven varieties of handcrafted Turkish Baklava — from classic pistachio to chocolate to Diyarbakir Burma. Fresh daily at 505 Fremont Street.",
 
   heroTag: "Handcrafted Daily",
   heroTitle: "Turkish Baklava",
-  heroHighlight: "Nine Varieties, One Tradition",
+  heroHighlight: "Seven Varieties, One Tradition",
   heroSubtitle:
     "Layers of flaky phyllo, premium nuts, and golden syrup — the world's most famous dessert, handcrafted fresh every day.",
   heroImage: "/images/2026-march/bakery/baklava-tea.webp",
@@ -631,9 +631,9 @@ const baklava: DishPageData = {
       imageAlt: "Assortment of Turkish Baklava at Istanbul Mediterranean 2",
     },
     {
-      title: "Nine Varieties, Fresh Daily",
+      title: "Seven Varieties, Fresh Daily",
       content:
-        "At Istanbul Mediterranean 2, we don't settle for one style of baklava. Our bakery case features nine distinct varieties, each handcrafted fresh. Start with our Double Pistachio or Double Walnut classics ($2.45 each) — pure expressions of the art. Try the elegant Mussel Baklava ($3.95), shaped like a shell and filled with pistachios, or the Diyarbakir Burma ($7.95), a hand-rolled spiral from Turkey's southeast.\n\nFor something different, our Chocolate Baklava ($2.45) adds a modern twist, while the Shobyet ($3.95) features velvety semolina cream between flaky layers. Every piece is made with real butter, premium nuts, and golden syrup — never shortcuts.",
+        "At Istanbul Mediterranean 2, we don't settle for one style of baklava. Our bakery case features seven distinct varieties, each handcrafted fresh. Start with our Double Pistachio or Double Walnut classics ($2.45 each) — pure expressions of the art. Try the Diyarbakir Burma ($7.95), a hand-rolled spiral from Turkey's southeast, or our Pistachio Roll ($3.95), sponge cake rolled with pistachio cream.\n\nFor something different, our Chocolate Baklava ($2.45) adds a modern twist, while the Shobyet ($3.95) features velvety semolina cream between flaky layers. Every piece is made with real butter, premium nuts, and golden syrup — never shortcuts.",
       image: "/images/baklava_.webp",
       imageAlt: "Close-up of handcrafted Turkish Baklava pieces",
     },
@@ -649,9 +649,7 @@ const baklava: DishPageData = {
         { name: "Chocolate Baklava", description: "Rich chocolate baklava with nut filling and chocolate drizzle", price: "$2.45" },
         { name: "Carrot Baklava", description: "Delicate carrot-shaped baklava with pistachio filling", price: "$7.95" },
         { name: "Shobyet Pistachio Baklava", description: "Flaky phyllo with velvety semolina cream and pistachios", price: "$3.95" },
-        { name: "Mussel Baklava", description: "Shell-shaped phyllo filled with ground pistachios", price: "$3.95" },
         { name: "Pistachio Roll", description: "Sponge cake rolled with pistachio cream and light syrup", price: "$3.95" },
-        { name: "Kadayif Baklava", description: "Crispy shredded phyllo filled with pistachios, soaked in syrup", price: "$7.95" },
         { name: "Diyarbakir Burma", description: "Hand-rolled phyllo with pistachio filling, golden and sweet", price: "$7.95" },
       ],
     },
@@ -666,7 +664,7 @@ const baklava: DishPageData = {
     {
       question: "How many types of Baklava does Istanbul Mediterranean 2 offer?",
       answer:
-        "We offer nine varieties: Double Pistachio, Double Walnut, Chocolate, Carrot, Shobyet Pistachio, Mussel, Pistachio Roll, Kadayif, and Diyarbakir Burma. Prices range from $2.45 to $7.95. All handcrafted fresh daily.",
+        "We offer seven varieties: Double Pistachio, Double Walnut, Chocolate, Carrot, Shobyet Pistachio, Pistachio Roll, and Diyarbakir Burma. Prices range from $2.45 to $7.95. All handcrafted fresh daily.",
     },
     {
       question: "Is the Baklava fresh?",
@@ -685,7 +683,7 @@ const baklava: DishPageData = {
   jsonLd: buildJsonLd({
     slug: "turkish-baklava",
     pageTitle: "Turkish Baklava Las Vegas | Istanbul Mediterranean 2",
-    pageDescription: "Nine varieties of handcrafted Turkish Baklava in Downtown Las Vegas. Fresh daily at 505 Fremont Street.",
+    pageDescription: "Seven varieties of handcrafted Turkish Baklava in Downtown Las Vegas. Fresh daily at 505 Fremont Street.",
     menuSectionName: "Baklava",
     menuItems: [
       { name: "Double Pistachio Baklava", description: "Flaky baklava with pistachio filling", price: "2.45" },
@@ -961,7 +959,6 @@ const simit: DishPageData = {
       items: [
         { name: "Simit", description: "Sesame crusted Turkish bread ring, crisp outside, soft inside", price: "$3.95" },
         { name: "Pogaca", description: "Soft, freshly baked Turkish pastry with your choice of savory filling — white cheese, mozzarella or potato", price: "$3.95" },
-        { name: "Acma", description: "Olive, Chocolate, Classic", price: "$3.95" },
         { name: "Gozleme", description: "Turkish flatbread with choice of filling", price: "$7.95" },
       ],
     },
@@ -1374,7 +1371,6 @@ const ricePudding: DishPageData = {
         { name: "Rice Pudding", description: "Oven-baked Turkish rice pudding with a silky texture and caramelized crust", price: "$7.95" },
         { name: "Kunefe", description: "Warm, cheesy kunefe with crispy shredded pastry, soaked in sweet syrup", price: "$11.95" },
         { name: "Double Pistachio Baklava", description: "Flaky baklava loaded with pistachio filling", price: "$2.45" },
-        { name: "Dubai Cheesecake", description: "Creamy cheesecake with pistachio, kunafa, and chocolate", price: "Market" },
       ],
     },
   ],
