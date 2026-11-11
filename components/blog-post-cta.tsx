@@ -15,6 +15,7 @@ export default function BlogPostCta({
 
   return (
     <div
+      data-ga-location="blog_cta"
       className={`rounded-2xl border px-5 py-5 sm:px-8 sm:py-6 ${chip}`}
       role="region"
       aria-label="Reserve, visit, or order"

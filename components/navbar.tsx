@@ -59,7 +59,7 @@ export default function Navbar() {
           </SiteLink>
 
           {/* Desktop nav */}
-          <div className="hidden flex-shrink-0 items-center gap-5 lg:flex xl:gap-8">
+          <div data-ga-location="header" className="hidden flex-shrink-0 items-center gap-5 lg:flex xl:gap-8">
             {NAV_ITEMS.map((item) => (
               <SiteLink
                 key={item.href}
@@ -114,6 +114,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
+            data-ga-location="mobile_menu"
             className="fixed inset-0 z-40 bg-stone/98 backdrop-blur-xl lg:hidden flex flex-col items-center justify-center"
           >
             <nav className="flex flex-col items-center gap-8">

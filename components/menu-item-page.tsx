@@ -32,7 +32,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
   ];
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream" data-ga-item={item.name}>
       {/* ── HERO ── */}
       <PageHeader
         badges={["100% Halal"]}

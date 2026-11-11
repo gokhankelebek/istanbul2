@@ -54,7 +54,7 @@ const cardVariants = {
 
 export default function Reviews() {
   return (
-    <section className="bg-cream py-12 sm:py-16 lg:py-28 turkish-pattern-subtle overflow-hidden">
+    <section data-ga-location="reviews" className="bg-cream py-12 sm:py-16 lg:py-28 turkish-pattern-subtle overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}

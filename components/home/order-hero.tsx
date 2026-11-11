@@ -20,7 +20,7 @@ export default function OrderHero() {
   return (
     <>
       {/* Status strip — sits under the fixed navbar */}
-      <div className="bg-stone pt-[76px] text-[13px] text-stone-300 sm:pt-[84px]">
+      <div data-ga-location="status_bar" className="bg-stone pt-[76px] text-[13px] text-stone-300 sm:pt-[84px]">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-2.5 lg:px-8">
           <span className="flex flex-wrap items-center gap-x-2">
             <OpenStatus />
@@ -56,7 +56,7 @@ export default function OrderHero() {
           </p>
 
           {/* Order box */}
-          <div className="flex max-w-[560px] flex-col gap-4 rounded-[20px] border border-stone-200 bg-white p-5 shadow-[0_18px_40px_-24px_rgba(28,25,23,0.35)]">
+          <div data-ga-location="home_order_box" className="flex max-w-[560px] flex-col gap-4 rounded-[20px] border border-stone-200 bg-white p-5 shadow-[0_18px_40px_-24px_rgba(28,25,23,0.35)]">
             <div
               role="group"
               aria-label="Order type"

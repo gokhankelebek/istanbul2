@@ -6,7 +6,7 @@ import { RESTAURANT, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function MobileCtaBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div data-ga-location="mobile_bar" className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <div className="bg-stone/95 backdrop-blur-xl border-t border-cream/10 px-2 py-2 safe-area-bottom">
         <div className="grid grid-cols-4 gap-1.5">
           <a

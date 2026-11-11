@@ -101,30 +101,53 @@ export default function RootLayout({
                 gtag('js', new Date());
                 gtag('config', '${gaId}');
                 // Conversion clicks (calls, directions, online orders) as GA4 events.
-                // Delegated so it covers links rendered after hydration; never blocks navigation.
-                document.addEventListener('click', function (e) {
+                // Delegated so it covers every link, including ones rendered after hydration and
+                // links inside blog posts; it never blocks navigation. Events go out by beacon so
+                // they survive the page unloading as the visitor leaves for the ordering site.
+                // Each event carries click_location (which button: header, footer, dish card…, from
+                // the nearest data-ga-location) and item_name (from data-ga-item) when known.
+                function track(e) {
+                  if (e.type === 'auxclick' && e.button !== 1) return; // middle-click only
                   if (!(e.target instanceof Element)) return;
                   var a = e.target.closest('a[href]');
                   if (!a) return;
-                  var u = new URL(a.href, location.href);
+                  var u;
+                  try { u = new URL(a.href, location.href); } catch (err) { return; }
+                  var where = a.closest('[data-ga-location]');
+                  var sec = a.closest('section[id]');
+                  var item = a.closest('[data-ga-item]');
+                  var base = {
+                    link_url: a.href,
+                    link_text: (a.textContent || '').trim().slice(0, 100),
+                    click_location: where ? where.getAttribute('data-ga-location') : (sec ? sec.id : 'page'),
+                    transport_type: 'beacon'
+                  };
+                  if (item) base.item_name = item.getAttribute('data-ga-item');
+                  function send(name, extra) {
+                    var p = {}; var k;
+                    for (k in base) p[k] = base[k];
+                    for (k in extra) p[k] = extra[k];
+                    gtag('event', name, p);
+                  }
                   if (u.protocol === 'tel:') {
-                    gtag('event', 'click_to_call', { link_url: a.href });
+                    send('click_to_call', {});
                   } else if (u.hostname === 'store.istanbul2.com' ||
                              (u.hostname === location.hostname && u.pathname.indexOf('/store') === 0)) {
-                    gtag('event', 'order_online_click', { platform: 'hub', order_type: u.hash === '#delivery' ? 'delivery' : 'menu', link_url: a.href });
+                    send('order_online_click', { platform: 'hub', order_type: u.hash === '#delivery' ? 'delivery' : 'menu' });
                   } else if (u.hostname === 'cash.app') {
                     var last = u.pathname.split('/').filter(Boolean).pop();
-                    var type = last === 'delivery' || last === 'pickup' ? last : 'menu';
-                    gtag('event', 'order_online_click', { platform: 'cash_app', order_type: type, link_url: a.href });
-                  } else if (u.hostname === 'www.order.store' || u.hostname === 'order.store') {
-                    gtag('event', 'order_online_click', { platform: 'uber_eats', order_type: 'delivery', link_url: a.href });
-                  } else if (u.hostname === 'order.online' || /(^|\.)doordash\.com$/.test(u.hostname)) {
-                    gtag('event', 'order_online_click', { platform: 'doordash', order_type: 'delivery', link_url: a.href });
+                    send('order_online_click', { platform: 'cash_app', order_type: last === 'delivery' || last === 'pickup' ? last : 'menu' });
+                  } else if (u.hostname === 'www.order.store' || u.hostname === 'order.store' || /(^|\\.)ubereats\\.com$/.test(u.hostname)) {
+                    send('order_online_click', { platform: 'uber_eats', order_type: 'delivery' });
+                  } else if (u.hostname === 'order.online' || /(^|\\.)doordash\\.com$/.test(u.hostname)) {
+                    send('order_online_click', { platform: 'doordash', order_type: 'delivery' });
                   } else if (u.hostname === 'maps.app.goo.gl' || u.hostname === 'maps.google.com' ||
                              ((u.hostname === 'www.google.com' || u.hostname === 'google.com') && u.pathname.indexOf('/maps') === 0)) {
-                    gtag('event', 'get_directions', { link_url: a.href });
+                    send('get_directions', {});
                   }
-                }, { capture: true, passive: true });
+                }
+                document.addEventListener('click', track, { capture: true, passive: true });
+                document.addEventListener('auxclick', track, { capture: true, passive: true });
               `}
             </Script>
           </>
