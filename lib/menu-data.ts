@@ -76,7 +76,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Served with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$14.95",
-        image: "/images/falafel-pita.webp",
+        image: "/images/Falafel-Pita.webp",
       },
       // Wraps
       {
@@ -141,7 +141,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Falafel over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
-        image: "/images/falafel-rice-bowl.webp",
+        image: "/images/Falafel-Rice-Bowl.webp",
       },
       // Fries Bowl
       {
@@ -199,7 +199,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Falafel over lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
-        image: "/images/falafel-salad-bowl.webp",
+        image: "/images/Falafel-Salad-Bowl.webp",
       },
     ],
   },
@@ -242,7 +242,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Crispy, stone oven thin crust topped with a savory, spiced blend of minced meat. Served traditional style with fresh parsley, sumac onions and lemon wedge for rolling",
         price: "$12.95",
-        image: "/images/lahmacun.webp",
+        image: "/images/LAHMACUN.webp",
       },
       {
         name: "Doner & Cheese Pide",
@@ -283,34 +283,34 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Smoky roasted eggplant dip blended with yogurt, garlic, and lemon, served with fresh bread",
         price: "$6.95",
-        image: "/images/babaganoush.webp",
+        image: "/images/BABAGANOUSH.webp",
       },
       {
         name: "Tzatziki Dip",
         description:
           "Creamy homemade yogurt, cucumber, garlic, and herb dip paired with freshly baked bread. Great for dipping",
         price: "$6.95",
-        image: "/images/tzatziki-dip.webp",
+        image: "/images/Tzatziki-Dip.webp",
       },
       {
         name: "Hummus",
         description:
           "Creamy chickpea dip blended with garlic, lemon, and olive oil. Served with freshly baked bread",
         price: "$6.95",
-        image: "/images/hummus.webp",
+        image: "/images/Hummus.webp",
       },
       {
         name: "French Fries",
         description: "Crispy golden fries",
         price: "$5.95",
-        image: "/images/french-fries.webp",
+        image: "/images/French-Fries.webp",
       },
       {
         name: "Mozzarella Sticks (4 pcs)",
         description:
           "Crispy breaded mozzarella, fried until golden and served with marinara sauce",
         price: "$7.95",
-        image: "/images/mozzarella-sticks.webp",
+        image: "/images/Mozzarella-Sticks.webp",
       },
       {
         name: "Stuffed Grape Leaves (4 pcs)",
@@ -458,14 +458,14 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Sesame crusted Turkish bread ring, crisp outside, soft inside",
         price: "$3.95",
-        image: "/images/simit.webp",
+        image: "/images/SIMIT.webp",
       },
       {
         name: "Gozleme",
         description:
           "Freshly made Turkish stuffed flatbread grilled to crispy perfection with your choice of filling — white cheese, mozzarella or potato",
         price: "$7.95",
-        image: "/images/gozleme.webp",
+        image: "/images/GOZLEME.webp",
       },
       {
         name: "Almond Croissant",
@@ -612,7 +612,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Layered espresso-soaked ladyfingers with rich mascarpone cream",
         price: "$7.95",
-        image: "/images/tiramisu.webp",
+        image: "/images/TIRAMISU.webp",
       },
       {
         name: "Tres Leches Cake",
