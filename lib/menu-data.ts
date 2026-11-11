@@ -47,7 +47,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Crispy falafel in warm Turkish pita with greens, pickles, tomatoes, sumac onions, cucumbers, red cabbage and your choice of sauce",
         price: "$15.95",
-        image: "/images/Falafel-Turkish-Pita.webp",
+        image: "/images/menu/falafel-turkish-pita.webp",
       },
       // Pita
       {
@@ -120,7 +120,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Your choice of protein over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$21.95",
-        image: "/images/Beef-and-Lamb-Doner-Shawarma-Rice-Bowl.webp",
+        image: "/images/menu/beef-lamb-doner-rice-bowl.webp",
       },
       {
         name: "Chicken Döner (Shawarma) Rice Bowl",
@@ -134,7 +134,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Beef & Lamb + Chicken over fluffy rice with lettuce, tomatoes, onions, red cabbage, cucumbers, fresh bread and your choice of sauce",
         price: "$22.95",
-        image: "/images/Mixed-Doner-Beef-and-Lamb-and-Chicken-Shawarma-Rice-Bowl.webp",
+        image: "/images/menu/mixed-doner-rice-bowl.webp",
       },
       {
         name: "Falafel Rice Bowl",
@@ -264,19 +264,21 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Crispy golden pastry rolls filled with savory cheese, served with a side of smoky homemade babaganoush for dipping",
         price: "$7.95",
+        image: "/images/menu/cigar-borek.webp",
       },
       {
         name: "Falafel (4 pcs)",
         description:
           "House-made falafel, fried fresh to order and served with a side of creamy hummus",
         price: "$7.95",
-        image: "/images/Falafel-Side.webp",
+        image: "/images/menu/falafel.webp",
       },
       {
         name: "Kibbeh (2 pcs)",
         description:
           "Golden-fried cracked wheat shells stuffed with seasoned ground beef, served with tzatziki sauce and a lemon wedge",
         price: "$7.95",
+        image: "/images/menu/kibbeh.webp",
       },
       {
         name: "Babaganoush",
@@ -317,14 +319,14 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Tender grape leaves stuffed with seasoned rice and herbs, served with a side of creamy tzatziki sauce",
         price: "$7.95",
-        image: "/images/Stuffed-Grape-Leaves.webp",
+        image: "/images/menu/stuffed-grape-leaves.webp",
       },
       {
         name: "Chikofte (4 pcs)",
         description:
           "Turkish-style seasoned bulgur made with herbs and spices, served with crisp romaine lettuce, fresh lemon, and pomegranate molasses",
         price: "$7.95",
-        image: "/images/chikofte-side.webp",
+        image: "/images/menu/chikofte.webp",
       },
       {
         name: "Red Lentil Soup",
@@ -381,6 +383,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Tomatoes, cucumbers, onions, capers, feta cheese, olive oil & pomegranate molasses",
         price: "$14.95",
+        image: "/images/menu/mediterranean-greek-salad.webp",
       },
       {
         name: "Doner & Cheese Pide",
@@ -452,6 +455,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Flaky layers of thin pastry filled with creamy cheese and herbs",
         price: "$8.95",
+        image: "/images/menu/su-borek.webp",
       },
       {
         name: "Simit",
@@ -505,12 +509,14 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Layered, flaky baklava packed with rich walnut filling and drizzled with golden syrup",
         price: "$2.45",
+        image: "/images/menu/double-walnut-baklava.webp",
       },
       {
         name: "Double Pistachio Baklava",
         description:
           "Flaky, buttery baklava loaded with pistachio filling and soaked in sweet syrup",
         price: "$2.45",
+        image: "/images/menu/double-pistachio-baklava.webp",
       },
       {
         name: "Carrot Baklava",
@@ -544,6 +550,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Fluffy sponge cake rolled with pistachio cream and light sweet syrup",
         price: "$3.95",
+        image: "/images/menu/pistachio-roll.webp",
       },
       {
         name: "Kadayif Baklava",
@@ -562,6 +569,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Golden, crispy shredded pastry baked in the oven with stretchy melted cheese, finished with warm syrup. Add one slice of Marash ice cream $3",
         price: "$11.95",
+        image: "/images/menu/kunefe.webp",
       },
       {
         name: "Kunefe Pistachio",
@@ -593,6 +601,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         description:
           "Decadent pistachio cake with creamy frosting and crunchy pistachios",
         price: "$7.95",
+        image: "/images/menu/pistachio-dream-cake.webp",
       },
       {
         name: "Red Velvet Cake",
@@ -640,8 +649,16 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     title: "Drinks, Tea & Coffee",
     subtitle: "Traditional Turkish beverages and refreshments",
     items: [
-      { name: "Nestle Water", price: "$1.95" },
-      { name: "Perrier Sparkling Water", price: "$3.95" },
+      {
+        name: "Nestle Water",
+        price: "$1.95",
+        image: "/images/menu/nestle-water.webp",
+      },
+      {
+        name: "Perrier Sparkling Water",
+        price: "$3.95",
+        image: "/images/menu/perrier-sparkling-water.webp",
+      },
       {
         name: "Hibiscus Lemonade",
         price: "$3.95",
@@ -651,6 +668,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Soda Can",
         description: "Coke, Diet, Zero, Sprite, Dr. Pepper",
         price: "$2.95",
+        image: "/images/menu/soda-can.webp",
       },
       {
         name: "Ayran",
@@ -662,6 +680,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
         name: "Salgam",
         description: "Fermented turnip juice",
         price: "$4.95",
+        image: "/images/menu/salgam.webp",
       },
       {
         name: "Turkish Tea Cup",
