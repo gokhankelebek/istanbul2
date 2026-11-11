@@ -109,6 +109,9 @@ export default function RootLayout({
                   var u = new URL(a.href, location.href);
                   if (u.protocol === 'tel:') {
                     gtag('event', 'click_to_call', { link_url: a.href });
+                  } else if (u.hostname === 'store.istanbul2.com' ||
+                             (u.hostname === location.hostname && u.pathname.indexOf('/store') === 0)) {
+                    gtag('event', 'order_online_click', { platform: 'hub', order_type: u.hash === '#delivery' ? 'delivery' : 'menu', link_url: a.href });
                   } else if (u.hostname === 'cash.app') {
                     var last = u.pathname.split('/').filter(Boolean).pop();
                     var type = last === 'delivery' || last === 'pickup' ? last : 'menu';

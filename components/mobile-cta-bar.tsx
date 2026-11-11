@@ -1,12 +1,8 @@
 "use client";
 
-import { Phone, MapPin, ShoppingBag, Bike } from "lucide-react";
-import { RESTAURANT, LINKS, ORDER_CHANNELS } from "@/lib/constants";
-
-const CHANNEL_ICONS = {
-  pickup: ShoppingBag,
-  delivery: Bike,
-} as const;
+import Link from "next/link";
+import { Phone, MapPin, ShoppingBag, UtensilsCrossed } from "lucide-react";
+import { RESTAURANT, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
 export default function MobileCtaBar() {
   return (
@@ -29,24 +25,21 @@ export default function MobileCtaBar() {
             <MapPin size={20} className="text-gold" />
             <span className="text-[11px] font-semibold">Directions</span>
           </a>
-          {ORDER_CHANNELS.map((channel) => {
-            const Icon = CHANNEL_ICONS[channel.key];
-            return (
-              <a
-                key={channel.key}
-                href={channel.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-crimson py-2 px-1 text-cream transition-colors active:bg-crimson-light"
-                aria-label={channel.ariaLabel}
-              >
-                <Icon size={20} />
-                <span className="text-[10px] font-bold leading-tight text-center">
-                  {channel.labelShort}
-                </span>
-              </a>
-            );
-          })}
+          <Link
+            href="/menu"
+            className="flex flex-col items-center gap-1 rounded-xl py-2.5 text-cream/80 transition-colors active:bg-cream/10"
+          >
+            <UtensilsCrossed size={20} className="text-gold" />
+            <span className="text-[11px] font-semibold">Menu</span>
+          </Link>
+          <a
+            href={LINKS.orderOnline}
+            className="flex flex-col items-center justify-center gap-1 rounded-xl bg-crimson py-2.5 text-cream transition-colors active:bg-crimson-light"
+            aria-label={ORDER_ONLINE_COPY.ariaLabel}
+          >
+            <ShoppingBag size={20} />
+            <span className="text-[11px] font-bold">{ORDER_ONLINE_COPY.labelShort}</span>
+          </a>
         </div>
       </div>
     </div>
