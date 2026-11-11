@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import SiteLink, { useOnStoreHost } from "@/components/site-link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -12,6 +12,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  // On store.istanbul2.com the path is "/" but this isn't the home page.
+  const onStore = useOnStoreHost();
+  const isActive = (href: string) => !onStore && pathname === href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -38,7 +41,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl flex-nowrap items-center justify-between gap-4 px-5 lg:px-8">
-          <Link href="/" className="flex items-center gap-3">
+          <SiteLink href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo-istanbul.webp"
               alt="Istanbul Mediterranean 2"
@@ -53,29 +56,29 @@ export default function Navbar() {
               </span>
               <span className="hidden text-xs text-stone-light sm:block">Halal · Fremont Street, Las Vegas</span>
             </span>
-          </Link>
+          </SiteLink>
 
           {/* Desktop nav */}
           <div className="hidden flex-shrink-0 items-center gap-5 lg:flex xl:gap-8">
             {NAV_ITEMS.map((item) => (
-              <Link
+              <SiteLink
                 key={item.href}
                 href={item.href}
                 className={`relative text-sm font-medium tracking-wide transition-colors ${
-                  pathname === item.href
+                  isActive(item.href)
                     ? "text-crimson"
                     : "text-stone hover:text-crimson"
                 }`}
               >
                 {item.label}
-                {pathname === item.href && (
+                {isActive(item.href) && (
                   <motion.div
                     layoutId="nav-underline"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-crimson"
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   />
                 )}
-              </Link>
+              </SiteLink>
             ))}
             <a
               href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
@@ -122,16 +125,16 @@ export default function Navbar() {
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ delay: i * 0.08 }}
                 >
-                  <Link
+                  <SiteLink
                     href={item.href}
                     className={`font-heading text-3xl font-bold transition-colors ${
-                      pathname === item.href
+                      isActive(item.href)
                         ? "text-gold"
                         : "text-cream hover:text-gold-light"
                     }`}
                   >
                     {item.label}
-                  </Link>
+                  </SiteLink>
                 </motion.div>
               ))}
               <motion.div

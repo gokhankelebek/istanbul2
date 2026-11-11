@@ -1,4 +1,4 @@
-import Link from "next/link";
+import SiteLink from "@/components/site-link";
 import Image from "next/image";
 import { ExternalLink, Instagram, MapPin, Phone, Rss } from "lucide-react";
 import {
@@ -56,12 +56,12 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-3">
+            <SiteLink href="/" className="flex items-center gap-3">
               <Image src="/images/logo-istanbul.webp" alt="" width={44} height={44} className="h-11 w-11" />
               <span className="font-heading text-xl font-bold uppercase tracking-wide text-white">
                 Istanbul Mediterranean 2
               </span>
-            </Link>
+            </SiteLink>
             <p className="max-w-xs text-sm leading-relaxed text-stone-400">
               Turkish street food and family recipes, 100% Zabiha Halal. Inside the Inspire
               building on Fremont Street.
@@ -81,17 +81,17 @@ export default function Footer() {
           <nav aria-label="Footer" className="flex flex-col gap-3">
             <h2 className={heading}>Explore</h2>
             {NAV_ITEMS.map((item) => (
-              <Link key={item.href} href={item.href} className={link}>
+              <SiteLink key={item.href} href={item.href} className={link}>
                 {item.label}
-              </Link>
+              </SiteLink>
             ))}
             <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className={`${link} inline-flex items-center gap-1`}>
               Leave a review <ExternalLink className="h-3 w-3" aria-hidden="true" />
             </a>
-            <Link href="/feed.xml" className={`${link} inline-flex items-center gap-1.5`}>
+            <SiteLink href="/feed.xml" className={`${link} inline-flex items-center gap-1.5`}>
               <Rss className="h-3.5 w-3.5" aria-hidden="true" />
               Blog RSS
-            </Link>
+            </SiteLink>
           </nav>
 
           {/* Hours */}
@@ -130,9 +130,9 @@ export default function Footer() {
             <h2 className={heading}>Dining in Las Vegas</h2>
             <nav aria-label="Dining in Las Vegas" className="flex flex-wrap gap-x-5 gap-y-2">
               {FOOTER_DINING_LINKS.map((item) => (
-                <Link key={item.href} href={item.href} className={link}>
+                <SiteLink key={item.href} href={item.href} className={link}>
                   {item.label}
-                </Link>
+                </SiteLink>
               ))}
             </nav>
           </div>
@@ -140,9 +140,9 @@ export default function Footer() {
             <h2 className={heading}>Discover our dishes</h2>
             <nav aria-label="Our dishes" className="flex flex-wrap gap-x-5 gap-y-2">
               {FOOTER_SEO_LINKS.map((item) => (
-                <Link key={item.href} href={item.href} className={link}>
+                <SiteLink key={item.href} href={item.href} className={link}>
                   {item.label}
-                </Link>
+                </SiteLink>
               ))}
             </nav>
           </div>
