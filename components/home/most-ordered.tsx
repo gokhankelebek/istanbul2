@@ -23,6 +23,8 @@ export default function MostOrdered() {
         {MOST_ORDERED.map((d) => (
           <article
             key={d.name}
+            data-ga-location="dish_card"
+            data-ga-item={d.name}
             className="flex flex-col overflow-hidden rounded-[20px] border border-stone-200 bg-white transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(28,25,23,0.4)]"
           >
             <div className="relative aspect-[4/3] bg-stone-100">

@@ -21,9 +21,9 @@ export default function Footer() {
   const tel = `tel:+1${RESTAURANT.phone.replace(/[^0-9]/g, "")}`;
 
   return (
-    <footer className="bg-stone text-stone-300">
+    <footer data-ga-location="footer" className="bg-stone text-stone-300">
       {/* Order band */}
-      <div className="border-b border-stone-800">
+      <div data-ga-location="footer_order_band" className="border-b border-stone-800">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-5 py-10 lg:px-8">
           <div className="flex flex-col gap-2">
             <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-gold">

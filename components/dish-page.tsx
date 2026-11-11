@@ -19,7 +19,7 @@ import type { DishPageData } from "@/lib/dish-pages-data";
 
 export default function DishPage({ dish }: { dish: DishPageData }) {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream" data-ga-item={dish.englishName}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(dish.jsonLd) }}

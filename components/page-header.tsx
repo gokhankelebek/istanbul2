@@ -25,7 +25,7 @@ export default function PageHeader({
   note?: ReactNode;
 }) {
   return (
-    <section className="border-b border-stone-200 bg-white pt-[76px] sm:pt-[84px]">
+    <section data-ga-location="page_header" className="border-b border-stone-200 bg-white pt-[76px] sm:pt-[84px]">
       <div
         className={`mx-auto flex max-w-7xl flex-wrap items-center gap-10 px-5 lg:px-8 ${
           image ? "py-10 sm:py-14" : "py-12 sm:py-16"

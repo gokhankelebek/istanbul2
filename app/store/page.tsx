@@ -71,7 +71,7 @@ export default function StorePage() {
         </p>
 
         {/* Pickup */}
-        <section aria-labelledby="pickup-heading" className="mt-10">
+        <section data-ga-location="store_pickup" aria-labelledby="pickup-heading" className="mt-10">
           <h2
             id="pickup-heading"
             className="flex items-center gap-2 font-heading text-2xl font-bold"
@@ -116,6 +116,7 @@ export default function StorePage() {
 
         {/* Delivery */}
         <section
+          data-ga-location="store_delivery"
           id="delivery"
           aria-labelledby="delivery-heading"
           className="mt-10 scroll-mt-6"
