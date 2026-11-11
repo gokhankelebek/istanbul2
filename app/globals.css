@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --color-crimson: #A51C30;
+  --color-crimson: #BE1E2D;
   --color-crimson-dark: #8A1526;
-  --color-crimson-light: #C42B42;
+  --color-crimson-light: #A51A27;
   --color-gold: #C9A84C;
   --color-gold-light: #D4BA6A;
   --color-gold-dark: #B09138;
-  --color-cream: #FDF6EC;
-  --color-cream-dark: #F5EBD6;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F5F4;
   --color-stone: #1C1917;
   --color-stone-light: #44403C;
   --color-olive: #5A6E3A;
@@ -25,20 +25,20 @@
   --color-foreground: var(--foreground);
   --color-crimson: var(--color-crimson);
   --color-crimson-dark: #8A1526;
-  --color-crimson-light: #C42B42;
+  --color-crimson-light: #A51A27;
   --color-gold: #C9A84C;
   --color-gold-light: #D4BA6A;
   --color-gold-dark: #B09138;
-  --color-cream: #FDF6EC;
-  --color-cream-dark: #F5EBD6;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F5F4;
   --color-stone: #1C1917;
   --color-stone-light: #44403C;
   --color-olive: #5A6E3A;
   --color-olive-light: #6E854A;
   --color-warm-gray: #9C958C;
   --color-warm-gray-light: #C4BFB8;
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: var(--font-oswald), "Oswald", Arial Narrow, sans-serif;
+  --font-body: var(--font-manrope), "Manrope", system-ui, sans-serif;
 }
 
 body {
