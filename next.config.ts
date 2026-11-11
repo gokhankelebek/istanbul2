@@ -36,6 +36,20 @@ const RENAMED_ITEM_SLUGS: Record<string, string> = {
   "potato-pogaca": "pogaca",
 };
 
+/** Ordering hub subdomain — its root serves app/store. */
+const STORE_HOST = "store.istanbul2.com";
+const MAIN_HOSTS = ["www.istanbul2.com", "istanbul2.com"];
+/** Paths store.istanbul2.com still serves itself: the hub page and the files it loads. */
+const STORE_HOST_ALLOWED = [
+  "store$",
+  "_next/",
+  "images/",
+  "favicon\\.ico$",
+  "icon\\.png$",
+  "apple-icon\\.png$",
+  "apple-touch-icon\\.png$",
+].join("|");
+
 const nextConfig: NextConfig = {
   reactCompiler: true,
 
@@ -50,13 +64,45 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return Object.entries(RENAMED_ITEM_SLUGS).flatMap(([from, to]) =>
+    const renamed = Object.entries(RENAMED_ITEM_SLUGS).flatMap(([from, to]) =>
       ["/menu", "/in-store"].map((base) => ({
         source: `${base}/${from}`,
         destination: `${base}/${to}`,
         permanent: true,
       }))
     );
+    return [
+      ...renamed,
+      // The ordering hub lives at store.istanbul2.com; send the main-site path there.
+      ...MAIN_HOSTS.map((host) => ({
+        source: "/store",
+        has: [{ type: "host" as const, value: host }],
+        destination: `https://${STORE_HOST}/`,
+        permanent: false,
+      })),
+      // store.istanbul2.com only serves the hub (plus its assets); everything
+      // else belongs on the main site.
+      {
+        source: `/:path((?!${STORE_HOST_ALLOWED}).+)`,
+        has: [{ type: "host" as const, value: STORE_HOST }],
+        destination: "https://www.istanbul2.com/:path",
+        permanent: false,
+      },
+    ];
+  },
+
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          has: [{ type: "host" as const, value: STORE_HOST }],
+          destination: "/store",
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
 };
 

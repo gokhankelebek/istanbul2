@@ -137,7 +137,7 @@ export default function InfoBar() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 font-semibold text-gold/95 hover:text-gold transition-colors"
-          aria-label="Order delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+          aria-label="Order delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab"
         >
           <Bike size={16} className="text-gold shrink-0" />
           <span>Delivery</span>

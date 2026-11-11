@@ -5,9 +5,10 @@ import { usePathname } from "next/navigation";
 /**
  * Hides global site chrome (navbar, footer, mobile order bar) on routes that
  * should be self-contained — e.g. the /in-store view-only menu, which must not
- * surface any "Order Online" navigation.
+ * surface any "Order Online" navigation, and the /store ordering hub
+ * (store.istanbul2.com), which has its own header.
  */
-const HIDDEN_PREFIXES = ["/in-store"];
+const HIDDEN_PREFIXES = ["/in-store", "/store"];
 
 export default function ConditionalChrome({
   children,

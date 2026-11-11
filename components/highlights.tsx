@@ -121,7 +121,7 @@ export default function Highlights() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:text-gold-light transition-colors underline underline-offset-2 font-medium"
-              aria-label="Order delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+              aria-label="Order delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab"
             >
               delivery
             </a>{" "}
