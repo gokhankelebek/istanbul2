@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <div className="mx-auto max-w-7xl px-5 pt-14 pb-28 md:pb-14 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div className="flex flex-col gap-4">
