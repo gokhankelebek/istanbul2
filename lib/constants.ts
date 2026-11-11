@@ -25,10 +25,19 @@ export const LINKS = {
   fremontMenu: "https://www.istanbul2.com/menu",
   /** Flagship Strip location — Grand Bazaar Shops */
   stripWebsite: "https://www.istanbullv.com",
-  /** Cash App ordering — base page plus direct pickup/delivery entry points */
-  orderOnline: "https://cash.app/order/$istanbulmediterrane2",
+  /** Ordering hub — store.istanbul2.com (served by app/store). Use `orderHub` for links inside the site. */
+  store: "https://store.istanbul2.com",
+  orderHub: "/store",
+  orderOnline: "/store",
+  /** Pickup goes straight to Cash App */
   orderPickup: "https://cash.app/order/$istanbulmediterrane2/pickup",
-  orderDelivery: "https://cash.app/order/$istanbulmediterrane2/delivery",
+  /** Delivery opens the hub, where guests pick Cash App, Uber Eats or DoorDash */
+  orderDelivery: "/store#delivery",
+  cashAppDelivery: "https://cash.app/order/$istanbulmediterrane2/delivery",
+  uberEats:
+    "https://www.order.store/store/istanbul-mediterranean/0t2idtJrWsK57ikiFt06BA?diningMode=DELIVERY",
+  /** DoorDash storefront (order.online) for the Fremont store. Set to "" to hide the option. */
+  doorDash: "https://order.online/store/-41526579?hideModal=true",
   instagram: "https://www.instagram.com/istanbul_mediterranean/",
   googleMaps:
     "https://maps.google.com/?q=505+Fremont+Street,+Las+Vegas,+NV+89101",
@@ -36,7 +45,7 @@ export const LINKS = {
     "https://whatnow.com/las-vegas/restaurants/istanbul-mediterranean-to-set-up-shop-on-fremont-street/",
 } as const;
 
-/** Primary CTA copy for Istanbul 2 Cash App ordering (pickup & delivery from Fremont) */
+/** Primary CTA copy for Istanbul 2 online ordering (pickup & delivery from Fremont) */
 export const ORDER_ONLINE_COPY = {
   label: "Order Pickup & Delivery",
   /** Shorter label for tight mobile UI */
@@ -44,7 +53,7 @@ export const ORDER_ONLINE_COPY = {
   promo:
     "Pickup and delivery are live — order direct from Istanbul 2 on Fremont, same Halal menu as the dining room.",
   ariaLabel:
-    "Order pickup or delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
+    "Order pickup or delivery from Istanbul Mediterranean 2 — opens our ordering page in a new tab",
 } as const;
 
 /** Pickup / Delivery CTA pair — map over this wherever ordering buttons appear */
@@ -63,9 +72,31 @@ export const ORDER_CHANNELS = [
     label: "Order Delivery",
     labelShort: "Delivery",
     ariaLabel:
-      "Order delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab",
+      "Order delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab",
   },
 ] as const;
+
+/** Delivery partners listed on the ordering hub. Entries with an empty href are hidden. */
+export const DELIVERY_PARTNERS = [
+  {
+    key: "cash_app",
+    name: "Cash App",
+    note: "Order direct from our kitchen",
+    href: LINKS.cashAppDelivery as string,
+  },
+  {
+    key: "uber_eats",
+    name: "Uber Eats",
+    note: "Delivered by Uber",
+    href: LINKS.uberEats as string,
+  },
+  {
+    key: "doordash",
+    name: "DoorDash",
+    note: "Delivered by DoorDash",
+    href: LINKS.doorDash as string,
+  },
+];
 
 /** SEO landing pages for footer links — helps crawlability and internal linking */
 export const FOOTER_SEO_LINKS = [
@@ -175,7 +206,7 @@ export const FAQ_ITEMS = [
   {
     question: "Can I order online for pickup or delivery from Istanbul 2?",
     answer:
-      "Yes — Istanbul Mediterranean 2 on Fremont now offers online ordering for pickup and delivery. Place your order at cash.app/order/$istanbulmediterrane2 (our official Cash App ordering page) for the full Halal menu straight from our kitchen. We're also on major delivery apps. For large catering, visit istanbul2.com/catering or call (702) 861-6905.",
+      "Yes — Istanbul Mediterranean 2 on Fremont now offers online ordering for pickup and delivery. Order at store.istanbul2.com (our official ordering page): pickup through Cash App, and delivery through Cash App, Uber Eats or DoorDash. Same full Halal menu straight from our kitchen. We're also on major delivery apps. For large catering, visit istanbul2.com/catering or call (702) 861-6905.",
   },
 ] as const;
 
@@ -337,7 +368,7 @@ export const HOMEPAGE_FAQ_JSON_LD = {
       name: "Can I order online for pickup or delivery from Istanbul 2?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Istanbul Mediterranean 2 on Fremont offers online ordering for pickup and delivery at cash.app/order/$istanbulmediterrane2 — the full Halal menu from our kitchen. Major delivery apps also carry us. For catering, visit istanbul2.com/catering or call (702) 861-6905.",
+        text: "Yes. Istanbul Mediterranean 2 on Fremont offers online ordering for pickup and delivery at store.istanbul2.com — pickup via Cash App, delivery via Cash App, Uber Eats or DoorDash. The full Halal menu from our kitchen. Major delivery apps also carry us. For catering, visit istanbul2.com/catering or call (702) 861-6905.",
       },
     },
     {

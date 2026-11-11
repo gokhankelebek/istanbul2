@@ -116,7 +116,7 @@ export default function BreakfastPageClient() {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-              aria-label="Order breakfast delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+              aria-label="Order breakfast delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab"
             >
               Breakfast delivery
             </a>
@@ -561,7 +561,7 @@ export default function BreakfastPageClient() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-6 py-3 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
-                  aria-label="Order breakfast delivery from Istanbul Mediterranean 2 — opens secure checkout in a new tab"
+                  aria-label="Order breakfast delivery from Istanbul Mediterranean 2 — choose Cash App, Uber Eats or DoorDash in a new tab"
                 >
                   Breakfast delivery
                 </a>

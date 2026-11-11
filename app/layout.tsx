@@ -100,7 +100,7 @@ export default function RootLayout({
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${gaId}');
-                // Conversion clicks (calls, directions, Cash App orders) as GA4 events.
+                // Conversion clicks (calls, directions, online orders) as GA4 events.
                 // Delegated so it covers links rendered after hydration; never blocks navigation.
                 document.addEventListener('click', function (e) {
                   if (!(e.target instanceof Element)) return;
@@ -113,6 +113,10 @@ export default function RootLayout({
                     var last = u.pathname.split('/').filter(Boolean).pop();
                     var type = last === 'delivery' || last === 'pickup' ? last : 'menu';
                     gtag('event', 'order_online_click', { platform: 'cash_app', order_type: type, link_url: a.href });
+                  } else if (u.hostname === 'www.order.store' || u.hostname === 'order.store') {
+                    gtag('event', 'order_online_click', { platform: 'uber_eats', order_type: 'delivery', link_url: a.href });
+                  } else if (u.hostname === 'order.online' || /(^|\.)doordash\.com$/.test(u.hostname)) {
+                    gtag('event', 'order_online_click', { platform: 'doordash', order_type: 'delivery', link_url: a.href });
                   } else if (u.hostname === 'maps.app.goo.gl' || u.hostname === 'maps.google.com' ||
                              ((u.hostname === 'www.google.com' || u.hostname === 'google.com') && u.pathname.indexOf('/maps') === 0)) {
                     gtag('event', 'get_directions', { link_url: a.href });
