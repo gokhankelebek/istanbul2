@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Download } from "lucide-react";
-import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
+import PageHeader, { btnPrimary } from "@/components/page-header";
 import { MENU_CATEGORIES } from "@/lib/menu-data";
 import { LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 import MenuSection from "@/components/menu-section";
@@ -60,9 +58,6 @@ export default function MenuPageClient() {
         <a href={LINKS.orderOnline} className={btnPrimary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
           {ORDER_ONLINE_COPY.label}
         </a>
-        <a href="/istanbul-2-menu.pdf" download className={btnSecondary}>
-          <Download size={18} aria-hidden="true" /> PDF menu
-        </a>
       </PageHeader>
 
       {/* Sticky category nav */}
@@ -95,23 +90,6 @@ export default function MenuPageClient() {
         {MENU_CATEGORIES.map((category) => (
           <MenuSection key={category.id} category={category} />
         ))}
-
-        {/* Download PDF */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center py-8"
-        >
-          <a
-            href="/istanbul-2-menu.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold text-stone transition-colors hover:border-stone hover:bg-stone-50"
-          >
-            <Download size={18} />
-            Download PDF Menu
-          </a>
-        </motion.div>
       </div>
     </div>
   );
