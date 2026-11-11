@@ -1,12 +1,12 @@
 "use client";
 
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
   ChevronDown,
-  ShieldCheck,
   MapPin,
   Clock,
   Phone,
@@ -34,59 +34,22 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
   return (
     <div className="min-h-screen bg-cream">
       {/* ── HERO ── */}
-      <section className="relative h-[50vh] min-h-[360px] overflow-hidden lg:h-[68vh] lg:max-h-[760px]">
-        <div className="absolute inset-0">
-          <Image
-            src={heroImage}
-            alt={item.name}
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-        <div className="relative flex h-full flex-col items-center justify-end px-5 pb-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-3"
-          >
-            <Link
-              href={`/menu#${category.id}`}
-              className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm hover:bg-gold/20 transition-colors"
-            >
-              {category.title}
-            </Link>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="font-heading text-3xl font-bold leading-tight text-cream sm:text-4xl md:text-5xl lg:text-6xl max-w-4xl"
-          >
-            {item.name}
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-4 flex items-center gap-4"
-          >
-            <span className="text-2xl font-bold text-gold font-heading">
-              {item.price}
-            </span>
-            <span className="flex items-center gap-1.5 rounded-full bg-olive/15 px-3 py-1 text-xs font-semibold text-olive-light border border-olive/20">
-              <ShieldCheck size={12} />
-              100% Halal
-            </span>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={["100% Halal"]}
+        eyebrow={category.title}
+        title={item.name}
+        image={{ src: heroImage, alt: item.name }}
+      >
+        <span className="inline-flex h-[52px] items-center rounded-full bg-gold px-5 font-heading text-2xl font-semibold text-stone">
+          {item.price}
+        </span>
+        <a href={LINKS.orderOnline} className={btnPrimary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
+          {ORDER_ONLINE_COPY.label}
+        </a>
+        <Link href={`/menu#${category.id}`} className={btnSecondary}>
+          More {category.title}
+        </Link>
+      </PageHeader>
 
       {/* ── DESCRIPTION ── */}
       <section className="py-16 lg:py-20">
@@ -132,7 +95,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
-            <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               More from {category.title}
             </h2>
             {category.subtitle && (
@@ -201,7 +164,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
-            <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               FAQ
             </h2>
           </motion.div>
@@ -211,7 +174,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
               <Accordion.Item
                 key={i}
                 value={`faq-${i}`}
-                className="group overflow-hidden rounded-xl border border-stone/8 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
+                className="group overflow-hidden rounded-xl border border-stone-200 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
               >
                 <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone transition-colors hover:text-crimson [&[data-state=open]>svg]:rotate-180">
                   {faq.question}
@@ -243,7 +206,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
             <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
               Visit Us
             </p>
-            <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               Try It at 505 Fremont
             </h2>
 

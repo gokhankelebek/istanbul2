@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Rss } from "lucide-react";
-import { Instagram, Phone, MapPin, Clock, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, Instagram, MapPin, Phone, Rss } from "lucide-react";
 import {
   RESTAURANT,
   HOURS,
@@ -11,166 +11,148 @@ import {
   ORDER_ONLINE_COPY,
 } from "@/lib/constants";
 
+const REVIEW_URL =
+  process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review";
+
+const heading = "mb-4 font-heading text-sm font-semibold uppercase tracking-[0.08em] text-white";
+const link = "text-sm text-stone-300 transition-colors hover:text-white";
+
 export default function Footer() {
+  const tel = `tel:+1${RESTAURANT.phone.replace(/[^0-9]/g, "")}`;
+
   return (
-    <footer className="relative bg-stone text-cream/80 turkish-pattern-footer overflow-hidden">
-      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-stone text-stone-300">
+      {/* Order band */}
+      <div className="border-b border-stone-800">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-5 py-10 lg:px-8">
+          <div className="flex flex-col gap-2">
+            <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-gold">
+              Open late, every night
+            </span>
+            <p className="font-heading text-3xl font-bold leading-none text-white sm:text-4xl">
+              Hungry? Your döner is a few taps away.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={LINKS.orderOnline}
+              aria-label={ORDER_ONLINE_COPY.ariaLabel}
+              className="flex h-[52px] items-center rounded-full bg-crimson px-7 font-bold text-white transition-colors hover:bg-crimson-light"
+            >
+              {ORDER_ONLINE_COPY.label}
+            </a>
+            <a
+              href={tel}
+              className="flex h-[52px] items-center gap-2 rounded-full border border-stone-600 px-6 font-semibold text-white transition-colors hover:border-white"
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {RESTAURANT.phone}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <h3 className="font-heading text-xl font-bold text-cream mb-4">
-              Istanbul Mediterranean 2
-            </h3>
-            <p className="text-sm leading-relaxed text-cream/60 mb-6">
-              The Heart of Istanbul, Now in Downtown Las Vegas. Authentic Turkish
-              cuisine, 100% Zabiha Halal certified.{" "}
-              <span className="text-cream/75">
-                Order pickup &amp; delivery from our Fremont kitchen.
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-3">
+              <Image src="/images/logo-istanbul.webp" alt="" width={44} height={44} className="h-11 w-11" />
+              <span className="font-heading text-xl font-bold uppercase tracking-wide text-white">
+                Istanbul Mediterranean 2
               </span>
+            </Link>
+            <p className="max-w-xs text-sm leading-relaxed text-stone-400">
+              Turkish street food and family recipes, 100% Zabiha Halal. Inside the Inspire
+              building on Fremont Street.
             </p>
             <a
               href={LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light transition-colors"
+              className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-gold hover:text-gold-light"
             >
-              <Instagram size={18} />
+              <Instagram className="h-[18px] w-[18px]" aria-hidden="true" />
               @istanbul_mediterranean
             </a>
           </div>
 
-          {/* Quick Links */}
+          {/* Explore */}
+          <nav aria-label="Footer" className="flex flex-col gap-3">
+            <h2 className={heading}>Explore</h2>
+            {NAV_ITEMS.map((item) => (
+              <Link key={item.href} href={item.href} className={link}>
+                {item.label}
+              </Link>
+            ))}
+            <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className={`${link} inline-flex items-center gap-1`}>
+              Leave a review <ExternalLink className="h-3 w-3" aria-hidden="true" />
+            </a>
+            <Link href="/feed.xml" className={`${link} inline-flex items-center gap-1.5`}>
+              <Rss className="h-3.5 w-3.5" aria-hidden="true" />
+              Blog RSS
+            </Link>
+          </nav>
+
+          {/* Hours */}
+          <div className="flex flex-col">
+            <h2 className={heading}>Hours</h2>
+            <dl className="flex flex-col gap-3">
+              {HOURS.map((h) => (
+                <div key={h.days} className="rounded-2xl bg-stone-800/70 px-4 py-3">
+                  <dt className="text-[13px] text-stone-400">{h.days}</dt>
+                  <dd className="mt-0.5 font-heading text-lg font-semibold text-white">{h.hours}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Visit */}
+          <div className="flex flex-col gap-3">
+            <h2 className={heading}>Visit us</h2>
+            <a href={LINKS.googleMaps} target="_blank" rel="noopener noreferrer" className={`${link} flex items-start gap-2`}>
+              <MapPin className="mt-0.5 h-4 w-4 flex-none text-crimson" aria-hidden="true" />
+              <span>{RESTAURANT.address}</span>
+            </a>
+            <a href={tel} className={`${link} flex items-center gap-2`}>
+              <Phone className="h-4 w-4 flex-none text-crimson" aria-hidden="true" />
+              {RESTAURANT.phone}
+            </a>
+            <a href={`mailto:${RESTAURANT.cateringEmail}`} className={link}>
+              {RESTAURANT.cateringEmail}
+            </a>
+          </div>
+        </div>
+
+        {/* SEO links */}
+        <div className="mt-12 grid gap-8 border-t border-stone-800 pt-8 md:grid-cols-2">
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-              Explore
-            </h4>
-            <nav className="flex flex-col gap-3">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm hover:text-cream transition-colors"
-                >
+            <h2 className={heading}>Dining in Las Vegas</h2>
+            <nav aria-label="Dining in Las Vegas" className="flex flex-wrap gap-x-5 gap-y-2">
+              {FOOTER_DINING_LINKS.map((item) => (
+                <Link key={item.href} href={item.href} className={link}>
                   {item.label}
                 </Link>
               ))}
-              <a
-                href={LINKS.orderOnline}
-                className="text-sm hover:text-cream transition-colors font-medium text-gold/90"
-                aria-label={ORDER_ONLINE_COPY.ariaLabel}
-              >
-                {ORDER_ONLINE_COPY.label}
-              </a>
-              {(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review") && (
-                <a
-                  href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://g.page/r/Cak2OTKFBTxcEAE/review"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1"
-                >
-                  Leave a Review <ExternalLink size={12} />
-                </a>
-              )}
-              <Link
-                href="/feed.xml"
-                className="text-sm hover:text-cream transition-colors inline-flex items-center gap-1.5 text-cream/70"
-              >
-                <Rss size={14} className="text-gold/80" />
-                Blog RSS
-              </Link>
             </nav>
           </div>
-
-          {/* Hours */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-              Hours
-            </h4>
-            <div className="space-y-3">
-              {HOURS.map((h) => (
-                <div key={h.days} className="flex items-start gap-2 text-sm">
-                  <Clock size={14} className="mt-0.5 shrink-0 text-cream/40" />
-                  <div>
-                    <div className="text-cream/90">{h.days}</div>
-                    <div className="text-cream/50">{h.hours}</div>
-                  </div>
-                </div>
+            <h2 className={heading}>Discover our dishes</h2>
+            <nav aria-label="Our dishes" className="flex flex-wrap gap-x-5 gap-y-2">
+              {FOOTER_SEO_LINKS.map((item) => (
+                <Link key={item.href} href={item.href} className={link}>
+                  {item.label}
+                </Link>
               ))}
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-              Visit Us
-            </h4>
-            <div className="space-y-3 text-sm">
-              <a
-                href={LINKS.googleMaps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-2 hover:text-cream transition-colors"
-              >
-                <MapPin size={14} className="mt-0.5 shrink-0 text-cream/40" />
-                <span>{RESTAURANT.address}</span>
-              </a>
-              <a
-                href={`tel:${RESTAURANT.phone}`}
-                className="flex items-center gap-2 hover:text-cream transition-colors"
-              >
-                <Phone size={14} className="shrink-0 text-cream/40" />
-                {RESTAURANT.phone}
-              </a>
-            </div>
+            </nav>
           </div>
         </div>
 
-        {/* Dining in Las Vegas */}
-        <div className="mt-12 border-t border-cream/10 pt-8">
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-            Dining in Las Vegas
-          </h4>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-8">
-            {FOOTER_DINING_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-cream/70 hover:text-gold transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
-            Discover Our Dishes
-          </h4>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            {FOOTER_SEO_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-cream/70 hover:text-gold transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-cream/10 pt-8">
-          <p className="text-xs text-cream/40">
-            &copy; {new Date().getFullYear()} Istanbul Mediterranean 2.
-            All rights reserved.
-          </p>
-          <p className="text-xs text-cream/40">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-stone-800 pt-6 text-xs text-stone-400 sm:flex-row">
+          <p>&copy; {new Date().getFullYear()} Istanbul Mediterranean 2. All rights reserved.</p>
+          <p>
             Also visit us at{" "}
-            <a
-              href={LINKS.stripWebsite}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cream/60 hover:text-gold transition-colors"
-            >
+            <a href={LINKS.stripWebsite} target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-white">
               Grand Bazaar Shops, Las Vegas Strip
             </a>
           </p>

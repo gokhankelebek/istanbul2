@@ -100,7 +100,7 @@ export default function Highlights() {
             </span>
             <div className="h-px flex-1 max-w-16 bg-gradient-to-l from-transparent to-gold/60" />
           </div>
-          <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl lg:text-5xl max-w-2xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl lg:text-5xl max-w-2xl">
             Not just another
             <span className="text-gold"> kebab shop</span>
           </h2>

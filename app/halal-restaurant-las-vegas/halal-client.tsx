@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDown, ShieldCheck, MapPin, Phone, ArrowRight } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
+import { ChevronDown, MapPin, ArrowRight } from "lucide-react";
+import { RESTAURANT, LINKS } from "@/lib/constants";
 
 const HALAL_FAQ = [
   {
@@ -43,68 +42,20 @@ export default function HalalPageClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(HALAL_FAQ_JSON_LD) }}
       />
 
-      <section className="relative min-h-[70vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/2026-march/fremont/fremont-open-kitchen-doner.webp"
-            alt="Halal doner kebab preparation in open kitchen at Istanbul Mediterranean 2"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        </div>
-        <div className="relative flex min-h-[70vh] flex-col items-center justify-center px-5 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 rounded-full border border-olive/40 bg-olive/20 px-4 py-2 text-sm font-semibold text-olive-light backdrop-blur-sm mb-4"
-          >
-            <ShieldCheck size={18} />
-            100% Zabiha Halal
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-heading text-4xl font-bold text-cream sm:text-5xl md:text-6xl max-w-4xl"
-          >
-            Halal Restaurant Las Vegas
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 max-w-2xl text-lg text-cream/80"
-          >
-            Authentic Turkish and Mediterranean cuisine, 100% Zabiha Halal certified. No pork. No alcohol. Ever.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <Link
-              href="/menu"
-              className="rounded-full bg-crimson px-8 py-3.5 font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg"
-            >
-              View Halal Menu
-            </Link>
-            <a
-              href={`tel:${RESTAURANT.phone.replace(/\D/g, "")}`}
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 font-semibold text-cream backdrop-blur-sm hover:border-gold hover:text-gold"
-            >
-              Call to Reserve
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={["No pork", "No alcohol"]}
+        eyebrow="100% Zabiha Halal"
+        title={<>Halal restaurant <span className="text-crimson">Las Vegas</span></>}
+        subtitle="Authentic Turkish and Mediterranean cuisine, 100% Zabiha Halal certified. No pork. No alcohol. Ever."
+        image={{ src: "/images/2026-march/fremont/fremont-open-kitchen-doner.webp", alt: "Halal doner kebab preparation in open kitchen at Istanbul Mediterranean 2" }}
+      >
+        <Link href="/menu" className={btnPrimary}>View the halal menu</Link>
+        <a href={`tel:${RESTAURANT.phone.replace(/\D/g, "")}`} className={btnSecondary}>Call to reserve</a>
+      </PageHeader>
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-8">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-8">
             Halal Turkish Food in Downtown Las Vegas
           </h2>
           <div className="prose prose-stone max-w-none space-y-6 text-warm-gray leading-relaxed">
@@ -124,9 +75,9 @@ export default function HalalPageClient() {
         </div>
       </section>
 
-      <section className="bg-stone/5 py-20 lg:py-28">
+      <section className="bg-stone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-10 text-center">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-10 text-center">
             Halal Restaurant FAQs
           </h2>
           <Accordion.Root type="single" collapsible className="space-y-3">
@@ -134,7 +85,7 @@ export default function HalalPageClient() {
               <Accordion.Item
                 key={i}
                 value={`faq-${i}`}
-                className="overflow-hidden rounded-xl border border-stone/8 bg-white"
+                className="overflow-hidden rounded-xl border border-stone-200 bg-white"
               >
                 <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone hover:text-crimson [&[data-state=open]>svg]:rotate-180">
                   {item.question}
@@ -151,7 +102,7 @@ export default function HalalPageClient() {
 
       <section className="bg-stone py-20">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
             Visit Our Halal Restaurant
           </h2>
           <p className="mt-4 text-cream/60">

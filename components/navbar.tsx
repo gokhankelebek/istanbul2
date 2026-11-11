@@ -12,7 +12,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -33,9 +32,9 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || !isHome
-            ? "bg-stone/90 backdrop-blur-xl shadow-lg py-3"
-            : "bg-black/30 backdrop-blur-sm py-5"
+          scrolled
+            ? "bg-white/95 backdrop-blur-xl shadow-[0_1px_0_#E7E5E4,0_8px_24px_-16px_rgba(28,25,23,0.35)] py-3"
+            : "bg-white border-b border-stone-200 py-4"
         }`}
       >
         <div className="mx-auto flex max-w-7xl flex-nowrap items-center justify-between gap-4 px-5 lg:px-8">
@@ -45,31 +44,34 @@ export default function Navbar() {
               alt="Istanbul Mediterranean 2"
               width={44}
               height={44}
-              className="rounded-full w-auto h-auto"
+              className="h-11 w-11"
               priority
             />
-            <span className="font-heading text-sm font-bold text-cream sm:text-lg whitespace-nowrap">
-              Istanbul Mediterranean 2
+            <span className="flex flex-col leading-tight">
+              <span className="font-heading text-lg font-bold uppercase tracking-wide text-stone sm:text-xl whitespace-nowrap">
+                Istanbul Mediterranean 2
+              </span>
+              <span className="hidden text-xs text-stone-light sm:block">Halal · Fremont Street, Las Vegas</span>
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden flex-shrink-0 items-center gap-4 md:flex lg:gap-6 xl:gap-8">
+          <div className="hidden flex-shrink-0 items-center gap-5 lg:flex xl:gap-8">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`relative text-sm font-medium tracking-wide transition-colors ${
                   pathname === item.href
-                    ? "text-gold"
-                    : "text-cream/80 hover:text-gold-light"
+                    ? "text-crimson"
+                    : "text-stone hover:text-crimson"
                 }`}
               >
                 {item.label}
                 {pathname === item.href && (
                   <motion.div
                     layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-crimson"
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -77,13 +79,13 @@ export default function Navbar() {
             ))}
             <a
               href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
-              className="hidden lg:inline-block rounded-full border border-cream/20 px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95 whitespace-nowrap"
+              className="hidden xl:inline-block rounded-full border border-stone-300 px-5 py-2.5 text-sm font-semibold text-stone transition-all hover:border-stone hover:bg-stone-50 active:scale-95 whitespace-nowrap"
             >
               Call to Reserve
             </a>
             <a
               href={LINKS.orderOnline}
-              className="flex-shrink-0 rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95 whitespace-nowrap"
+              className="flex-shrink-0 rounded-full bg-crimson px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95 whitespace-nowrap"
               aria-label={ORDER_ONLINE_COPY.ariaLabel}
             >
               {ORDER_ONLINE_COPY.label}
@@ -93,7 +95,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-cream p-2 rounded-lg hover:bg-cream/10 transition-colors"
+            className="lg:hidden text-stone p-2.5 rounded-lg hover:bg-stone-100 transition-colors"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -109,7 +111,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-stone/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-stone/98 backdrop-blur-xl lg:hidden flex flex-col items-center justify-center"
           >
             <nav className="flex flex-col items-center gap-8">
               {NAV_ITEMS.map((item, i) => (

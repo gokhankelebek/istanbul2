@@ -40,7 +40,7 @@ export default function FaqAccordion() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
             Frequently Asked Questions
           </h2>
         </motion.div>
@@ -56,7 +56,7 @@ export default function FaqAccordion() {
               <motion.div key={i} variants={itemVariants}>
                 <Accordion.Item
                   value={`faq-${i}`}
-                  className="group overflow-hidden rounded-xl border border-stone/8 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
+                  className="group overflow-hidden rounded-xl border border-stone-200 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
                 >
                   <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone transition-colors hover:text-crimson sm:text-lg [&[data-state=open]>svg]:rotate-180">
                     {item.question}

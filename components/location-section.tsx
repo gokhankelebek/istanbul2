@@ -35,7 +35,7 @@ export default function LocationSection() {
               mass: 1,
             }}
           >
-            <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               Find Us on Fremont
             </h2>
             <p className="mt-4 text-cream/50 max-w-lg">

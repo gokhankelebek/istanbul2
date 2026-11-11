@@ -40,7 +40,7 @@ export default function GalleryGrid() {
             className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
               activeCategory === cat.id
                 ? "bg-crimson text-cream shadow-lg shadow-crimson/20"
-                : "bg-stone/5 text-stone hover:bg-stone/10"
+                : "bg-stone-50 text-stone hover:bg-stone/10"
             }`}
           >
             {cat.label}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Oswald, Manrope } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import MobileCtaBar from "@/components/mobile-cta-bar";
@@ -12,14 +12,14 @@ const gaId =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-BRZ9K2JW3L";
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
-const playfair = Playfair_Display({
-  variable: "--font-heading",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-body",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -74,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${oswald.variable} ${manrope.variable}`}>
       <head>
         <link
           rel="alternate"

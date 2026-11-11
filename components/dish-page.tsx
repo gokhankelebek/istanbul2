@@ -1,5 +1,6 @@
 "use client";
 
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -25,82 +26,18 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
       />
 
       {/* ── HERO ── */}
-      <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={dish.heroImage}
-            alt={dish.heroImageAlt}
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-        <div className="relative flex h-full flex-col items-center justify-center px-5 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-3"
-          >
-            <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
-              {dish.heroTag}
-            </span>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
-            className="font-heading text-lg tracking-widest text-cream/60 uppercase sm:text-xl"
-          >
-            {dish.turkishName}
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-heading text-4xl font-bold leading-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl max-w-5xl mt-2"
-          >
-            {dish.heroTitle}
-            <br />
-            <span className="text-gold">{dish.heroHighlight}</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-6 max-w-2xl text-lg text-cream/70 sm:text-xl leading-relaxed"
-          >
-            {dish.heroSubtitle}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <a
-              href="#dish-menu"
-              className="rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
-            >
-              {dish.heroCtaLabel}
-            </a>
-            <a
-              href={LINKS.orderOnline}
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-              aria-label={ORDER_ONLINE_COPY.ariaLabel}
-            >
-              {ORDER_ONLINE_COPY.label}
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={[dish.heroTag]}
+        eyebrow={dish.turkishName}
+        title={<>{dish.heroTitle} <span className="text-crimson">{dish.heroHighlight}</span></>}
+        subtitle={dish.heroSubtitle}
+        image={{ src: dish.heroImage, alt: dish.heroImageAlt }}
+      >
+        <a href="#dish-menu" className={btnPrimary}>{dish.heroCtaLabel}</a>
+        <a href={LINKS.orderOnline} className={btnSecondary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
+          {ORDER_ONLINE_COPY.label}
+        </a>
+      </PageHeader>
 
       {/* ── STORY ── */}
       <section className="py-20 lg:py-28">
@@ -115,7 +52,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               {dish.storyTag}
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl lg:text-5xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl lg:text-5xl">
               {dish.storyHeading}
             </h2>
             <p className="mt-4 text-warm-gray max-w-2xl mx-auto text-lg">
@@ -134,10 +71,9 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
                 className="grid gap-10 lg:gap-16 lg:grid-cols-2 items-center"
               >
                 <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
-                  <h3 className="font-heading text-2xl font-bold text-stone sm:text-3xl">
+                  <h3 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
                     {section.title}
                   </h3>
-                  <div className="mt-2 h-0.5 w-12 bg-crimson/40 rounded-full" />
                   {section.content.split("\n\n").map((p, j) => (
                     <p
                       key={j}
@@ -183,7 +119,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
               <ShieldCheck size={14} />
               100% Zabiha Halal Certified
             </div>
-            <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               On Our Menu
             </h2>
             <p className="mt-4 text-cream/50 max-w-xl mx-auto">
@@ -276,7 +212,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               {dish.englishName} FAQ
             </h2>
           </motion.div>
@@ -292,7 +228,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
                 <Accordion.Item
                   key={i}
                   value={`faq-${i}`}
-                  className="group overflow-hidden rounded-xl border border-stone/8 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
+                  className="group overflow-hidden rounded-xl border border-stone-200 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
                 >
                   <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone transition-colors hover:text-crimson sm:text-lg [&[data-state=open]>svg]:rotate-180">
                     {item.question}
@@ -324,7 +260,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
               transition={{ duration: 0.6 }}
               className="text-center mb-14"
             >
-              <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+              <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
                 More to Discover
               </h2>
               <p className="mt-4 text-warm-gray max-w-xl mx-auto">
@@ -384,7 +320,7 @@ export default function DishPage({ dish }: { dish: DishPageData }) {
             <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
               Visit Us
             </p>
-            <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               Try It at 505 Fremont
             </h2>
             <p className="mt-4 text-cream/50 max-w-lg mx-auto">

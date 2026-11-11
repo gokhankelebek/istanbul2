@@ -101,16 +101,16 @@ export default async function BlogPostPage({ params }: Props) {
           { name: post.title, path: `/blog/${slug}` },
         ]}
       />
-      <article className="min-h-screen bg-cream pt-24 pb-20">
-        <header className="border-b border-stone/10 bg-stone pb-12 pt-10 lg:pb-16 lg:pt-14">
+      <article className="min-h-screen bg-white pt-[76px] pb-20 sm:pt-[84px]">
+        <header className="border-b border-stone-200 bg-white pb-12 pt-10 lg:pb-16 lg:pt-14">
           <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
             <Link
               href="/blog"
-              className="text-xs font-semibold uppercase tracking-wider text-gold hover:text-gold-light"
+              className="text-[13px] font-bold uppercase tracking-[0.08em] text-crimson hover:text-crimson-dark"
             >
               ← All posts
             </Link>
-            <p className="mt-4 text-sm text-cream/60">
+            <p className="mt-4 text-sm text-stone-500">
               <time dateTime={post.date}>{formatDate(post.date)}</time>
               {post.updated ? (
                 <>
@@ -121,10 +121,10 @@ export default async function BlogPostPage({ params }: Props) {
               {" · "}
               <span>{author.name}</span>
             </p>
-            <h1 className="mt-4 font-heading text-3xl font-bold leading-tight text-cream sm:text-4xl lg:text-5xl">
+            <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.02] text-stone sm:text-5xl lg:text-6xl">
               {post.title}
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg text-cream/70">
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-stone-light">
               {post.description}
             </p>
             {post.tags && post.tags.length > 0 ? (
@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full border border-cream/20 px-3 py-1 text-xs font-medium text-cream/80"
+                    className="rounded-full bg-stone-100 px-3 py-1.5 text-xs font-semibold text-stone-light"
                   >
                     {tag}
                   </li>
@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {related.length > 0 ? (
-          <section className="border-t border-stone/10 bg-stone/5 py-14">
+          <section className="border-t border-stone-200 bg-stone-50 py-14">
             <div className="mx-auto max-w-7xl px-5 lg:px-8">
               <h2 className="font-heading text-2xl font-bold text-stone">
                 More from the blog
@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <li key={p.slug}>
                     <Link
                       href={`/blog/${p.slug}`}
-                      className="group block rounded-xl border border-stone/10 bg-white p-4 transition-shadow hover:shadow-md"
+                      className="group block rounded-xl border border-stone-200 bg-white p-4 transition-shadow hover:shadow-md"
                     >
                       <h3 className="font-heading font-semibold text-stone group-hover:text-crimson">
                         {p.title}

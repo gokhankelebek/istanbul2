@@ -1,5 +1,6 @@
 "use client";
 
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -35,102 +36,24 @@ export default function BreakfastPageClient() {
       />
 
       {/* ── HERO ── */}
-      <section className="relative h-screen min-h-[600px] overflow-hidden">
-        <div className="absolute inset-0 animate-ken-burns">
-          <Image
-            src="/images/2026-march/breakfast/turkish-breakfast-spread.webp"
-            alt="Traditional Turkish breakfast spread at Istanbul Mediterranean 2"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-        <div className="relative flex h-full flex-col items-center justify-center px-5 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-3"
-          >
-            <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
-              Exclusive to Fremont Street
-            </span>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
-            className="font-heading text-lg tracking-widest text-cream/60 uppercase sm:text-xl"
-          >
-            Kahvalti
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-heading text-4xl font-bold leading-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl max-w-5xl mt-2"
-          >
-            The Art of Turkish Breakfast
-            <br />
-            <span className="text-gold">in Las Vegas</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-6 max-w-2xl text-lg text-cream/70 sm:text-xl leading-relaxed"
-          >
-            A centuries-old morning ritual. Fresh cheeses, olives, honey, eggs,
-            and endless Turkish tea — now in Downtown Las Vegas.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <a
-              href="#breakfast-menu"
-              className="rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
-            >
-              See the Breakfast Menu
-            </a>
-            <a
-              href={LINKS.orderOnline}
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 text-base font-semibold text-cream backdrop-blur-sm transition-all hover:border-gold hover:text-gold active:scale-95"
-              aria-label="Order breakfast online from Istanbul Mediterranean 2 — pickup or delivery"
-            >
-              Order breakfast online
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-8"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.8,
-                ease: "easeInOut",
-              }}
-              className="h-10 w-6 rounded-full border-2 border-cream/30 flex items-start justify-center pt-2"
-            >
-              <div className="h-2 w-1 rounded-full bg-cream/60" />
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={["Exclusive to Fremont Street", "Served from 10 AM"]}
+        eyebrow="Kahvaltı · Turkish breakfast"
+        title={<>The art of Turkish breakfast <span className="text-crimson">in Las Vegas</span></>}
+        subtitle="A centuries-old morning ritual. Fresh cheeses, olives, honey, eggs and endless Turkish tea, now in Downtown Las Vegas."
+        image={{ src: "/images/2026-march/breakfast/turkish-breakfast-spread.webp", alt: "Traditional Turkish breakfast spread at Istanbul Mediterranean 2" }}
+      >
+        <a href="#breakfast-menu" className={btnPrimary}>
+          See the breakfast menu
+        </a>
+        <a
+          href={LINKS.orderOnline}
+          className={btnSecondary}
+          aria-label="Order breakfast online from Istanbul Mediterranean 2 — pickup or delivery"
+        >
+          Order breakfast online
+        </a>
+      </PageHeader>
 
       {/* ── WHAT IS KAHVALTI ── */}
       <section className="py-20 lg:py-28">
@@ -145,7 +68,7 @@ export default function BreakfastPageClient() {
             <p className="text-sm font-semibold uppercase tracking-widest text-crimson mb-3">
               More than a meal
             </p>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl lg:text-5xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl lg:text-5xl">
               What is Kahvalti?
             </h2>
             <p className="mt-4 text-warm-gray max-w-2xl mx-auto text-lg">
@@ -165,10 +88,9 @@ export default function BreakfastPageClient() {
                 className="grid gap-10 lg:gap-16 lg:grid-cols-2 items-center"
               >
                 <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
-                  <h3 className="font-heading text-2xl font-bold text-stone sm:text-3xl">
+                  <h3 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
                     {section.title}
                   </h3>
-                  <div className="mt-2 h-0.5 w-12 bg-crimson/40 rounded-full" />
                   {section.content.split("\n\n").map((p, j) => (
                     <p
                       key={j}
@@ -211,7 +133,7 @@ export default function BreakfastPageClient() {
               <ShieldCheck size={14} />
               100% Zabiha Halal Certified
             </div>
-            <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               The Breakfast Menu
             </h2>
             <p className="mt-4 text-cream/50 max-w-xl mx-auto">
@@ -342,7 +264,7 @@ export default function BreakfastPageClient() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Your Perfect Morning at Fremont
             </h2>
             <p className="mt-4 text-warm-gray max-w-xl mx-auto">
@@ -414,7 +336,7 @@ export default function BreakfastPageClient() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               Turkish Breakfast FAQ
             </h2>
           </motion.div>
@@ -430,7 +352,7 @@ export default function BreakfastPageClient() {
                 <Accordion.Item
                   key={i}
                   value={`faq-${i}`}
-                  className="group overflow-hidden rounded-xl border border-stone/8 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
+                  className="group overflow-hidden rounded-xl border border-stone-200 bg-white transition-shadow data-[state=open]:shadow-lg data-[state=open]:shadow-stone/5"
                 >
                   <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone transition-colors hover:text-crimson sm:text-lg [&[data-state=open]>svg]:rotate-180">
                     {item.question}
@@ -464,7 +386,7 @@ export default function BreakfastPageClient() {
               <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
                 Start Your Morning With Us
               </p>
-              <h2 className="font-heading text-3xl font-bold text-cream sm:text-4xl">
+              <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
                 Breakfast at 505 Fremont
               </h2>
               <p className="mt-4 text-cream/50 max-w-lg">

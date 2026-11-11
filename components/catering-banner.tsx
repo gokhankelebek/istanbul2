@@ -11,7 +11,7 @@ export default function CateringBanner() {
             <UtensilsCrossed size={22} className="text-gold" />
           </div>
           <div>
-            <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
               Feeding a group in Las Vegas?
             </h2>
             <p className="mt-2 max-w-2xl text-cream/85">

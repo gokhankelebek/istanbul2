@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --color-crimson: #A51C30;
+  --color-crimson: #BE1E2D;
   --color-crimson-dark: #8A1526;
-  --color-crimson-light: #C42B42;
+  --color-crimson-light: #A51A27;
   --color-gold: #C9A84C;
   --color-gold-light: #D4BA6A;
   --color-gold-dark: #B09138;
-  --color-cream: #FDF6EC;
-  --color-cream-dark: #F5EBD6;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F5F4;
   --color-stone: #1C1917;
   --color-stone-light: #44403C;
-  --color-olive: #5A6E3A;
-  --color-olive-light: #6E854A;
-  --color-warm-gray: #9C958C;
-  --color-warm-gray-light: #C4BFB8;
+  --color-olive: #3F6212;
+  --color-olive-light: #84CC16;
+  --color-warm-gray: #78716C;
+  --color-warm-gray-light: #A8A29E;
 
   --background: var(--color-cream);
   --foreground: var(--color-stone);
@@ -25,20 +25,20 @@
   --color-foreground: var(--foreground);
   --color-crimson: var(--color-crimson);
   --color-crimson-dark: #8A1526;
-  --color-crimson-light: #C42B42;
+  --color-crimson-light: #A51A27;
   --color-gold: #C9A84C;
   --color-gold-light: #D4BA6A;
   --color-gold-dark: #B09138;
-  --color-cream: #FDF6EC;
-  --color-cream-dark: #F5EBD6;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F5F4;
   --color-stone: #1C1917;
   --color-stone-light: #44403C;
-  --color-olive: #5A6E3A;
-  --color-olive-light: #6E854A;
-  --color-warm-gray: #9C958C;
-  --color-warm-gray-light: #C4BFB8;
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --color-olive: #3F6212;
+  --color-olive-light: #84CC16;
+  --color-warm-gray: #78716C;
+  --color-warm-gray-light: #A8A29E;
+  --font-heading: var(--font-oswald), "Oswald", Arial Narrow, sans-serif;
+  --font-body: var(--font-manrope), "Manrope", system-ui, sans-serif;
 }
 
 body {
@@ -137,36 +137,13 @@ html {
   display: none;
 }
 
-/* ─── Turkish Pattern Utilities ─── */
-
-/* Section divider: kilim-inspired zigzag band (gold on cream) */
-.turkish-divider {
-  height: 24px;
-  background-color: var(--color-cream);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 12 L12 0 L24 12 L36 0 L48 12' fill='none' stroke='%23C9A84C' stroke-width='1.5' opacity='0.5'/%3E%3Cpath d='M0 12 L12 24 L24 12 L36 24 L48 12' fill='none' stroke='%23C9A84C' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 48px 24px;
-}
-
-/* Variant for dark sections (cream on stone) */
+/* ─── Retired Turkish pattern utilities (kept as no-ops for the new clean look) ─── */
+.turkish-divider,
 .turkish-divider-light {
-  height: 24px;
-  background-color: var(--color-stone);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M0 12 L12 0 L24 12 L36 0 L48 12' fill='none' stroke='%23FDF6EC' stroke-width='1.5' opacity='0.35'/%3E%3Cpath d='M0 12 L12 24 L24 12 L36 24 L48 12' fill='none' stroke='%23FDF6EC' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 48px 24px;
+  display: none;
 }
 
-/* Subtle diamond pattern for cream backgrounds */
-.turkish-pattern-subtle {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 0 L32 16 L16 32 L0 16 Z' fill='none' stroke='%239C958C' stroke-width='0.4' opacity='0.06'/%3E%3Cpath d='M8 8 L24 8 L24 24 L8 24 Z' fill='none' stroke='%239C958C' stroke-width='0.3' opacity='0.04'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 32px 32px;
-}
-
-/* Footer: diamond pattern in gold/cream on stone */
+.turkish-pattern-subtle,
 .turkish-pattern-footer {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%23C9A84C' stroke-width='0.35' opacity='0.12'/%3E%3Cpath d='M10 10 L30 10 L30 30 L10 30 Z' fill='none' stroke='%23FDF6EC' stroke-width='0.25' opacity='0.06'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 40px 40px;
+  background-image: none;
 }

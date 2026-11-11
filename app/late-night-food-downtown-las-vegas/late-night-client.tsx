@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import PageHeader, { btnPrimary, btnSecondary } from "@/components/page-header";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDown, Clock, MapPin, ArrowRight } from "lucide-react";
-import { RESTAURANT, HOURS, LINKS } from "@/lib/constants";
+import { ChevronDown, MapPin, ArrowRight } from "lucide-react";
+import { RESTAURANT, LINKS } from "@/lib/constants";
 
 const LATE_NIGHT_FAQ = [
   {
@@ -43,72 +42,22 @@ export default function LateNightPageClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(LATE_NIGHT_FAQ_JSON_LD) }}
       />
 
-      <section className="relative min-h-[70vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/2026-march/fremont/fremont-exterior-night-505.webp"
-            alt="Istanbul Mediterranean 2 on Fremont Street at night"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        </div>
-        <div className="relative flex min-h-[70vh] flex-col items-center justify-center px-5 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold backdrop-blur-sm mb-4"
-          >
-            <Clock size={18} />
-            Open Until 5 AM Fri–Sat
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-heading text-4xl font-bold text-cream sm:text-5xl md:text-6xl max-w-4xl"
-          >
-            Late Night Food
-            <br />
-            <span className="text-gold">Downtown Las Vegas</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 max-w-2xl text-lg text-cream/80"
-          >
-            Turkish restaurant on Fremont Street. Doner kebab, pide, lahmacun—until 2 AM Sun–Thu, 5 AM Fri–Sat. 100% Halal.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
-          >
-            <Link
-              href="/menu"
-              className="rounded-full bg-crimson px-8 py-3.5 font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg"
-            >
-              See Late Night Menu
-            </Link>
-            <a
-              href={LINKS.googleMaps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border-2 border-cream/30 px-8 py-3.5 font-semibold text-cream backdrop-blur-sm hover:border-gold hover:text-gold inline-flex items-center justify-center gap-2"
-            >
-              <MapPin size={18} /> Get Directions
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badges={["Open until 5 AM Fri–Sat", "100% Halal"]}
+        eyebrow="Late-night kitchen"
+        title={<>Late-night food <span className="text-crimson">Downtown Las Vegas</span></>}
+        subtitle="Turkish restaurant on Fremont Street. Döner kebab, pide and lahmacun until 2 AM Sun–Thu and 5 AM Fri–Sat."
+        image={{ src: "/images/2026-march/fremont/fremont-exterior-night-505.webp", alt: "Istanbul Mediterranean 2 on Fremont Street at night" }}
+      >
+        <Link href="/menu" className={btnPrimary}>See the late-night menu</Link>
+        <a href={LINKS.googleMaps} target="_blank" rel="noopener noreferrer" className={btnSecondary}>
+          <MapPin size={18} aria-hidden="true" /> Get directions
+        </a>
+      </PageHeader>
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-8">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-8">
             Food Open Late on Fremont Street
           </h2>
           <div className="prose prose-stone max-w-none space-y-6 text-warm-gray leading-relaxed">
@@ -128,9 +77,9 @@ export default function LateNightPageClient() {
         </div>
       </section>
 
-      <section className="bg-stone/5 py-20 lg:py-28">
+      <section className="bg-stone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-stone sm:text-3xl mb-10 text-center">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl mb-10 text-center">
             Late Night Dining FAQs
           </h2>
           <Accordion.Root type="single" collapsible className="space-y-3">
@@ -138,7 +87,7 @@ export default function LateNightPageClient() {
               <Accordion.Item
                 key={i}
                 value={`faq-${i}`}
-                className="overflow-hidden rounded-xl border border-stone/8 bg-white"
+                className="overflow-hidden rounded-xl border border-stone-200 bg-white"
               >
                 <Accordion.Trigger className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-semibold text-stone hover:text-crimson [&[data-state=open]>svg]:rotate-180">
                   {item.question}
@@ -155,7 +104,7 @@ export default function LateNightPageClient() {
 
       <section className="bg-stone py-20">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <h2 className="font-heading text-2xl font-bold text-cream sm:text-3xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-white sm:text-5xl">
             Late Night on Fremont Street
           </h2>
           <p className="mt-4 text-cream/60">

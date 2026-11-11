@@ -12,7 +12,7 @@ export default function BlogTeaser() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="flex items-end justify-between mb-8 sm:mb-14">
           <div>
-            <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+            <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
               From Our Kitchen
             </h2>
             <p className="mt-4 text-warm-gray max-w-xl">
@@ -32,7 +32,7 @@ export default function BlogTeaser() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group overflow-hidden rounded-2xl border border-stone/8 bg-white transition-shadow hover:shadow-xl"
+              className="group overflow-hidden rounded-[20px] border border-stone-200 bg-white transition-shadow hover:shadow-xl"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image

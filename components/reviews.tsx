@@ -63,7 +63,7 @@ export default function Reviews() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-8 sm:mb-14"
         >
-          <h2 className="font-heading text-3xl font-bold text-stone sm:text-4xl">
+          <h2 className="font-heading text-4xl font-bold leading-none text-stone sm:text-5xl">
             What Our Guests Say
           </h2>
           <p className="mt-4 text-warm-gray max-w-xl mx-auto">
@@ -82,7 +82,7 @@ export default function Reviews() {
             <motion.div
               key={review.name}
               variants={cardVariants}
-              className="rounded-2xl border border-stone/8 bg-white p-6 flex flex-col"
+              className="rounded-[20px] border border-stone-200 bg-white p-6 flex flex-col"
             >
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: review.rating }).map((_, i) => (
