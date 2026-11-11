@@ -25,12 +25,15 @@ export function LateNight() {
               </div>
             ))}
           </dl>
+          <p className="text-sm text-stone-400">
+            Online ordering for pickup and delivery runs until about 1 AM. Dine in for the latest hours.
+          </p>
           <div className="flex flex-wrap gap-3">
             <a
               href={`${LINKS.orderOnline}#delivery`}
               className="flex h-[52px] items-center rounded-full bg-gold px-6 font-bold text-stone transition-colors hover:bg-gold-light"
             >
-              Order late-night delivery
+              Order delivery
             </a>
             <a
               href={LINKS.googleMaps}
