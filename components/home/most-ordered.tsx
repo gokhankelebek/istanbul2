@@ -14,18 +14,19 @@ export default function MostOrdered() {
             What Fremont orders most
           </h2>
         </div>
-        <Link href="/menu" className="text-[15px] font-semibold text-crimson hover:text-crimson-dark">
+        <Link href="/menu" className="inline-flex min-h-11 items-center text-[15px] font-semibold text-crimson hover:text-crimson-dark">
           See the full menu →
         </Link>
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-5">
+      {/* Phones: one swipeable row (next card peeks in). sm and up: grid. */}
+      <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-[repeat(auto-fill,minmax(260px,1fr))] sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0">
         {MOST_ORDERED.map((d) => (
           <article
             key={d.name}
             data-ga-location="dish_card"
             data-ga-item={d.name}
-            className="flex flex-col overflow-hidden rounded-[20px] border border-stone-200 bg-white transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(28,25,23,0.4)]"
+            className="flex w-[78%] max-w-[300px] flex-none snap-start flex-col overflow-hidden rounded-[20px] border border-stone-200 bg-white transition-shadow sm:w-auto sm:max-w-none hover:shadow-[0_18px_40px_-24px_rgba(28,25,23,0.4)]"
           >
             <div className="relative aspect-[4/3] bg-stone-100">
               <Image

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import SiteLink, { useOnStoreHost } from "@/components/site-link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ChevronRight, Menu, Phone, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS, RESTAURANT, LINKS, ORDER_ONLINE_COPY } from "@/lib/constants";
 
@@ -22,9 +22,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  // Close the phone menu after navigating (adjusting state during render,
+  // as React recommends, instead of in an effect).
+  const [menuPath, setMenuPath] = useState(pathname);
+  if (pathname !== menuPath) {
+    setMenuPath(pathname);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -115,48 +119,52 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             data-ga-location="mobile_menu"
-            className="fixed inset-0 z-40 bg-stone/98 backdrop-blur-xl lg:hidden flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 flex flex-col bg-white pt-[76px] lg:hidden"
           >
-            <nav className="flex flex-col items-center gap-8">
+            <nav aria-label="Mobile" className="flex flex-1 flex-col overflow-y-auto px-5 pb-28 pt-2">
               {NAV_ITEMS.map((item, i) => (
                 <motion.div
                   key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ delay: i * 0.08 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ delay: i * 0.04 }}
                 >
                   <SiteLink
                     href={item.href}
-                    className={`font-heading text-3xl font-bold transition-colors ${
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`flex min-h-14 items-center justify-between border-b border-stone-200 font-heading text-2xl font-bold uppercase tracking-wide transition-colors ${
                       isActive(item.href)
-                        ? "text-gold"
-                        : "text-cream hover:text-gold-light"
+                        ? "text-crimson"
+                        : "text-stone hover:text-crimson"
                     }`}
                   >
                     {item.label}
+                    <ChevronRight size={22} className="text-stone-400" aria-hidden="true" />
                   </SiteLink>
                 </motion.div>
               ))}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
-                className="flex flex-col items-center gap-4 mt-4"
+                transition={{ delay: 0.25 }}
+                className="mt-6 flex flex-col gap-3"
               >
                 <a
                   href={LINKS.orderOnline}
-                  className="inline-block rounded-full bg-crimson px-8 py-3 text-lg font-semibold text-cream transition-all hover:bg-crimson-light text-center"
+                  className="flex h-[52px] items-center justify-center rounded-full bg-crimson px-7 font-bold text-white transition-colors hover:bg-crimson-light"
                   aria-label={ORDER_ONLINE_COPY.ariaLabel}
                 >
                   {ORDER_ONLINE_COPY.label}
                 </a>
                 <a
                   href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
-                  className="inline-block rounded-full border-2 border-cream/20 px-8 py-3 text-lg font-semibold text-cream transition-all hover:border-gold hover:text-gold"
+                  className="flex h-[52px] items-center justify-center gap-2 rounded-full border border-stone-300 px-6 font-semibold text-stone transition-colors hover:border-stone hover:bg-stone-50"
                 >
-                  Call to Reserve
+                  <Phone size={18} aria-hidden="true" />
+                  Call {RESTAURANT.phone}
                 </a>
+                <p className="mt-2 text-center text-sm text-stone-500">{RESTAURANT.address}</p>
               </motion.div>
             </nav>
           </motion.div>

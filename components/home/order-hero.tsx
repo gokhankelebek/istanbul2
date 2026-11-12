@@ -28,7 +28,7 @@ export default function OrderHero() {
           </span>
           <span className="flex flex-wrap gap-x-5">
             <span className="hidden md:inline">{RESTAURANT.address}</span>
-            <a href={tel} className="font-semibold text-gold hover:text-gold-light">
+            <a href={tel} className="-my-2.5 inline-flex min-h-11 items-center font-semibold text-gold hover:text-gold-light">
               {RESTAURANT.phone}
             </a>
           </span>
@@ -120,7 +120,7 @@ export default function OrderHero() {
               </div>
             )}
           </div>
-          <Link href="/menu" className="w-fit text-[15px] font-semibold text-crimson hover:text-crimson-dark">
+          <Link href="/menu" className="inline-flex min-h-11 items-center w-fit text-[15px] font-semibold text-crimson hover:text-crimson-dark">
             Browse the full menu →
           </Link>
         </div>
