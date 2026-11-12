@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { RESTAURANT } from "@/lib/constants";
+import { trackEvent } from "@/lib/analytics";
 import {
   CATERING_EVENT_TYPES,
   CATERING_GUEST_COUNTS,
@@ -66,11 +67,22 @@ export default function CateringInquiryForm() {
         throw new Error(data.error ?? "Something went wrong. Please try again.");
       }
 
+      // GA4 recommended lead event. Only the event details, never contact info.
+      trackEvent("generate_lead", {
+        form_name: "catering_quote",
+        event_type: form.eventType,
+        guest_count: form.guestCount,
+        service_style: form.serviceStyle,
+        has_event_date: form.eventDate ? "yes" : "no",
+        heard_about: form.hearAbout,
+      });
+
       setStatus("success");
       const submittedName = form.name;
       setForm(INITIAL);
       setSubmittedName(submittedName);
     } catch (err) {
+      trackEvent("catering_quote_error", { form_name: "catering_quote" });
       setStatus("error");
       setErrorMsg(
         err instanceof Error
