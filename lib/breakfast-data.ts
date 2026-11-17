@@ -54,7 +54,7 @@ export const BREAKFAST_FAQ = [
   {
     question: "Can I order Turkish breakfast for delivery?",
     answer:
-      "Yes! You can order our breakfast items for delivery through OrderDoner.com. For the best experience, we recommend dining in — Turkish breakfast is meant to be savored slowly at the table with Turkish tea.",
+      "No. Turkish breakfast is dine-in only at 505 Fremont Street. It's served fresh at the table with Turkish tea, so we don't send it out for delivery. Döner, pide, lahmacun and the rest of the menu are available for delivery.",
   },
   {
     question:
@@ -237,7 +237,7 @@ export const BREAKFAST_JSON_LD = {
           name: "Can I order Turkish breakfast for delivery?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, order breakfast for delivery through OrderDoner.com. For the best experience, we recommend dining in to enjoy the full Turkish breakfast ritual with Turkish tea.",
+            text: "No. Turkish breakfast is dine-in only at 505 Fremont Street, served fresh at the table with Turkish tea. The rest of the menu is available for delivery.",
           },
         },
         {

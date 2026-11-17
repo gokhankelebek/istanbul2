@@ -3,11 +3,35 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, Coffee, MapPin, Moon, Truck } from "lucide-react";
 import OpenStatus from "@/components/home/open-status";
 import { DELIVERY_PARTNERS, LINKS, RESTAURANT } from "@/lib/constants";
 
 type Mode = "delivery" | "pickup";
+
+const PILLARS = [
+  {
+    Icon: Truck,
+    eyebrow: "Delivery",
+    title: "Delivered hot, late.",
+    body: "Döner, pide, lahmacun, kebab plates and desserts through Cash App, Uber Eats or DoorDash. Online orders run until about 1 AM.",
+    cta: { label: "Order delivery", href: `${LINKS.orderOnline}#delivery`, external: false },
+  },
+  {
+    Icon: Coffee,
+    eyebrow: "Breakfast",
+    title: "Turkish breakfast, dine-in only.",
+    body: "Kahvaltı is served at the table from 10 AM: cheeses, olives, honey and kaymak, eggs, fresh bread and Turkish tea. It isn’t available for delivery.",
+    cta: { label: "See the breakfast", href: "/turkish-breakfast", external: false },
+  },
+  {
+    Icon: Moon,
+    eyebrow: "Late night",
+    title: "Open late on Fremont.",
+    body: "Dine in until 2 AM Sunday to Thursday and 5 AM on Friday and Saturday. Walk in, no reservation needed.",
+    cta: { label: "Get directions", href: LINKS.googleMaps, external: true },
+  },
+];
 
 const tabBase =
   "h-11 rounded-[11px] text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson";
@@ -47,12 +71,12 @@ export default function OrderHero() {
           </div>
 
           <h1 className="font-heading text-[44px] font-bold leading-[0.98] text-stone sm:text-6xl lg:text-[76px]">
-            Döner, pide &amp; Turkish breakfast.{" "}
+            Döner, pide &amp; lahmacun.{" "}
             <span className="text-crimson">Delivered hot,</span> late.
           </h1>
           <p className="max-w-[520px] text-lg leading-relaxed text-stone-light">
-            Fremont Street&rsquo;s late-night Turkish kitchen. Order for delivery or skip the
-            line with pickup, same menu as our dining room.
+            Fremont Street&rsquo;s late-night Turkish kitchen. Order döner, pide and kebab
+            plates for delivery, or skip the line with pickup.
           </p>
 
           {/* Order box */}
@@ -146,21 +170,36 @@ export default function OrderHero() {
         </div>
       </section>
 
-      {/* Ways to order */}
-      <section aria-label="Ways to order" className="mx-auto max-w-7xl px-5 pb-12 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-3 border-y border-stone-200 py-[18px]">
-          <span className="text-sm text-stone-500">Order your way</span>
-          <div className="flex flex-wrap items-baseline gap-x-9 gap-y-2 font-heading text-xl font-semibold uppercase tracking-wide text-stone-light">
-            <span>
-              Cash App{" "}
-              <span className="font-body text-[13px] font-medium normal-case tracking-normal text-stone-500">
-                direct from our kitchen
+      {/* Three separate promises: what we deliver, what's dine-in only, and late hours */}
+      <section aria-label="Delivery, breakfast and late night" className="mx-auto max-w-7xl px-5 pb-12 lg:px-8">
+        <div className="grid gap-3 md:grid-cols-3">
+          {PILLARS.map(({ Icon, eyebrow, title, body, cta }) => (
+            <div
+              key={eyebrow}
+              data-ga-location={`pillar_${eyebrow.toLowerCase().replace(/[^a-z]+/g, "_")}`}
+              className="flex flex-col gap-3 rounded-[20px] border border-stone-200 bg-white p-6"
+            >
+              <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-crimson">
+                <Icon className="h-4 w-4" aria-hidden="true" />
+                {eyebrow}
               </span>
-            </span>
-            <span>Uber Eats</span>
-            <span>DoorDash</span>
-            <span>Dine in</span>
-          </div>
+              <h2 className="font-heading text-[28px] font-bold leading-none text-stone">{title}</h2>
+              <p className="flex-1 text-[15px] leading-relaxed text-stone-500">{body}</p>
+              {cta.external ? (
+                <a href={cta.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 w-fit items-center text-[15px] font-semibold text-crimson hover:text-crimson-dark">
+                  {cta.label} →
+                </a>
+              ) : cta.href.startsWith("/") ? (
+                <Link href={cta.href} className="inline-flex min-h-11 w-fit items-center text-[15px] font-semibold text-crimson hover:text-crimson-dark">
+                  {cta.label} →
+                </Link>
+              ) : (
+                <a href={cta.href} className="inline-flex min-h-11 w-fit items-center text-[15px] font-semibold text-crimson hover:text-crimson-dark">
+                  {cta.label} →
+                </a>
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </>

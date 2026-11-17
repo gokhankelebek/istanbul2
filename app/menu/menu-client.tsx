@@ -51,7 +51,7 @@ export default function MenuPageClient() {
         badges={["100% Zabiha Halal", "Breakfast to late night"]}
         eyebrow="Full menu · Fremont Street"
         title="Turkish restaurant menu"
-        subtitle="Döner, pide, lahmacun, kebab plates, Turkish breakfast and our bakery case. Every dish is on the menu for pickup and delivery too."
+        subtitle="Döner, pide, lahmacun, kebab plates, Turkish breakfast and our bakery case. Everything except Turkish breakfast (dine-in only) is available for pickup and delivery."
         image={{ src: "/images/2026-march/food/lahmacun-pide-table.webp", alt: "Lahmacun and pide on the table at Istanbul 2" }}
         note={ORDER_ONLINE_COPY.promo}
       >

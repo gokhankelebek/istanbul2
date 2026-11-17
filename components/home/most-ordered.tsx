@@ -55,14 +55,24 @@ export default function MostOrdered() {
               <p className="flex-1 text-sm leading-relaxed text-stone-500">{d.description}</p>
               <div className="mt-2.5 flex items-center justify-between">
                 <span className="text-[17px] font-bold text-stone">{d.price}</span>
-                <a
-                  href={LINKS.orderOnline}
-                  aria-label={`Order ${d.name}`}
-                  className="flex h-11 items-center gap-1.5 rounded-full bg-stone px-[18px] text-sm font-semibold text-white transition-colors hover:bg-crimson"
-                >
-                  <Plus className="h-4 w-4" strokeWidth={2.6} aria-hidden="true" />
-                  Order
-                </a>
+                {d.dineInOnly ? (
+                  <Link
+                    href={d.href ?? "/turkish-breakfast"}
+                    aria-label={`${d.name}: dine-in only`}
+                    className="flex h-11 items-center rounded-full border border-stone-300 px-[18px] text-sm font-semibold text-stone transition-colors hover:border-stone"
+                  >
+                    Dine in
+                  </Link>
+                ) : (
+                  <a
+                    href={LINKS.orderOnline}
+                    aria-label={`Order ${d.name}`}
+                    className="flex h-11 items-center gap-1.5 rounded-full bg-stone px-[18px] text-sm font-semibold text-white transition-colors hover:bg-crimson"
+                  >
+                    <Plus className="h-4 w-4" strokeWidth={2.6} aria-hidden="true" />
+                    Order
+                  </a>
+                )}
               </div>
             </div>
           </article>
