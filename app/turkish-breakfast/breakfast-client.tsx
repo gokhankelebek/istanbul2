@@ -37,7 +37,7 @@ export default function BreakfastPageClient() {
 
       {/* ── HERO ── */}
       <PageHeader
-        badges={["Exclusive to Fremont Street", "Served from 10 AM"]}
+        badges={["Exclusive to Fremont Street", "Served from 10 AM", "Dine-in only"]}
         eyebrow="Kahvaltı · Turkish breakfast"
         title={<>The art of Turkish breakfast <span className="text-crimson">in Las Vegas</span></>}
         subtitle="A centuries-old morning ritual. Fresh cheeses, olives, honey, eggs and endless Turkish tea, now in Downtown Las Vegas."
@@ -46,12 +46,8 @@ export default function BreakfastPageClient() {
         <a href="#breakfast-menu" className={btnPrimary}>
           See the breakfast menu
         </a>
-        <a
-          href={LINKS.orderOnline}
-          className={btnSecondary}
-          aria-label="Order breakfast online from Istanbul Mediterranean 2 — pickup or delivery"
-        >
-          Order breakfast online
+        <a href={LINKS.googleMaps} target="_blank" rel="noopener noreferrer" className={btnSecondary}>
+          Get directions
         </a>
       </PageHeader>
 
@@ -459,11 +455,10 @@ export default function BreakfastPageClient() {
                   Get Directions
                 </a>
                 <a
-                  href={LINKS.orderOnline}
+                  href={`tel:${RESTAURANT.phone.replace(/[^0-9]/g, "")}`}
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-6 py-3 text-sm font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
-                  aria-label="Order breakfast online from Istanbul Mediterranean 2 — pickup or delivery"
                 >
-                  Order breakfast online
+                  Call {RESTAURANT.phone}
                 </a>
               </div>
             </motion.div>

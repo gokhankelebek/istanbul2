@@ -18,6 +18,8 @@ import { getMenuItemHref, type MenuItemWithMeta } from "@/lib/menu-utils";
 
 export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
   const { item, category } = entry;
+  // Turkish breakfast is served at the table only, never delivered.
+  const dineInOnly = category.id === "breakfast";
   const heroImage = item.image || category.image || "/images/2026-march/food/doner-salad-plate.webp";
 
   const faqItems = [
@@ -27,7 +29,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
     },
     {
       question: `Where can I get ${item.name} in Las Vegas?`,
-      answer: `Istanbul Mediterranean 2 at 505 Fremont Street, Downtown Las Vegas serves ${item.name} for ${item.price}. We're open daily from 10 AM. Order pickup or delivery online at store.istanbul2.com — same Halal menu from our Fremont kitchen.`,
+      answer: `Istanbul Mediterranean 2 at 505 Fremont Street, Downtown Las Vegas serves ${item.name} for ${item.price}. We're open daily from 10 AM. ${dineInOnly ? "Turkish breakfast is dine-in only; it isn't available for delivery." : "Order pickup or delivery online at store.istanbul2.com — same Halal menu from our Fremont kitchen."}`,
     },
   ];
 
@@ -35,7 +37,7 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
     <div className="min-h-screen bg-cream" data-ga-item={item.name}>
       {/* ── HERO ── */}
       <PageHeader
-        badges={["100% Halal"]}
+        badges={dineInOnly ? ["100% Halal", "Dine-in only"] : ["100% Halal"]}
         eyebrow={category.title}
         title={item.name}
         image={{ src: heroImage, alt: item.name }}
@@ -43,9 +45,15 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
         <span className="inline-flex h-[52px] items-center rounded-full bg-gold px-5 font-heading text-2xl font-semibold text-stone">
           {item.price}
         </span>
-        <a href={LINKS.orderOnline} className={btnPrimary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
-          {ORDER_ONLINE_COPY.label}
-        </a>
+        {dineInOnly ? (
+          <a href={LINKS.googleMaps} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+            Get directions
+          </a>
+        ) : (
+          <a href={LINKS.orderOnline} className={btnPrimary} aria-label={ORDER_ONLINE_COPY.ariaLabel}>
+            {ORDER_ONLINE_COPY.label}
+          </a>
+        )}
         <Link href={`/menu#${category.id}`} className={btnSecondary}>
           More {category.title}
         </Link>
@@ -66,14 +74,19 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
               </p>
             )}
 
+            {dineInOnly && (
+              <p className="mt-6 text-center text-sm font-semibold text-stone-500">
+                Dine-in only. Turkish breakfast isn&rsquo;t available for delivery.
+              </p>
+            )}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              {!dineInOnly && <a
                 href={LINKS.orderOnline}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-crimson px-8 py-3.5 text-base font-semibold text-cream transition-all hover:bg-crimson-light hover:shadow-lg hover:shadow-crimson/25 active:scale-95"
                 aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
                 {ORDER_ONLINE_COPY.label}
-              </a>
+              </a>}
               <Link
                 href="/menu"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-stone/15 px-8 py-3.5 text-base font-semibold text-stone transition-all hover:border-crimson hover:text-crimson active:scale-95"
@@ -248,13 +261,13 @@ export default function MenuItemPage({ entry }: { entry: MenuItemWithMeta }) {
                 <Navigation size={16} />
                 Get Directions
               </a>
-              <a
+              {!dineInOnly && <a
                 href={LINKS.orderOnline}
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/20 px-8 py-3.5 text-base font-semibold text-cream transition-all hover:border-gold hover:text-gold active:scale-95"
                 aria-label={ORDER_ONLINE_COPY.ariaLabel}
               >
                 {ORDER_ONLINE_COPY.label}
-              </a>
+              </a>}
             </div>
           </motion.div>
         </div>

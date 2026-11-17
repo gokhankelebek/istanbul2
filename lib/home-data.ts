@@ -7,6 +7,8 @@ export type HomeDish = {
   /** Optional dish landing page */
   href?: string;
   tag?: string;
+  /** Not sold for delivery or online ordering (Turkish breakfast). */
+  dineInOnly?: boolean;
 };
 
 export const MOST_ORDERED: HomeDish[] = [
@@ -52,7 +54,8 @@ export const MOST_ORDERED: HomeDish[] = [
     price: "$44.95",
     image: "/images/DOUBLE BREAKFAST PLATE.webp",
     href: "/turkish-breakfast",
-    tag: "Serves two",
+    tag: "Dine-in only",
+    dineInOnly: true,
   },
   {
     name: "Künefe",
